@@ -52,7 +52,7 @@ struct ChooseTopicView: View {
                     path.append(AppRoute.chooseTime)
                 }
             )
-                .disabled(selectedTopic == nil)
+            .disabled(selectedTopic == nil)
         }
         .navigationTitle("Choose Topic")
         .navigationBarTitleDisplayMode(.inline)

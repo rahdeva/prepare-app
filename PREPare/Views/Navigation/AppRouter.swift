@@ -39,13 +39,13 @@ struct AppRouter: ViewModifier {
                         ChooseTimeView(path: $path)
                     
                     case .prepGuide:
-                        PREPGuideView()
+                        PREPGuideView(path: $path)
                     
                     case .practice:
-                        PracticeView()
+                        PracticeView(path: $path)
                     
                     case .result:
-                        ResultView()
+                        ResultView(path: $path)
                 }
             }
     }
