@@ -4,9 +4,10 @@ extension Color {
     // Base
     public static let black = Color(UIColor(red: 0, green: 0, blue: 0, alpha: 1))
     public static let white = Color(UIColor(red: 1, green: 1, blue: 1, alpha: 1))
-    public static let primaryColor = UIColor(hex: "#ffe700ff")
-    public static let secondaryColor = UIColor(hex: "#ffe700ff")
-    public static let secoColor = UIColor(hex: "#ffe700ff")
+    public static let primaryColor = Color(UIColor(hex: "#213C51"))
+    public static let secondaryColor = Color(UIColor(hex: "#6594B1"))
+    public static let tertiaryColor = Color(UIColor(hex: "#DDAED3"))
+    public static let backgroundColor = Color(UIColor(hex: "#SFAFAFA"))
 
     // Slate
     public static let slate50 = Color(UIColor(red: 248/255, green: 250/255, blue: 252/255, alpha: 1))
@@ -296,29 +297,76 @@ extension Color {
 }
 
 extension UIColor {
-    public convenience init?(hex: String) {
-        let r, g, b, a: CGFloat
+    public convenience init(hex: String) {
+        var hexColor = hex.trimmingCharacters(in: .whitespacesAndNewlines)
+        hexColor = hexColor.replacingOccurrences(of: "#", with: "")
 
-        if hex.hasPrefix("#") {
-            let start = hex.index(hex.startIndex, offsetBy: 1)
-            let hexColor = String(hex[start...])
-
-            if hexColor.count == 8 {
-                let scanner = Scanner(string: hexColor)
-                var hexNumber: UInt64 = 0
-
-                if scanner.scanHexInt64(&hexNumber) {
-                    r = CGFloat((hexNumber & 0xff000000) >> 24) / 255
-                    g = CGFloat((hexNumber & 0x00ff0000) >> 16) / 255
-                    b = CGFloat((hexNumber & 0x0000ff00) >> 8) / 255
-                    a = CGFloat(hexNumber & 0x000000ff) / 255
-
-                    self.init(red: r, green: g, blue: b, alpha: a)
-                    return
-                }
-            }
+        if hexColor.count == 6 {
+            hexColor.append("FF")
         }
 
-        return nil
+        var hexNumber: UInt64 = 0
+        Scanner(string: hexColor).scanHexInt64(&hexNumber)
+
+        let r = CGFloat((hexNumber & 0xff000000) >> 24) / 255
+        let g = CGFloat((hexNumber & 0x00ff0000) >> 16) / 255
+        let b = CGFloat((hexNumber & 0x0000ff00) >> 8) / 255
+        let a = CGFloat(hexNumber & 0x000000ff) / 255
+
+        self.init(red: r, green: g, blue: b, alpha: a)
     }
+}
+
+extension View {
+    func shadowPrimary() -> some View {
+        self.shadow(
+            color: Color.black.opacity(0.25),
+            radius: 8,
+            x: 0,
+            y: 4
+        )
+    }
+}
+
+extension LinearGradient {
+    static let primaryGradient = LinearGradient(
+        gradient: Gradient(colors: [
+            Color(UIColor(hex: "#213C51")),
+            Color(UIColor(hex: "#254257")),
+            Color(UIColor(hex: "#2A485E")),
+            Color(UIColor(hex: "#2F4E64")),
+            Color(UIColor(hex: "#33546B")),
+            Color(UIColor(hex: "#385A72")),
+            Color(UIColor(hex: "#3D6079")),
+            Color(UIColor(hex: "#42667F")),
+            Color(UIColor(hex: "#476D86")),
+            Color(UIColor(hex: "#4B738D")),
+            Color(UIColor(hex: "#507A94")),
+            Color(UIColor(hex: "#56809B")),
+            Color(UIColor(hex: "#5B87A3")),
+            Color(UIColor(hex: "#608DAA")),
+            Color(UIColor(hex: "#6594B1"))
+        ]),
+        startPoint: .topLeading,
+        endPoint: .bottomTrailing
+    )
+    
+    static let orangeGradient = LinearGradient(
+        gradient: Gradient(colors: [
+            Color(UIColor(hex: "#FF8904")),
+            Color(UIColor(hex: "#FF6900")),
+            Color(UIColor(hex: "#FB2C36")),
+        ]),
+        startPoint: .topLeading,
+        endPoint: .bottomTrailing
+    )
+    
+    static let pinkGradient = LinearGradient(
+        gradient: Gradient(colors: [
+            Color(UIColor(hex: "#E72B83")),
+            Color(UIColor(hex: "#FF90BC")),
+        ]),
+        startPoint: .topLeading,
+        endPoint: .bottomTrailing
+    )
 }
