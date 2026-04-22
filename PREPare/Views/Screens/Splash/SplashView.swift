@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct SplashScreenView: View {
+struct SplashView: View {
     @Binding var isPresented: Bool
     
     var body: some View {
@@ -9,18 +9,17 @@ struct SplashScreenView: View {
                 .ignoresSafeArea()
             
             VStack(){
-                ZStack{
-                    Image("prepare_app_logo")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 200, height: 200)
-                        .background(
-                            RoundedRectangle(cornerRadius: 40)
-                                .fill(.white)
-                                .shadowPrimary()
-                                .padding(24)
-                        )
-                }
+                Image("prepare_app_logo")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 150, height: 150)
+                    .background(
+                        RoundedRectangle(cornerRadius: 40)
+                            .fill(.white)
+                            .shadowPrimary()
+                            .padding(.vertical, 4)
+                    )
+                    .shadowPrimary()
                 
                 Text("PREPare")
                     .font(.largeTitle)
@@ -29,7 +28,7 @@ struct SplashScreenView: View {
             }
         }
         .onAppear{
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.9, execute: {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5, execute: {
                 withAnimation(.easeIn(duration: 0.2)){
                     isPresented.toggle()
                 }
@@ -39,5 +38,5 @@ struct SplashScreenView: View {
 }
 
 #Preview {
-    SplashScreenView(isPresented: .constant(true))
+    SplashView(isPresented: .constant(true))
 }

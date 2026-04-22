@@ -6,70 +6,58 @@
 //
 
 import SwiftUI
-// ChooseTopicView.swift
-import SwiftUI
 
 struct ChooseTopicView: View {
-    @State private var topics: [Topic] = [
-        Topic(
-            id: "job-interview",
-            title: "Job Interview",
-            icon: "bubble.left.and.bubble.right",
-            category: "CAREER",
-            categoryOrder: 0
-        ),
-        Topic(id: "personal-strength", title: "Personal Strength", icon: "bubble.left.and.bubble.right", category: "CAREER", categoryOrder: 0),
-        Topic(id: "career-goals", title: "Career Goals", icon: "bubble.left.and.bubble.right", category: "CAREER", categoryOrder: 0),
-        Topic(id: "personal-growth", title: "Personal Growth", icon: "bubble.left.and.bubble.right", category: "PERSONAL GROWTH", categoryOrder: 1),
+    @Binding var path: NavigationPath
+    @State private var selectedTopic: String? = nil
+
+    let topics: [String: [String]] = [
+        "CAREER": ["Job Interview", "Teamwork", "Career Goals"],
+        "PERSONAL GROWTH": ["Personal Growth"]
     ]
-    @State private var selectedTopic: Topic? = nil
-    
-    var groupedTopics: [String: [Topic]] {
-        Dictionary(grouping: topics, by: { $0.category })
-    }
-    
-    var categories: [String] {
-        groupedTopics.keys.sorted {
-            let a = groupedTopics[$0]?.first?.categoryOrder ?? 0
-            let b = groupedTopics[$1]?.first?.categoryOrder ?? 0
-            return a < b
-        }
-    }
-    
+
+    let categoryOrder = ["CAREER", "PERSONAL GROWTH"]
+
     var body: some View {
         VStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 24) {
-                    ForEach(categories, id: \.self) { category in
+                    ForEach(categoryOrder, id: \.self) { category in
                         Section(category) {
                             LazyVGrid(
-                                columns: [GridItem(.flexible()), GridItem(.flexible())],
-                                spacing: 16
+                                columns: [
+                                    GridItem(.flexible(), spacing: 16),
+                                    GridItem(.flexible())
+                                ],
+                                spacing: 16,
                             ) {
-                                ForEach(groupedTopics[category] ?? []) { topic in
+                                ForEach(topics[category] ?? [], id: \.self) { title in
                                     TopicCard(
-                                        title: topic.title,
-                                        icon: topic.icon,
-                                        isSelected: selectedTopic?.id == topic.id
+                                        title: title,
+                                        isSelected: selectedTopic == title
                                     )
-                                    .onTapGesture { selectedTopic = topic }
+                                    .onTapGesture { selectedTopic = title }
                                 }
                             }
                         }
+                        .fontWeight(.semibold)
                     }
                 }
-                .padding()
+                .padding(.horizontal, 24)
             }
-            
-            PrimaryButton(title: "Continue")
+
+            PrimaryButton(
+                title: "Continue",
+                action: {
+                    path.append(AppRoute.chooseTime)
+                }
+            )
                 .disabled(selectedTopic == nil)
-                .padding()
         }
         .navigationTitle("Choose Topic")
         .navigationBarTitleDisplayMode(.inline)
     }
 }
-
 #Preview {
-    AppView()
+    ChooseTopicView(path: .constant(NavigationPath()))
 }

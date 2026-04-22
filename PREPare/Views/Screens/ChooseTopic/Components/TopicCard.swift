@@ -14,12 +14,12 @@ struct TopicCard: View {
     var body: some View {
         VStack(spacing: 12) {
             RoundedRectangle(cornerRadius: 16)
-                .fill(.blue.gradient)
-                .frame(width: 80, height: 80)
+                .fill(LinearGradient.primaryGradient)
+                .frame(width: 56, height: 56)
                 .overlay {
-                    Image(systemName: "bubble.left.and.bubble.right")
+                    Image(systemName: "ellipsis.message")
                         .foregroundStyle(.white)
-                        .font(.title2)
+                        .font(.title3)
                 }
             
             Text(title)
@@ -31,8 +31,11 @@ struct TopicCard: View {
         .cornerRadius(16)
         .overlay {
             RoundedRectangle(cornerRadius: 16)
-                .stroke(isSelected ? Color.blue : Color.clear, lineWidth: 2)  // ← border kalau selected
+                .stroke(
+                    isSelected ? Color.primaryColor : Color.clear,
+                    lineWidth: 2
+            )
         }
-        .shadow(color: .black.opacity(0.08), radius: 8)
+        .shadowPrimary()
     }
 }

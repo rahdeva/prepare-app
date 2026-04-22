@@ -9,7 +9,6 @@ import SwiftUI
 import SwiftData
 
 struct AppView: View {
-    
     @State private var isSplashPresented: Bool = true
     @State private var path = NavigationPath()
     
@@ -19,10 +18,10 @@ struct AppView: View {
                 if !isSplashPresented {
                     HomeView(path: $path)
                 } else {
-                    SplashScreenView(isPresented: $isSplashPresented)
+                    SplashView(isPresented: $isSplashPresented)
                 }
             }
-            .registerRoutes()
+            .registerRoutes(path: $path)
         }
     }
 }
