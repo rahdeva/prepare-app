@@ -16,7 +16,8 @@ struct AppView: View {
         NavigationStack(path: $path) {
             Group {
                 if !isSplashPresented {
-                    HomeView(path: $path)
+                    OnboardingView()
+//                    HomeView(path: $path)
                 } else {
                     SplashView(isPresented: $isSplashPresented)
                 }
