@@ -19,7 +19,7 @@ struct HomeView: View {
                     }
                 }
                 Spacer()
-                /// TODO: Hide for now
+                /// TODO: Hide tutorial  for now
 //                ChipButton {
 //                    Button {
 //                        print("Tutorial tapped")
@@ -48,10 +48,10 @@ struct HomeView: View {
             ScrollView{
                 StreakCard()
                 Spacer().frame(height: 20)
-                
+
                 StartPracticeCard(path: $path)
                 Spacer().frame(height: 20)
-                
+
                 Button(
                     action: {
                         print("asdasds")
@@ -61,6 +61,9 @@ struct HomeView: View {
                     HistoryCard()
                 }
             }
+        }
+        .sheet(isPresented: $showModalPREP) {
+            PREPFrameworkSheet()
         }
     }
 }
