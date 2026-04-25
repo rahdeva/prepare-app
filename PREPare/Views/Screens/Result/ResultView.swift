@@ -11,6 +11,19 @@ struct ResultView: View {
     @Binding var path: NavigationPath
     
     var body: some View {
-        Text("ResultView")
+        VStack{
+            Image("haha")
+                .background(.black)
+            
+            Text("Hehe Maap belum jadi")
+                .font(.title)
+                .foregroundStyle(.black)
+        }
+    }
+}
+
+#Preview {
+    NavigationStack {
+        ResultView(path: .constant(NavigationPath()))
     }
 }

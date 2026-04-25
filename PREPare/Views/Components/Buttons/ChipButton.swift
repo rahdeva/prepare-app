@@ -26,7 +26,6 @@ import SwiftUI
 import SwiftUI
 
 struct ChipButton<Label: View>: View {
-    
     let label: Label
     var horizontalPadding: CGFloat = 12
     var verticalPadding: CGFloat = 8

@@ -8,6 +8,8 @@ extension Color {
     public static let secondaryColor = Color(UIColor(hex: "#6594B1"))
     public static let tertiaryColor = Color(UIColor(hex: "#DDAED3"))
     public static let backgroundColor = Color(UIColor(hex: "#SFAFAFA"))
+    public static let errorColor = Color(UIColor(hex: "#FF90BC"))
+    public static let successColor = Color(UIColor(hex: "#C9E9D2"))
 
     // Slate
     public static let slate50 = Color(UIColor(red: 248/255, green: 250/255, blue: 252/255, alpha: 1))

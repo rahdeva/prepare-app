@@ -5,6 +5,8 @@ struct PrimaryButton: View {
     var icon: String? = nil
     var action: (() -> Void)? = nil
     var horizontalPadding: CGFloat = 24
+    var bgColor: Color = Color.primaryColor
+    var textColor: Color = .white
     
     var body: some View {
         Button(action: { action?() }) {
@@ -18,12 +20,12 @@ struct PrimaryButton: View {
                 Text(title)
                     .font(.system(size: 18, weight: .bold))
             }
-            .foregroundStyle(.white)
+            .foregroundStyle(textColor)
             .frame(maxWidth: .infinity, alignment: .center)
             .frame(height: 60)
             .padding(.horizontal, 8)
             .padding(.vertical, 0)
-            .background(Color.primaryColor)
+            .background(bgColor)
             .cornerRadius(16)
             .shadowPrimary()
         }
