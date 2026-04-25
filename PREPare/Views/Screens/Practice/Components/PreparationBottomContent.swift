@@ -20,8 +20,8 @@ struct PreparationBottomContent: View {
             .padding(16)
             .background(
                 RoundedRectangle(cornerRadius: 16)
-                    .fill(.white.opacity(0.15))
-                    .stroke(.white, lineWidth: 0.4)
+                    .fill(.ultraThinMaterial)
+                    .stroke(.white, lineWidth: 0.8)
             )
             .padding(.horizontal, 24)
             .shadowPrimary()

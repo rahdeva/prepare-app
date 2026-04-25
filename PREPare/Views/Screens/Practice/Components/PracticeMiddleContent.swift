@@ -39,7 +39,7 @@ struct PracticeMiddleContent: View {
                 .foregroundStyle(.white)
                 .padding(.horizontal, 12)
                 .padding(.vertical, 6)
-                .background(.white.opacity(0.2))
+                .background(.ultraThinMaterial)
                 .cornerRadius(20)
                 .frame(maxWidth: .infinity, alignment: .center)
                 .padding(.horizontal, 20)

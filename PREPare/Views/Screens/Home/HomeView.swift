@@ -19,17 +19,20 @@ struct HomeView: View {
                     }
                 }
                 Spacer()
-                ChipButton {
-                    Button {
-                        print("Tutorial tapped")
-                    } label: {
-                        HStack(spacing: 6) {
-                            Image(systemName: "info.circle.fill")
-                            Text("Tutorial").fontWeight(.semibold)
-                        }
-                    }
-                }
-                ChipButton {
+                /// TODO: Hide for now
+//                ChipButton {
+//                    Button {
+//                        print("Tutorial tapped")
+//                    } label: {
+//                        HStack(spacing: 6) {
+//                            Image(systemName: "info.circle.fill")
+//                            Text("Tutorial").fontWeight(.semibold)
+//                        }
+//                    }
+//                }
+                ChipButton(
+                    horizontalPadding: 8
+                ){
                     Button {
                         path.append(AppRoute.settings)
                     } label: {

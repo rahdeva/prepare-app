@@ -23,6 +23,9 @@ struct QuestionCard: View {
                 }
             }
             
+            Divider()
+                .background(.white)
+            
             Text(question)
                 .font(.system(size: 32))
                 .fontWeight(.bold)
@@ -32,7 +35,7 @@ struct QuestionCard: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(
             RoundedRectangle(cornerRadius: 16)
-                .fill(.white.opacity(0.15))
+                .fill(.ultraThinMaterial)
                 .stroke(.white, lineWidth: 0.4)
         )
         .shadowPrimary()
