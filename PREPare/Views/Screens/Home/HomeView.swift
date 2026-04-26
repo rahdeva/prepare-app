@@ -65,6 +65,9 @@ struct HomeView: View {
         .sheet(isPresented: $showModalPREP) {
             PREPFrameworkSheet()
         }
+        .navigationTitle("Home")
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarHidden(true)
     }
 }
 

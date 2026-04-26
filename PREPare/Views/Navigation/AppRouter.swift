@@ -27,7 +27,7 @@ struct AppRouter: ViewModifier {
                         SettingView()
                         
                     case .history:
-                        HistoryView()
+                        HistoryView(path: $path)
                     
                     case .historyDetail:
                         HistoryDetailView()

@@ -115,6 +115,7 @@ struct PracticeView: View {
             }
             .navigationTitle("Practice")
             .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden(true)
             .toolbarColorScheme(.dark, for: .navigationBar)
             .onAppear { startTimer() }
             .onDisappear { timer?.invalidate() }
