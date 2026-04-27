@@ -16,12 +16,12 @@ struct PracticeBottomContent: View {
     }
     
     var body: some View {
-        VStack(spacing: 24) {
+        VStack(spacing: 16) {
             HStack(spacing: 6) {
                 Circle()
                     .fill(Color.primaryColor)
                     .frame(width: 8, height: 8)
-                
+
                 Text(formatTime(timeElapsed))
                     .font(.title2)
                     .fontWeight(.semibold)
@@ -33,7 +33,9 @@ struct PracticeBottomContent: View {
             .cornerRadius(20)
             .frame(maxWidth: .infinity, alignment: .center)
             .padding(.horizontal, 20)
-            
+
+            RecordingIndicatorCard()
+
             isLast
             ?   PrimaryButton(
                     title: "FINISH",

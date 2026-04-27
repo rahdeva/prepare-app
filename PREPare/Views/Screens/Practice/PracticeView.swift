@@ -96,8 +96,6 @@ struct PracticeView: View {
                     
                     if practiceState == .preparation {
                         PreparationBottomContent(
-                            prepSeconds: prepSeconds,
-                            progress: progress,
                             onSkip: { switchToPractice() }
                         )
                         .padding(.bottom, 24)

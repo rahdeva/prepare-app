@@ -64,6 +64,8 @@ struct ResultView: View {
                         targetTimeSeconds: targetTimeSeconds
                     )
 
+                    RecordingResultCard(totalDurationSeconds: totalTimeSeconds)
+
                     PREPSummarySection(
                         prepStepResults: prepStepResults,
                         expandedSteps: $expandedSteps

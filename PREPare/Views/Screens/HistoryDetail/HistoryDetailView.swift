@@ -22,6 +22,8 @@ struct HistoryDetailView: View {
                     targetTimeSeconds: 150
                 )
 
+                RecordingResultCard(totalDurationSeconds: 120)
+
                 Text("PREP Summary")
                     .font(.title3)
                     .fontWeight(.bold)
