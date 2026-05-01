@@ -10,22 +10,25 @@ import SwiftData
 
 @main
 struct PREPareApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
+    let sharedModelContainer: ModelContainer
+    @State private var generalVM: GeneralViewModel
 
+    init() {
+        let schema = Schema([])
+        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
         do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
+            let container = try ModelContainer(for: schema, configurations: [modelConfiguration])
+            self.sharedModelContainer = container
+            self._generalVM = State(initialValue: GeneralViewModel(modelContext: container.mainContext))
         } catch {
             fatalError("Could not create ModelContainer: \(error)")
         }
-    }()
+    }
 
     var body: some Scene {
         WindowGroup {
             AppView()
+                .environment(generalVM)
                 .preferredColorScheme(.light)
         }
         .modelContainer(sharedModelContainer)

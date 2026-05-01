@@ -1,12 +1,13 @@
 import SwiftUI
+import SwiftData
 
 struct SettingView: View {
     @Environment(\.dismiss) private var dismiss
+    @Environment(GeneralViewModel.self) private var generalVM
     @State private var dailyReminders: Bool = true
     @State private var soundEffects: Bool = true
     @State private var darkMode: Bool = false
     @State private var showDeleteAlert: Bool = false
-    @State private var selectedLanguage: AppLanguage = .english
 
     var body: some View {
         ScrollView {
@@ -14,28 +15,29 @@ struct SettingView: View {
                 // Preferences
                 SettingSectionHeader(title: "Preferences")
 
-                SettingRow(
-                    icon: "bell",
-                    title: "Daily Reminders",
-                    subtitle: "Get notified to practice",
-                    toggle: $dailyReminders
-                )
+//                SettingRow(
+//                    icon: "bell",
+//                    title: "Daily Reminders",
+//                    subtitle: "Get notified to practice",
+//                    toggle: $dailyReminders
+//                )
+//
+//                SettingRow(
+//                    icon: "speaker.wave.2",
+//                    title: "Sound Effects",
+//                    subtitle: "Play sounds during practice",
+//                    toggle: $soundEffects
+//                )
+//
+//                SettingRow(
+//                    icon: "moon",
+//                    title: "Dark Mode",
+//                    subtitle: "Switch to a darker appearance",
+//                    toggle: $darkMode
+//                )
 
-                SettingRow(
-                    icon: "speaker.wave.2",
-                    title: "Sound Effects",
-                    subtitle: "Play sounds during practice",
-                    toggle: $soundEffects
-                )
-
-                SettingRow(
-                    icon: "moon",
-                    title: "Dark Mode",
-                    subtitle: "Switch to a darker appearance",
-                    toggle: $darkMode
-                )
-
-                LanguageSwitchRow(selectedLanguage: $selectedLanguage)
+                @Bindable var vm = generalVM
+                LanguageSwitchRow(selectedLanguage: $vm.selectedLanguage)
 
                 // Data & Privacy
                 SettingSectionHeader(title: "Data & Privacy")
@@ -75,8 +77,12 @@ struct SettingView: View {
 }
 
 #Preview {
+    let container = try! ModelContainer(
+        configurations: ModelConfiguration(isStoredInMemoryOnly: true)
+    )
     NavigationStack {
         SettingView()
     }
+    .environment(GeneralViewModel(modelContext: container.mainContext))
 }
 

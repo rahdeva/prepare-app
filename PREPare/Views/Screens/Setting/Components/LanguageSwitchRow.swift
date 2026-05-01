@@ -1,26 +1,7 @@
 import SwiftUI
 
-enum AppLanguage: String, CaseIterable {
-    case english = "EN"
-    case indonesian = "ID"
-
-    var label: String {
-        switch self {
-        case .english: "English"
-        case .indonesian: "Bahasa Indonesia"
-        }
-    }
-
-    var flag: String {
-        switch self {
-        case .english: "🇺🇸"
-        case .indonesian: "🇮🇩"
-        }
-    }
-}
-
 struct LanguageSwitchRow: View {
-    @Binding var selectedLanguage: AppLanguage
+    @Binding var selectedLanguage: AppLanguageModel
 
     var body: some View {
         HStack(spacing: 16) {
@@ -46,7 +27,7 @@ struct LanguageSwitchRow: View {
             Spacer()
 
             Menu {
-                ForEach(AppLanguage.allCases, id: \.self) { language in
+                ForEach(AppLanguageModel.allCases, id: \.self) { language in
                     Button {
                         withAnimation(.easeInOut(duration: 0.2)) {
                             selectedLanguage = language

@@ -1,4 +1,5 @@
 import SwiftUI
+import SwiftData
 
 struct OnboardingPage {
     let icon: String
@@ -9,6 +10,7 @@ struct OnboardingPage {
 }
 
 struct OnboardingView: View {
+    @Environment(GeneralViewModel.self) private var generalVM
     @State private var currentPage = 0
 
     private let pages: [OnboardingPage] = [
@@ -72,6 +74,8 @@ struct OnboardingView: View {
                         withAnimation {
                             currentPage += 1
                         }
+                    } else {
+                        generalVM.completeOnboarding()
                     }
                 }
             )
@@ -142,5 +146,9 @@ private struct PageIndicator: View {
 }
 
 #Preview {
+    let container = try! ModelContainer(
+        configurations: ModelConfiguration(isStoredInMemoryOnly: true)
+    )
     OnboardingView()
+        .environment(GeneralViewModel(modelContext: container.mainContext))
 }
