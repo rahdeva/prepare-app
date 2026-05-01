@@ -7,11 +7,12 @@ enum PracticeState {
 
 struct PracticeView: View {
     @Binding var path: NavigationPath
+    @Environment(PracticeViewModel.self) private var practiceVM
     
-    let topic = "Job Interview"
-    let question = "What is your greatest weakness?"
-    let prepSeconds = 30
-    let targetSeconds = 120
+    var topic: String { practiceVM.selectedTopic?.title ?? "Job Interview" }
+    var question: String { practiceVM.selectedQuestion?.text ?? "What is your greatest weakness?" }
+    var prepSeconds: Int { practiceVM.selectedPrepTime ?? 30 }
+    var targetSeconds: Int { practiceVM.selectedTargetTime ?? 120 }
     
     @State private var practiceState: PracticeState = .preparation
     @State private var timeRemaining: Int = 30
@@ -124,5 +125,6 @@ struct PracticeView: View {
 #Preview {
     NavigationStack {
         PracticeView(path: .constant(NavigationPath()))
+            .environment(PracticeViewModel())
     }
 }

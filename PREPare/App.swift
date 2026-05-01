@@ -12,6 +12,7 @@ import SwiftData
 struct PREPareApp: App {
     let sharedModelContainer: ModelContainer
     @State private var generalVM: GeneralViewModel
+    @State private var practiceVM = PracticeViewModel()
 
     init() {
         let schema = Schema([])
@@ -29,6 +30,7 @@ struct PREPareApp: App {
         WindowGroup {
             AppView()
                 .environment(generalVM)
+                .environment(practiceVM)
                 .preferredColorScheme(.light)
         }
         .modelContainer(sharedModelContainer)

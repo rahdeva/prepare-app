@@ -10,7 +10,7 @@ final class GeneralViewModel {
         }
     }
 
-    var selectedLanguage: AppLanguageModel {
+    var selectedLanguage: AppLanguageData {
         didSet {
             storage.set(selectedLanguage.rawValue, forKey: .selectedLanguage)
         }
@@ -21,8 +21,8 @@ final class GeneralViewModel {
     init(modelContext: ModelContext) {
         self.storage = LocalStorageUtil(modelContext: modelContext)
         self.hasCompletedOnboarding = storage.getBool(forKey: .hasCompletedOnboarding)
-        let languageRaw = storage.getString(forKey: .selectedLanguage) ?? AppLanguageModel.english.rawValue
-        self.selectedLanguage = AppLanguageModel(rawValue: languageRaw) ?? .english
+        let languageRaw = storage.getString(forKey: .selectedLanguage) ?? AppLanguageData.english.rawValue
+        self.selectedLanguage = AppLanguageData(rawValue: languageRaw) ?? .english
     }
 
     func completeOnboarding() {

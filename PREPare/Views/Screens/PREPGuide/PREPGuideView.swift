@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PREPGuideView: View {
     @Binding var path: NavigationPath
+    @Environment(PracticeViewModel.self) private var practiceVM
     @State private var showConfirmation = false
 
     let steps: [(letter: String, title: String, subtitle: String, example: String)] = [
@@ -93,7 +94,7 @@ struct PREPGuideView: View {
                         .fontWeight(.bold)
                         .foregroundStyle(Color.slate900)
 
-                    Text("You'll have 30s preparation time, then 2m to complete your response using the PREP framework.")
+                    Text("You'll have \(practiceVM.formatTime(practiceVM.selectedPrepTime ?? 0)) preparation time, then \(practiceVM.formatTime(practiceVM.selectedTargetTime ?? 0)) to complete your response using the PREP framework.")
                         .font(.subheadline)
                         .foregroundStyle(Color.slate500)
                         .multilineTextAlignment(.center)
@@ -114,6 +115,7 @@ struct PREPGuideView: View {
 
                         Button {
                             showConfirmation = false
+                            practiceVM.pickRandomQuestion()
                             path.append(AppRoute.practice)
                         } label: {
                             Text("Start Practice")
@@ -141,5 +143,6 @@ struct PREPGuideView: View {
 #Preview {
     NavigationStack {
         PREPGuideView(path: .constant(NavigationPath()))
+            .environment(PracticeViewModel())
     }
 }

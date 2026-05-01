@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct LanguageSwitchRow: View {
-    @Binding var selectedLanguage: AppLanguageModel
+    @Binding var selectedLanguage: AppLanguageData
 
     var body: some View {
         HStack(spacing: 16) {
@@ -27,7 +27,7 @@ struct LanguageSwitchRow: View {
             Spacer()
 
             Menu {
-                ForEach(AppLanguageModel.allCases, id: \.self) { language in
+                ForEach(AppLanguageData.allCases, id: \.self) { language in
                     Button {
                         withAnimation(.easeInOut(duration: 0.2)) {
                             selectedLanguage = language

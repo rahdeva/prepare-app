@@ -7,10 +7,16 @@
 
 import Foundation
 
-struct Topic: Identifiable {
+struct Topic: Identifiable, Hashable {
     let id: String
     let title: String
     let icon: String
     let category: String
     let categoryOrder: Int
+}
+
+struct Question: Identifiable {
+    let id: String
+    let topicId: String
+    let text: String
 }

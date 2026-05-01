@@ -35,5 +35,6 @@ struct AppView: View {
     )
     AppView()
         .environment(GeneralViewModel(modelContext: container.mainContext))
+        .environment(PracticeViewModel())
         .modelContainer(container)
 }

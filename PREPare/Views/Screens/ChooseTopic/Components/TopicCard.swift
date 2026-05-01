@@ -8,21 +8,21 @@
 import SwiftUI
 
 struct TopicCard: View {
-    var title: String
+    let topic: Topic
     var isSelected: Bool = false
-    
+
     var body: some View {
         VStack(spacing: 12) {
             RoundedRectangle(cornerRadius: 16)
                 .fill(LinearGradient.primaryGradient)
                 .frame(width: 56, height: 56)
                 .overlay {
-                    Image(systemName: "ellipsis.message")
+                    Image(systemName: topic.icon)
                         .foregroundStyle(.white)
                         .font(.title3)
                 }
-            
-            Text(title)
+
+            Text(topic.title)
                 .fontWeight(isSelected ? .bold : .regular)
         }
         .padding(16)

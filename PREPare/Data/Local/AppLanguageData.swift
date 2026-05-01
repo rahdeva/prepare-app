@@ -1,11 +1,11 @@
 //
-//  AppLanguageModel.swift
+//  AppLanguageData.swift
 //  PREPare
 //
 //  Created by rahdeva on 01/05/26.
 //
 
-enum AppLanguageModel: String, CaseIterable {
+enum AppLanguageData: String, CaseIterable {
     case english = "EN"
     case indonesian = "ID"
 

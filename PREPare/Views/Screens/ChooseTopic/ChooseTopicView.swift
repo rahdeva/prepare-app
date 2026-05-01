@@ -9,21 +9,14 @@ import SwiftUI
 
 struct ChooseTopicView: View {
     @Binding var path: NavigationPath
-    @State private var selectedTopic: String? = nil
-
-    let topics: [String: [String]] = [
-        "CAREER": ["Job Interview", "Teamwork", "Career Goals"],
-        "PERSONAL GROWTH": ["Personal Growth"]
-    ]
-
-    let categoryOrder = ["CAREER", "PERSONAL GROWTH"]
+    @Environment(PracticeViewModel.self) private var practiceVM
 
     var body: some View {
         VStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 24) {
-                    ForEach(categoryOrder, id: \.self) { category in
-                        Section(category) {
+                    ForEach(practiceVM.groupedTopics, id: \.category) { group in
+                        Section(group.category) {
                             LazyVGrid(
                                 columns: [
                                     GridItem(.flexible(), spacing: 16),
@@ -31,12 +24,12 @@ struct ChooseTopicView: View {
                                 ],
                                 spacing: 16,
                             ) {
-                                ForEach(topics[category] ?? [], id: \.self) { title in
+                                ForEach(group.topics) { topic in
                                     TopicCard(
-                                        title: title,
-                                        isSelected: selectedTopic == title
+                                        topic: topic,
+                                        isSelected: practiceVM.selectedTopic == topic
                                     )
-                                    .onTapGesture { selectedTopic = title }
+                                    .onTapGesture { practiceVM.selectedTopic = topic }
                                 }
                             }
                         }
@@ -44,15 +37,16 @@ struct ChooseTopicView: View {
                     }
                 }
                 .padding(.horizontal, 24)
+                .padding(.bottom, 16)
             }
 
             PrimaryButton(
                 title: "Continue",
                 action: {
                     path.append(AppRoute.chooseTime)
-                }
+                },
+                isDisabled: practiceVM.selectedTopic == nil
             )
-            .disabled(selectedTopic == nil)
         }
         .navigationTitle("Choose Topic")
         .navigationBarTitleDisplayMode(.inline)
@@ -60,4 +54,5 @@ struct ChooseTopicView: View {
 }
 #Preview {
     ChooseTopicView(path: .constant(NavigationPath()))
+        .environment(PracticeViewModel())
 }
