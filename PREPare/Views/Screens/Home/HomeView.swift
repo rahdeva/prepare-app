@@ -19,7 +19,6 @@ struct HomeView: View {
                     }
                 }
                 Spacer()
-                /// TODO: Hide tutorial  for now
 //                ChipButton {
 //                    Button {
 //                        print("Tutorial tapped")
@@ -46,8 +45,8 @@ struct HomeView: View {
             .padding(.bottom, 24)
             
             ScrollView{
-                StreakCard()
-                Spacer().frame(height: 20)
+//                StreakCard()
+//                Spacer().frame(height: 20)
 
                 StartPracticeCard(path: $path)
                 Spacer().frame(height: 20)

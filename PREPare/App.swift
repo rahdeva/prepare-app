@@ -26,6 +26,7 @@ struct PREPareApp: App {
     var body: some Scene {
         WindowGroup {
             AppView()
+                .preferredColorScheme(.light)
         }
         .modelContainer(sharedModelContainer)
     }
