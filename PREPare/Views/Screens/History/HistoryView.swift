@@ -27,13 +27,13 @@ struct HistoryView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
-                ActivityHeatmapCard()
+//                ActivityHeatmapCard()
 
-                Text("Recent Sessions")
-                    .font(.title3)
-                    .fontWeight(.bold)
-                    .foregroundStyle(Color.slate900)
-                    .padding(.top, 8)
+//                Text("Recent Sessions")
+//                    .font(.title3)
+//                    .fontWeight(.bold)
+//                    .foregroundStyle(Color.slate900)
+//                    .padding(.top, 8)
 
                 ForEach(0..<sessions.count, id: \.self) { index in
                     let session = sessions[index]
