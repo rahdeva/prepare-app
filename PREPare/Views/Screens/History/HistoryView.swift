@@ -1,70 +1,70 @@
 import SwiftUI
+import SwiftData
 
 struct HistoryView: View {
     @Binding var path: NavigationPath
-
-    private let sessions = [
-        (
-            title: "Job Interview Basics",
-            subtitle: "Introduce yourself in a job interview",
-            date: "Apr 15",
-            actualTime: 120,
-            targetTime: 150,
-            rating: 4.0,
-            notes: "Good flow, need to work on examples"
-        ),
-        (
-            title: "Job Interview Basics",
-            subtitle: "Introduce yourself in a job interview",
-            date: "Apr 15",
-            actualTime: 120,
-            targetTime: 150,
-            rating: 4.0,
-            notes: "Good flow, need to work on examples"
-        ),
-    ]
+    @Environment(HistoryViewModel.self) private var historyVM
 
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 20) {
-//                ActivityHeatmapCard()
+        Group {
+            if historyVM.sessions.isEmpty {
+                VStack(spacing: 16) {
+                    Spacer()
 
-//                Text("Recent Sessions")
-//                    .font(.title3)
-//                    .fontWeight(.bold)
-//                    .foregroundStyle(Color.slate900)
-//                    .padding(.top, 8)
+                    Image(systemName: "clock.arrow.circlepath")
+                        .font(.system(size: 48))
+                        .foregroundStyle(Color.gray300)
 
-                ForEach(0..<sessions.count, id: \.self) { index in
-                    let session = sessions[index]
-                    Button {
-                        path.append(AppRoute.historyDetail)
-                    } label: {
-                        SessionCard(
-                            title: session.title,
-                            subtitle: session.subtitle,
-                            date: session.date,
-                            actualTimeSeconds: session.actualTime,
-                            targetTimeSeconds: session.targetTime,
-                            rating: session.rating,
-                            notes: session.notes
-                        )
+                    Text("No Practice Sessions Yet")
+                        .font(.title3)
+                        .fontWeight(.semibold)
+                        .foregroundStyle(Color.gray500)
+
+                    Text("Complete a practice session to see your history here.")
+                        .font(.subheadline)
+                        .foregroundStyle(Color.gray400)
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal, 40)
+
+                    Spacer()
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            } else {
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 20) {
+                        ForEach(historyVM.sessions) { session in
+                            Button {
+                                path.append(AppRoute.historyDetail(session))
+                            } label: {
+                                SessionCard(
+                                    title: session.topicTitle,
+                                    subtitle: session.questionText,
+                                    date: session.formattedShortDate,
+                                    actualTimeSeconds: session.totalTimeSeconds,
+                                    targetTimeSeconds: session.targetTimeSeconds,
+                                    rating: Double(session.rating),
+                                    notes: session.notes
+                                )
+                            }
+                            .buttonStyle(.plain)
+                        }
                     }
-                    .buttonStyle(.plain)
+                    .padding(.horizontal, 24)
+                    .padding(.top, 8)
+                    .padding(.bottom, 24)
                 }
             }
-            .padding(.horizontal, 24)
-            .padding(.top, 8)
-            .padding(.bottom, 24)
         }
         .background(Color.slate50)
         .navigationTitle("History")
         .navigationBarTitleDisplayMode(.inline)
+        .onAppear { historyVM.fetchSessions() }
     }
 }
 
 #Preview {
     NavigationStack {
         HistoryView(path: .constant(NavigationPath()))
+            .environment(HistoryViewModel(modelContext: try! ModelContainer(configurations: ModelConfiguration(isStoredInMemoryOnly: true)).mainContext))
     }
 }

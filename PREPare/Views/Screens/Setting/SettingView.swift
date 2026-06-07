@@ -4,6 +4,7 @@ import SwiftData
 struct SettingView: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(GeneralViewModel.self) private var generalVM
+    @Environment(HistoryViewModel.self) private var historyVM
     @State private var dailyReminders: Bool = true
     @State private var soundEffects: Bool = true
     @State private var darkMode: Bool = false
@@ -69,7 +70,9 @@ struct SettingView: View {
         .navigationBarTitleDisplayMode(.inline)
         .alert("Delete All History", isPresented: $showDeleteAlert) {
             Button("Cancel", role: .cancel) {}
-            Button("Delete", role: .destructive) {}
+            Button("Delete", role: .destructive) {
+                historyVM.clearAllHistory()
+            }
         } message: {
             Text("Are you sure you want to delete all history? This cannot be undone.")
         }
@@ -84,5 +87,6 @@ struct SettingView: View {
         SettingView()
     }
     .environment(GeneralViewModel(modelContext: container.mainContext))
+    .environment(HistoryViewModel(modelContext: container.mainContext))
 }
 

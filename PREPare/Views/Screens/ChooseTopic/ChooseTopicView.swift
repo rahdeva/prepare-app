@@ -50,6 +50,7 @@ struct ChooseTopicView: View {
         }
         .navigationTitle("Choose Topic")
         .navigationBarTitleDisplayMode(.inline)
+        .task { await practiceVM.requestPermissions() }
     }
 }
 #Preview {

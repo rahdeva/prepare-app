@@ -1,28 +1,43 @@
 import SwiftUI
 
 struct HistoryDetailView: View {
-    private let prepSteps: [(letter: String, title: String, stepNumber: Int, timeSeconds: Int, resultText: String)] = [
-        ("P", "Point", 1, 30, "My greatest weakness is that I tend to be overly detail-oriented, which sometimes slows me down on tasks."),
-        ("R", "Reason", 2, 30, "This matters because in fast-paced environments, spending too much time perfecting small details can delay overall project delivery."),
-        ("E", "Example", 3, 30, "For instance, in my previous role I spent an extra two days refining a report layout that was already approved, which pushed back the submission deadline."),
-        ("P", "Point (restate)", 4, 30, "So while being detail-oriented is a strength, I've been actively working on setting time limits to balance quality with efficiency."),
-    ]
+    let session: PracticeSession
+
+    private let stepLetters = ["P", "R", "E", "P"]
+    private let stepTitles = ["Point", "Reason", "Example", "Point (Restate)"]
+
+    private var prepSteps: [(letter: String, title: String, stepNumber: Int, timeSeconds: Int, resultText: String)] {
+        (0..<4).map { index in
+            (
+                letter: stepLetters[index],
+                title: stepTitles[index],
+                stepNumber: index + 1,
+                timeSeconds: session.stepDurations.indices.contains(index) ? session.stepDurations[index] : 0,
+                resultText: session.stepTranscriptions.indices.contains(index) && !session.stepTranscriptions[index].isEmpty
+                    ? session.stepTranscriptions[index]
+                    : "No speech detected"
+            )
+        }
+    }
 
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
                 DetailTopicCard(
-                    topicName: "Job Interview Basics",
-                    question: "Introduce yourself in a job interview",
-                    date: "Wednesday, April 15, 2026"
+                    topicName: session.topicTitle,
+                    question: session.questionText,
+                    date: session.formattedFullDate
                 )
 
                 DetailTimeCard(
-                    totalTimeSeconds: 120,
-                    targetTimeSeconds: 150
+                    totalTimeSeconds: session.totalTimeSeconds,
+                    targetTimeSeconds: session.targetTimeSeconds
                 )
 
-                RecordingResultCard(totalDurationSeconds: 120)
+                RecordingResultCard(
+                    totalDurationSeconds: session.totalTimeSeconds,
+                    recordingURL: session.recordingURL
+                )
 
                 Text("PREP Summary")
                     .font(.title3)
@@ -41,10 +56,14 @@ struct HistoryDetailView: View {
                     )
                 }
 
-                DetailRatingCard(rating: 4)
-                    .padding(.top, 4)
+                if session.rating > 0 {
+                    DetailRatingCard(rating: session.rating)
+                        .padding(.top, 4)
+                }
 
-                DetailNotesCard(notes: "Good flow, need to work on examples")
+                if !session.notes.isEmpty {
+                    DetailNotesCard(notes: session.notes)
+                }
             }
             .padding(.horizontal, 24)
             .padding(.top, 8)
@@ -58,6 +77,22 @@ struct HistoryDetailView: View {
 
 #Preview {
     NavigationStack {
-        HistoryDetailView()
+        HistoryDetailView(
+            session: PracticeSession(
+                topicTitle: "Job Interview Basics",
+                questionText: "Introduce yourself in a job interview",
+                totalTimeSeconds: 120,
+                targetTimeSeconds: 150,
+                rating: 4,
+                notes: "Good flow, need to work on examples",
+                stepTranscriptions: [
+                    "My greatest weakness is that I tend to be overly detail-oriented.",
+                    "This matters because in fast-paced environments, it can delay delivery.",
+                    "For instance, I spent extra days refining an already-approved report.",
+                    "So I've been actively working on setting time limits for quality and efficiency."
+                ],
+                stepDurations: [30, 30, 30, 30]
+            )
+        )
     }
 }

@@ -11,6 +11,7 @@ struct PREPGuideView: View {
     @Binding var path: NavigationPath
     @Environment(PracticeViewModel.self) private var practiceVM
     @State private var showConfirmation = false
+    @State private var showPermissionAlert = false
 
     let steps: [(letter: String, title: String, subtitle: String, example: String)] = [
         (letter: "P", title: "Point", subtitle: "State your main idea clearly", example: "\"I am passionate about web development\""),
@@ -53,7 +54,11 @@ struct PREPGuideView: View {
             PrimaryButton(
                 title: "Got It! I'm understand.",
                 action: {
-                    showConfirmation = true
+                    if practiceVM.checkCurrentPermissions() {
+                        showConfirmation = true
+                    } else {
+                        showPermissionAlert = true
+                    }
                 }
             )
         }
@@ -137,6 +142,16 @@ struct PREPGuideView: View {
             }
         }
         .animation(.easeInOut(duration: 0.2), value: showConfirmation)
+        .alert("Permissions Required", isPresented: $showPermissionAlert) {
+            Button("Open Settings") {
+                if let url = URL(string: UIApplication.openSettingsURLString) {
+                    UIApplication.shared.open(url)
+                }
+            }
+            Button("Cancel", role: .cancel) {}
+        } message: {
+            Text("Please enable Microphone and Speech Recognition access in Settings to start practice.")
+        }
     }
 }
 

@@ -8,64 +8,74 @@ enum PracticeState {
 struct PracticeView: View {
     @Binding var path: NavigationPath
     @Environment(PracticeViewModel.self) private var practiceVM
-    
+
     var topic: String { practiceVM.selectedTopic?.title ?? "Job Interview" }
     var question: String { practiceVM.selectedQuestion?.text ?? "What is your greatest weakness?" }
     var prepSeconds: Int { practiceVM.selectedPrepTime ?? 30 }
     var targetSeconds: Int { practiceVM.selectedTargetTime ?? 120 }
-    
+
     @State private var practiceState: PracticeState = .preparation
     @State private var timeRemaining: Int = 30
     @State private var timeElapsed: Int = 0
     @State private var timer: Timer? = nil
     @State private var currentPREPIndex: Int = 0
-    
+
     let prepSteps = ["P", "R", "E", "P"]
     let prepStepNames = ["Point (P)", "Reason (R)", "Example (E)", "Point (P)"]
-    
+
     var progress: CGFloat {
-        CGFloat(prepSeconds - timeRemaining) / CGFloat(prepSeconds)
+        guard prepSeconds > 0 else { return 1.0 }
+        return CGFloat(prepSeconds - timeRemaining) / CGFloat(prepSeconds)
     }
-    
+
     func startTimer() {
+        if prepSeconds <= 0 {
+            switchToPractice()
+            return
+        }
         timeRemaining = prepSeconds
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
             if timeRemaining > 0 { timeRemaining -= 1 }
             else { switchToPractice() }
         }
     }
-    
+
     func switchToPractice() {
         timer?.invalidate()
+        timer = nil
         withAnimation(.easeInOut(duration: 0.3)) {
             practiceState = .practice
             timeRemaining = targetSeconds
             timeElapsed = 0
         }
+        practiceVM.startRecordingSession()
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
             timeElapsed += 1
         }
     }
-    
+
     func nextPREPStep() {
         if currentPREPIndex < prepSteps.count - 1 {
+            practiceVM.advanceStep(currentIndex: currentPREPIndex)
             withAnimation { currentPREPIndex += 1 }
         } else {
             timer?.invalidate()
+            timer = nil
+            practiceVM.finishSession(currentIndex: currentPREPIndex, totalTime: timeElapsed)
             path.append(AppRoute.result)
         }
     }
-    
+
     func formatTime(_ seconds: Int) -> String {
         String(format: "%d:%02d", seconds / 60, seconds % 60)
     }
-    
+
     var body: some View {
         GeometryReader{ geo in
             ZStack() {
                 LinearGradient.primaryGradient.ignoresSafeArea()
                     .overlay(alignment: .bottom) {
-                        if practiceState == .preparation {
+                        if practiceState == .preparation && prepSeconds > 0 {
                             Rectangle()
                                 .fill(Color.successColor.opacity(0.5))
                                 .ignoresSafeArea()
@@ -75,14 +85,14 @@ struct PracticeView: View {
                                 .animation(.linear(duration: 1), value: progress)
                         }
                     }
-                
+
                 VStack(spacing: 0) {
                     QuestionCard(topic: topic, question: question)
                         .padding(.horizontal, 20)
                         .padding(.top, 16)
-                    
+
                     Spacer()
-                    
+
                     if practiceState == .preparation {
                         PreparationMiddleContent(timeRemaining: timeRemaining)
                     } else {
@@ -92,9 +102,9 @@ struct PracticeView: View {
                             currentPREPIndex: currentPREPIndex
                         )
                     }
-                    
+
                     Spacer()
-                    
+
                     if practiceState == .preparation {
                         PreparationBottomContent(
                             onSkip: { switchToPractice() }
@@ -117,7 +127,13 @@ struct PracticeView: View {
             .navigationBarBackButtonHidden(true)
             .toolbarColorScheme(.dark, for: .navigationBar)
             .onAppear { startTimer() }
-            .onDisappear { timer?.invalidate() }
+            .onDisappear {
+                timer?.invalidate()
+                timer = nil
+                if practiceVM.audioRecorder.isRecording {
+                    practiceVM.audioRecorder.stopRecording()
+                }
+            }
         }
     }
 }

@@ -9,41 +9,41 @@ import SwiftUI
 
 struct AppRouter: ViewModifier {
     @Binding var path: NavigationPath
-    
+
     func body(content: Content) -> some View {
         content
             .navigationDestination(for: AppRoute.self) { route in
                 switch route {
                     case .splash:
                         SplashView(isPresented: .constant(true))
-                    
+
                     case .onboarding:
                         OnboardingView()
-                    
+
                     case .home:
                         HomeView(path: $path)
-                    
+
                     case .settings:
                         SettingView()
-                        
+
                     case .history:
                         HistoryView(path: $path)
-                    
-                    case .historyDetail:
-                        HistoryDetailView()
-                    
+
+                    case .historyDetail(let session):
+                        HistoryDetailView(session: session)
+
                     case .chooseTopic:
                         ChooseTopicView(path: $path)
-                    
+
                     case .chooseTime:
                         ChooseTimeView(path: $path)
-                    
+
                     case .prepGuide:
                         PREPGuideView(path: $path)
-                    
+
                     case .practice:
                         PracticeView(path: $path)
-                    
+
                     case .result:
                         ResultView(path: $path)
                 }

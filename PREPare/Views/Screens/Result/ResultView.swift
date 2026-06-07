@@ -1,57 +1,76 @@
 import SwiftUI
+import SwiftData
 
 struct ResultView: View {
     @Binding var path: NavigationPath
-
-    let totalTimeSeconds: Int = 150
-    let targetTimeSeconds: Int = 120
+    @Environment(PracticeViewModel.self) private var practiceVM
+    @Environment(HistoryViewModel.self) private var historyVM
 
     @State private var rating: Int = 0
     @State private var notes: String = ""
     @State private var expandedSteps: Set<Int> = []
 
-    let prepStepResults: [PREPStepResult] = [
-        PREPStepResult(
-            letter: "P", title: "Point", stepNumber: 1, totalSteps: 4, timeSeconds: 30,
-            stepResult: "My greatest weakness is that I tend to be overly detail-oriented, which sometimes slows me down on tasks.",
-            guidelines: [
-                "Clear and concise main statement",
-                "Easy to understand and remember",
-                "Directly answers the question or topic",
-                "Sets the direction for your entire response"
-            ]
-        ),
-        PREPStepResult(
-            letter: "R", title: "Reason", stepNumber: 2, totalSteps: 4, timeSeconds: 45,
-            stepResult: "This matters because in fast-paced environments, spending too much time perfecting small details can delay overall project delivery.",
-            guidelines: [
-                "Explains the \"why\" behind your point",
-                "Provides logical justification",
-                "Connects to broader context or impact",
-                "Makes your argument more convincing"
-            ]
-        ),
-        PREPStepResult(
-            letter: "E", title: "Example", stepNumber: 3, totalSteps: 4, timeSeconds: 52,
-            stepResult: "For instance, in my previous role I spent an extra two days refining a report layout that was already approved, which pushed back the submission deadline.",
-            guidelines: [
-                "Specific, concrete illustration",
-                "Real-world scenario or case study",
-                "Makes your point relatable and memorable",
-                "Provides evidence to support your claim"
-            ]
-        ),
-        PREPStepResult(
-            letter: "P", title: "Point (Restate)", stepNumber: 4, totalSteps: 4, timeSeconds: 23,
-            stepResult: "So while being detail-oriented is a strength, I've been actively working on setting time limits to balance quality with efficiency.",
-            guidelines: [
-                "Reinforces your main message",
-                "Provides a strong conclusion",
-                "May be slightly rephrased for impact",
-                "Leaves a lasting impression on your audience"
-            ]
-        )
+    private var totalTimeSeconds: Int { practiceVM.totalPracticeTime }
+    private var targetTimeSeconds: Int { practiceVM.selectedTargetTime ?? 120 }
+
+    private let stepLetters = ["P", "R", "E", "P"]
+    private let stepTitles = ["Point", "Reason", "Example", "Point (Restate)"]
+    private let stepGuidelines: [[String]] = [
+        [
+            "Clear and concise main statement",
+            "Easy to understand and remember",
+            "Directly answers the question or topic",
+            "Sets the direction for your entire response"
+        ],
+        [
+            "Explains the \"why\" behind your point",
+            "Provides logical justification",
+            "Connects to broader context or impact",
+            "Makes your argument more convincing"
+        ],
+        [
+            "Specific, concrete illustration",
+            "Real-world scenario or case study",
+            "Makes your point relatable and memorable",
+            "Provides evidence to support your claim"
+        ],
+        [
+            "Reinforces your main message",
+            "Provides a strong conclusion",
+            "May be slightly rephrased for impact",
+            "Leaves a lasting impression on your audience"
+        ]
     ]
+
+    private var prepStepResults: [PREPStepResult] {
+        (0..<4).map { index in
+            PREPStepResult(
+                letter: stepLetters[index],
+                title: stepTitles[index],
+                stepNumber: index + 1,
+                totalSteps: 4,
+                timeSeconds: practiceVM.stepDurations[index],
+                stepResult: practiceVM.stepTranscriptions[index].isEmpty
+                    ? "No speech detected"
+                    : practiceVM.stepTranscriptions[index],
+                guidelines: stepGuidelines[index]
+            )
+        }
+    }
+
+    private func saveSession() {
+        historyVM.saveSession(
+            topicTitle: practiceVM.selectedTopic?.title ?? "Unknown Topic",
+            questionText: practiceVM.selectedQuestion?.text ?? "",
+            totalTimeSeconds: totalTimeSeconds,
+            targetTimeSeconds: targetTimeSeconds,
+            rating: rating,
+            notes: notes,
+            stepTranscriptions: practiceVM.stepTranscriptions,
+            stepDurations: practiceVM.stepDurations,
+            recordingURL: practiceVM.audioRecorder.recordingURL
+        )
+    }
 
     var body: some View {
         VStack(spacing: 0) {
@@ -64,7 +83,10 @@ struct ResultView: View {
                         targetTimeSeconds: targetTimeSeconds
                     )
 
-                    RecordingResultCard(totalDurationSeconds: totalTimeSeconds)
+                    RecordingResultCard(
+                        totalDurationSeconds: totalTimeSeconds,
+                        recordingURL: practiceVM.audioRecorder.recordingURL
+                    )
 
                     PREPSummarySection(
                         prepStepResults: prepStepResults,
@@ -79,8 +101,11 @@ struct ResultView: View {
                 .padding(.horizontal, 24)
                 .padding(.top, 16)
                 .padding(.bottom, 24)
-                
-                ResultBottomButtons(path: $path)
+
+                ResultBottomButtons(
+                    path: $path,
+                    onSave: saveSession
+                )
             }
         }
         .background(Color(UIColor.systemGroupedBackground))
@@ -94,5 +119,7 @@ struct ResultView: View {
 #Preview {
     NavigationStack {
         ResultView(path: .constant(NavigationPath()))
+            .environment(PracticeViewModel())
+            .environment(HistoryViewModel(modelContext: try! ModelContainer(configurations: ModelConfiguration(isStoredInMemoryOnly: true)).mainContext))
     }
 }

@@ -2,12 +2,14 @@ import SwiftUI
 
 struct ResultBottomButtons: View {
     @Binding var path: NavigationPath
+    let onSave: () -> Void
 
     var body: some View {
         VStack(spacing: 12) {
             PrimaryButton(
                 title: "Save & Back to Home",
                 action: {
+                    onSave()
                     path = NavigationPath()
                 }
             )
