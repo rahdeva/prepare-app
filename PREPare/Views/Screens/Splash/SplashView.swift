@@ -21,7 +21,7 @@ struct SplashView: View {
                     )
                     .shadowPrimary()
                 
-                Text("PREPare")
+                Text(verbatim: "PREPare")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundStyle(Color.white)

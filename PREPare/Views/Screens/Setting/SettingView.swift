@@ -10,11 +10,15 @@ struct SettingView: View {
     @State private var darkMode: Bool = false
     @State private var showDeleteAlert: Bool = false
 
+    private var appVersion: String {
+        Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "-"
+    }
+
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 16) {
+            VStack(alignment: .leading, spacing: 12) {
                 // Preferences
-                SettingSectionHeader(title: "Preferences")
+                SettingSectionHeader(title: "PREFERENCES")
 
 //                SettingRow(
 //                    icon: "bell",
@@ -41,8 +45,8 @@ struct SettingView: View {
                 LanguageSwitchRow(selectedLanguage: $vm.selectedLanguage)
 
                 // Data & Privacy
-                SettingSectionHeader(title: "Data & Privacy")
-                    .padding(.top, 8)
+                SettingSectionHeader(title: "DATA & PRIVACY")
+                    .padding(.top, 16)
 
                 SettingRow(
                     icon: "trash",
@@ -53,20 +57,21 @@ struct SettingView: View {
                 )
 
                 // About
-                SettingSectionHeader(title: "About")
-                    .padding(.top, 8)
+                SettingSectionHeader(title: "ABOUT")
+                    .padding(.top, 16)
 
                 SettingRow(
                     icon: "info.circle",
                     title: "Version",
-                    subtitle: "1.0.0"
+                    subtitle: LocalizedStringKey(appVersion)
                 )
             }
-            .padding(.horizontal, 24)
-            .padding(.top, 8)
+            .padding(.horizontal, 20)
+            .padding(.top, 16)
+            .padding(.bottom, 24)
         }
-        .background(Color.slate50)
-        .navigationTitle("Setting")
+        .background(Color(UIColor.systemGroupedBackground))
+        .localizedNavigationTitle("Settings")
         .navigationBarTitleDisplayMode(.inline)
         .alert("Delete All History", isPresented: $showDeleteAlert) {
             Button("Cancel", role: .cancel) {}

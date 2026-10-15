@@ -41,14 +41,6 @@ final class PracticeViewModel {
         (selectedPrepTime ?? 0) + (selectedTargetTime ?? 0)
     }
 
-    func formatTime(_ seconds: Int) -> String {
-        let m = seconds / 60
-        let s = seconds % 60
-        if m == 0 { return "\(s)s" }
-        if s == 0 { return "\(m)m" }
-        return "\(m)m \(s)s"
-    }
-
     // MARK: - Audio Recording & Speech Recognition
     let audioRecorder = AudioRecordingUtil()
     let speechRecognizer = SpeechRecognizerUtil()

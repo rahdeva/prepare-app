@@ -3,7 +3,6 @@ import SwiftUI
 struct PracticeBottomContent: View {
     let timeElapsed: Int
     let targetSeconds: Int
-    let formatTime: (Int) -> String
     let onNext: () -> Void
     let isLast: Bool
     
@@ -22,7 +21,7 @@ struct PracticeBottomContent: View {
                     .fill(Color.primaryColor)
                     .frame(width: 8, height: 8)
 
-                Text(formatTime(timeElapsed))
+                Text(clock: timeElapsed)
                     .font(.title2)
                     .fontWeight(.semibold)
                     .foregroundStyle(Color.primaryColor)

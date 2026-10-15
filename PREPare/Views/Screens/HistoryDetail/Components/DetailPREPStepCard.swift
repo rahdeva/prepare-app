@@ -1,20 +1,16 @@
 import SwiftUI
 
 struct DetailPREPStepCard: View {
-    let letter: String
-    let title: String
-    let stepNumber: Int
-    let totalSteps: Int
+    let step: PREPStep
     let timeSeconds: Int
-    let stepResultText: String
+    let transcription: String
 
     private var circleColor: Color {
-        switch stepNumber {
-        case 1: return Color.indigo400
-        case 2: return Color.green500
-        case 3: return Color.amber500
-        case 4: return Color.purple400
-        default: return Color.gray400
+        switch step {
+        case .point: Color.indigo400
+        case .reason: Color.green500
+        case .example: Color.amber500
+        case .restate: Color.purple400
         }
     }
 
@@ -25,19 +21,19 @@ struct DetailPREPStepCard: View {
                     .fill(circleColor)
                     .frame(width: 40, height: 40)
                     .overlay(
-                        Text(letter)
+                        Text(step.letter)
                             .font(.headline)
                             .fontWeight(.bold)
                             .foregroundStyle(.white)
                     )
 
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(title)
+                    Text(step.title)
                         .font(.headline)
                         .fontWeight(.semibold)
                         .foregroundStyle(Color.slate900)
 
-                    Text("Step \(stepNumber) of \(totalSteps)")
+                    Text("Step \(step.number) of \(PREPStep.allCases.count)")
                         .font(.caption)
                         .foregroundStyle(Color.gray500)
                 }
@@ -50,7 +46,13 @@ struct DetailPREPStepCard: View {
                     .foregroundStyle(Color.slate800)
             }
 
-            Text(stepResultText)
+            Group {
+                if transcription.isEmpty {
+                    Text("No speech detected")
+                } else {
+                    Text(transcription)
+                }
+            }
                 .font(.subheadline)
                 .foregroundStyle(Color.gray600)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -64,12 +66,9 @@ struct DetailPREPStepCard: View {
 
 #Preview {
     DetailPREPStepCard(
-        letter: "P",
-        title: "Point",
-        stepNumber: 1,
-        totalSteps: 4,
+        step: .point,
         timeSeconds: 30,
-        stepResultText: "My greatest weakness is that I tend to be overly detail-oriented, which sometimes slows me down on tasks."
+        transcription: "My greatest weakness is that I tend to be overly detail-oriented, which sometimes slows me down on tasks."
     )
     .padding(24)
     .background(Color.slate50)

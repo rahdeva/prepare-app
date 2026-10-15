@@ -10,11 +10,10 @@ struct HomeView: View {
                 ChipButton {
                     Button {
                         showModalPREP = true
-                        print("PREP tapped")
                     } label: {
                         HStack(spacing: 6) {
                             Image(systemName: "lightbulb.circle.fill")
-                            Text("PREP").fontWeight(.semibold)
+                            Text(verbatim: "PREP").fontWeight(.semibold)
                         }
                     }
                 }
@@ -53,7 +52,6 @@ struct HomeView: View {
 
                 Button(
                     action: {
-                        print("asdasds")
                         path.append(AppRoute.history)
                     },
                 ){
@@ -64,7 +62,7 @@ struct HomeView: View {
         .sheet(isPresented: $showModalPREP) {
             PREPFrameworkSheet()
         }
-        .navigationTitle("Home")
+        .localizedNavigationTitle("Home")
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarHidden(true)
     }

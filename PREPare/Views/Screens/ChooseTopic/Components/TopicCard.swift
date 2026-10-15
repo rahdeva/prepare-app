@@ -22,7 +22,8 @@ struct TopicCard: View {
                         .font(.title3)
                 }
 
-            Text(topic.title)
+            Text(LocalizedStringKey(topic.title))
+                .multilineTextAlignment(.center)
                 .fontWeight(isSelected ? .bold : .regular)
         }
         .padding(16)

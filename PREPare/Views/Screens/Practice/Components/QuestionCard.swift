@@ -17,7 +17,7 @@ struct QuestionCard: View {
                         .fontWeight(.bold)
                         .foregroundStyle(.white)
                     
-                    Text("Topic: \(topic)")
+                    Text("Topic: \(Text(LocalizedStringKey(topic)))")
                         .font(.footnote)
                         .foregroundStyle(.white.opacity(0.8))
                 }
@@ -26,7 +26,7 @@ struct QuestionCard: View {
             Divider()
                 .background(.white)
             
-            Text(question)
+            Text(LocalizedStringKey(question))
                 .font(.system(size: 32))
                 .fontWeight(.bold)
                 .foregroundStyle(.white)

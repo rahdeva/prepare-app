@@ -16,7 +16,7 @@ struct ChooseTopicView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 24) {
                     ForEach(practiceVM.groupedTopics, id: \.category) { group in
-                        Section(group.category) {
+                        Section(LocalizedStringKey(group.category)) {
                             LazyVGrid(
                                 columns: [
                                     GridItem(.flexible(), spacing: 16),
@@ -48,7 +48,7 @@ struct ChooseTopicView: View {
                 isDisabled: practiceVM.selectedTopic == nil
             )
         }
-        .navigationTitle("Choose Topic")
+        .localizedNavigationTitle("Choose Topic")
         .navigationBarTitleDisplayMode(.inline)
         .task { await practiceVM.requestPermissions() }
     }

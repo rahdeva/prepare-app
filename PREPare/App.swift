@@ -34,6 +34,7 @@ struct PREPareApp: App {
                 .environment(generalVM)
                 .environment(practiceVM)
                 .environment(historyVM)
+                .environment(\.locale, generalVM.selectedLanguage.locale)
                 .preferredColorScheme(.light)
         }
         .modelContainer(sharedModelContainer)

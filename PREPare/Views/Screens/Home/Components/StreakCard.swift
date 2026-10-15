@@ -7,12 +7,12 @@ struct StreakCard: View {
             
             HStack{
                 HStack(alignment: .bottom){
-                    Text("7")
+                    Text(7, format: .number)
                         .font(.system(size: 60))
                         .foregroundStyle(.white)
                         .fontWeight(.bold)
                     
-                    Text("days Streak")
+                    Text("day streak")
                         .font(.title2)
                         .foregroundStyle(.white)
                         .fontWeight(.bold)

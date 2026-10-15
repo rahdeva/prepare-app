@@ -52,16 +52,4 @@ final class PracticeSession {
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?
             .appendingPathComponent(fileName)
     }
-
-    var formattedShortDate: String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MMM d"
-        return formatter.string(from: date)
-    }
-
-    var formattedFullDate: String {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .full
-        return formatter.string(from: date)
-    }
 }

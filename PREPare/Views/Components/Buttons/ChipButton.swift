@@ -53,6 +53,6 @@ struct ChipButton<Label: View>: View {
 
 #Preview {
     ChipButton{
-        Text("asdasd")
+        Text(verbatim: "PREP")
     }
 }

@@ -10,16 +10,8 @@ struct RecordingResultCard: View {
     @State private var playbackProgress: Double = 0
     @State private var progressTimer: Timer?
 
-    private var formattedDuration: String {
-        let minutes = totalDurationSeconds / 60
-        let seconds = totalDurationSeconds % 60
-        return String(format: "%d:%02d", minutes, seconds)
-    }
-
-    private var formattedCurrentTime: String {
-        guard let player = audioPlayer else { return "0:00" }
-        let current = Int(player.currentTime)
-        return String(format: "%d:%02d", current / 60, current % 60)
+    private var currentTimeSeconds: Int {
+        Int(audioPlayer?.currentTime ?? 0)
     }
 
     private func togglePlayback() {
@@ -108,13 +100,13 @@ struct RecordingResultCard: View {
 
                 VStack(spacing: 6) {
                     HStack {
-                        Text(formattedCurrentTime)
+                        Text(clock: currentTimeSeconds)
                             .font(.caption)
                             .foregroundStyle(.white.opacity(0.8))
 
                         Spacer()
 
-                        Text(formattedDuration)
+                        Text(clock: totalDurationSeconds)
                             .font(.caption)
                             .foregroundStyle(.white.opacity(0.8))
                     }
@@ -139,7 +131,13 @@ struct RecordingResultCard: View {
                     .fill(.white.opacity(0.15))
             )
 
-            Text(recordingURL != nil ? "Listen to your practice session" : "No recording available")
+            Group {
+                if recordingURL != nil {
+                    Text("Listen to your practice session")
+                } else {
+                    Text("No recording available")
+                }
+            }
                 .font(.caption)
                 .foregroundStyle(.white.opacity(0.7))
                 .frame(maxWidth: .infinity, alignment: .center)

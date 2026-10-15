@@ -9,8 +9,8 @@ struct PracticeView: View {
     @Binding var path: NavigationPath
     @Environment(PracticeViewModel.self) private var practiceVM
 
-    var topic: String { practiceVM.selectedTopic?.title ?? "Job Interview" }
-    var question: String { practiceVM.selectedQuestion?.text ?? "What is your greatest weakness?" }
+    var topic: String { practiceVM.selectedTopic?.title ?? TopicData.topics[0].title }
+    var question: String { practiceVM.selectedQuestion?.text ?? TopicData.questions[0].text }
     var prepSeconds: Int { practiceVM.selectedPrepTime ?? 30 }
     var targetSeconds: Int { practiceVM.selectedTargetTime ?? 120 }
 
@@ -19,24 +19,32 @@ struct PracticeView: View {
     @State private var timeElapsed: Int = 0
     @State private var timer: Timer? = nil
     @State private var currentPREPIndex: Int = 0
-
-    let prepSteps = ["P", "R", "E", "P"]
-    let prepStepNames = ["Point (P)", "Reason (R)", "Example (E)", "Point (P)"]
-
-    var progress: CGFloat {
-        guard prepSeconds > 0 else { return 1.0 }
-        return CGFloat(prepSeconds - timeRemaining) / CGFloat(prepSeconds)
-    }
+    /// 0 = empty, 1 = full. Animated once, linearly, over the whole preparation time.
+    @State private var prepFillProgress: CGFloat = 0
 
     func startTimer() {
         if prepSeconds <= 0 {
             switchToPractice()
             return
         }
+
+        // Drive both the countdown and the fill from the same start date so they can't drift apart.
+        let startDate = Date()
+        let duration = TimeInterval(prepSeconds)
         timeRemaining = prepSeconds
-        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
-            if timeRemaining > 0 { timeRemaining -= 1 }
-            else { switchToPractice() }
+        prepFillProgress = 0
+        withAnimation(.linear(duration: duration)) {
+            prepFillProgress = 1
+        }
+
+        timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
+            let remaining = duration - Date().timeIntervalSince(startDate)
+            if remaining <= 0 {
+                switchToPractice()
+            } else {
+                let seconds = Int(remaining.rounded(.up))
+                if seconds != timeRemaining { timeRemaining = seconds }
+            }
         }
     }
 
@@ -55,7 +63,7 @@ struct PracticeView: View {
     }
 
     func nextPREPStep() {
-        if currentPREPIndex < prepSteps.count - 1 {
+        if currentPREPIndex < PREPStep.allCases.count - 1 {
             practiceVM.advanceStep(currentIndex: currentPREPIndex)
             withAnimation { currentPREPIndex += 1 }
         } else {
@@ -66,25 +74,18 @@ struct PracticeView: View {
         }
     }
 
-    func formatTime(_ seconds: Int) -> String {
-        String(format: "%d:%02d", seconds / 60, seconds % 60)
-    }
-
     var body: some View {
-        GeometryReader{ geo in
+        GeometryReader { _ in
             ZStack() {
                 LinearGradient.primaryGradient.ignoresSafeArea()
-                    .overlay(alignment: .bottom) {
-                        if practiceState == .preparation && prepSeconds > 0 {
-                            Rectangle()
-                                .fill(Color.successColor.opacity(0.5))
-                                .ignoresSafeArea()
-                                .frame(
-                                    height: (geo.size.height + geo.safeAreaInsets.top) * progress
-                                )
-                                .animation(.linear(duration: 1), value: progress)
-                        }
-                    }
+
+                if practiceState == .preparation && prepSeconds > 0 {
+                    // Full-screen layer scaled from the bottom: reaches the very top exactly when time runs out.
+                    Color.successColor.opacity(0.5)
+                        .scaleEffect(x: 1, y: prepFillProgress, anchor: .bottom)
+                        .ignoresSafeArea()
+                        .allowsHitTesting(false)
+                }
 
                 VStack(spacing: 0) {
                     QuestionCard(topic: topic, question: question)
@@ -96,11 +97,7 @@ struct PracticeView: View {
                     if practiceState == .preparation {
                         PreparationMiddleContent(timeRemaining: timeRemaining)
                     } else {
-                        PracticeMiddleContent(
-                            prepSteps: prepSteps,
-                            prepStepNames: prepStepNames,
-                            currentPREPIndex: currentPREPIndex
-                        )
+                        PracticeMiddleContent(currentPREPIndex: currentPREPIndex)
                     }
 
                     Spacer()
@@ -114,15 +111,14 @@ struct PracticeView: View {
                         PracticeBottomContent(
                             timeElapsed: timeElapsed,
                             targetSeconds: targetSeconds,
-                            formatTime: formatTime,
                             onNext: { nextPREPStep() },
-                            isLast: currentPREPIndex == prepSteps.count - 1
+                            isLast: currentPREPIndex == PREPStep.allCases.count - 1
                         )
                         .padding(.bottom, 24)
                     }
                 }
             }
-            .navigationTitle("Practice")
+            .localizedNavigationTitle("Practice")
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden(true)
             .toolbarColorScheme(.dark, for: .navigationBar)

@@ -39,7 +39,7 @@ struct HistoryView: View {
                                 SessionCard(
                                     title: session.topicTitle,
                                     subtitle: session.questionText,
-                                    date: session.formattedShortDate,
+                                    date: session.date,
                                     actualTimeSeconds: session.totalTimeSeconds,
                                     targetTimeSeconds: session.targetTimeSeconds,
                                     rating: Double(session.rating),
@@ -56,7 +56,7 @@ struct HistoryView: View {
             }
         }
         .background(Color.slate50)
-        .navigationTitle("History")
+        .localizedNavigationTitle("History")
         .navigationBarTitleDisplayMode(.inline)
         .onAppear { historyVM.fetchSessions() }
     }

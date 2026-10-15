@@ -3,33 +3,6 @@ import SwiftUI
 struct PREPFrameworkSheet: View {
     @Environment(\.dismiss) private var dismiss
 
-    private let steps: [(letter: String, title: String, description: String, example: String)] = [
-        (
-            letter: "P",
-            title: "Point",
-            description: "State your main opinion.",
-            example: "I think morning exercise is important."
-        ),
-        (
-            letter: "R",
-            title: "Reason",
-            description: "Explain the reason behind your opinion.",
-            example: "Because exercise can make the body healthier and more refreshed."
-        ),
-        (
-            letter: "E",
-            title: "Example",
-            description: "Give a simple example.",
-            example: "For example, when I go jogging in the morning, I feel more focused while working."
-        ),
-        (
-            letter: "P",
-            title: "Point",
-            description: "Repeat your main opinion as a closing.",
-            example: "So, I believe morning exercise is very beneficial."
-        ),
-    ]
-
     @State private var contentHeight: CGFloat = 0
 
     var body: some View {
@@ -66,7 +39,7 @@ struct PREPFrameworkSheet: View {
             .padding(.bottom, 16)
 
             VStack(alignment: .leading, spacing: 16) {
-                ForEach(steps, id: \.title) { step in
+                ForEach(PREPStep.allCases) { step in
                     PREPStepRow(step: step)
                 }
             }
@@ -93,18 +66,21 @@ private struct SheetHeightKey: PreferenceKey {
 }
 
 private struct PREPStepRow: View {
-    let step: (letter: String, title: String, description: String, example: String)
+    let step: PREPStep
 
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
-            Text("\(step.letter) — \(step.title)")
-                .fontWeight(.bold)
-            Text(step.description)
+            HStack(spacing: 4) {
+                Text(verbatim: "\(step.letter) —")
+                Text(step.title)
+            }
+            .fontWeight(.bold)
+            Text(step.sheetDescription)
                 .font(.subheadline)
-            Text("Example: ")
+            Text("Example:")
                 .font(.subheadline)
                 .fontWeight(.semibold)
-            Text(step.example)
+            Text(step.sheetExample)
                 .font(.subheadline)
                 .italic()
         }
@@ -112,7 +88,7 @@ private struct PREPStepRow: View {
 }
 
 #Preview {
-    Text("Home")
+    Color.clear
         .sheet(isPresented: .constant(true)) {
             PREPFrameworkSheet()
         }

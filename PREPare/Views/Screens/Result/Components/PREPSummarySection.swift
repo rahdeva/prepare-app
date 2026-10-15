@@ -1,13 +1,11 @@
 import SwiftUI
 
-struct PREPStepResult {
-    let letter: String
-    let title: String
-    let stepNumber: Int
-    let totalSteps: Int
+struct PREPStepResult: Identifiable {
+    let step: PREPStep
     let timeSeconds: Int
-    let stepResult: String
-    let guidelines: [String]
+    let transcription: String
+
+    var id: PREPStep.ID { step.id }
 }
 
 struct PREPSummarySection: View {
@@ -20,15 +18,12 @@ struct PREPSummarySection: View {
                 .font(.system(size: 20, weight: .bold))
                 .padding(.bottom, 4)
 
-            ForEach(Array(prepStepResults.enumerated()), id: \.offset) { index, step in
+            ForEach(prepStepResults) { result in
+                let index = result.id
                 PREPStepSummaryCard(
-                    letter: step.letter,
-                    title: step.title,
-                    stepNumber: step.stepNumber,
-                    totalSteps: step.totalSteps,
-                    timeSeconds: step.timeSeconds,
-                    stepResult: step.stepResult,
-                    guidelines: step.guidelines,
+                    step: result.step,
+                    timeSeconds: result.timeSeconds,
+                    transcription: result.transcription,
                     isExpanded: expandedSteps.contains(index),
                     onToggle: {
                         withAnimation(.easeInOut(duration: 0.2)) {
