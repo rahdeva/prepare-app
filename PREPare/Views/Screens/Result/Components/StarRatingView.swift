@@ -13,6 +13,9 @@ struct StarRatingView: View {
                     .onTapGesture {
                         rating = index
                     }
+                    .accessibilityLabel(Text("\(index) stars", comment: "Star rating option."))
+                    .accessibilityAddTraits(index <= rating ? [.isButton, .isSelected] : .isButton)
+                    .accessibilityIdentifier("star_\(index)")
             }
         }
     }

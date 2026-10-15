@@ -31,6 +31,7 @@ final class HistoryViewModel {
         )
     }
 
+    @discardableResult
     func saveSession(
         topicTitle: String,
         questionText: String,
@@ -41,7 +42,7 @@ final class HistoryViewModel {
         stepTranscriptions: [String],
         stepDurations: [Int],
         recordingURL: URL?
-    ) {
+    ) -> PracticeSession {
         var recordingFileName: String? = nil
         if let sourceURL = recordingURL {
             recordingFileName = moveRecordingToDocuments(from: sourceURL)
@@ -61,6 +62,7 @@ final class HistoryViewModel {
 
         storage.insert(session)
         fetchSessions()
+        return session
     }
 
     /// Updates the self-evaluation of a saved session and persists it.

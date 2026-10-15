@@ -40,8 +40,8 @@ final class GeneralViewModel {
     private let storage: LocalStorageUtil
     private let notifications = NotificationService()
 
-    init(modelContext: ModelContext) {
-        self.storage = LocalStorageUtil(modelContext: modelContext)
+    init(modelContext: ModelContext, defaults: UserDefaults = .standard) {
+        self.storage = LocalStorageUtil(modelContext: modelContext, defaults: defaults)
         self.hasCompletedOnboarding = storage.getBool(forKey: .hasCompletedOnboarding)
         let languageRaw = storage.getString(forKey: .selectedLanguage) ?? AppLanguageData.english.rawValue
         self.selectedLanguage = AppLanguageData(rawValue: languageRaw) ?? .english

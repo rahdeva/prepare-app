@@ -22,12 +22,17 @@ struct PREPareApp: App {
             try? FileManager.default.createDirectory(at: supportURL, withIntermediateDirectories: true)
         }
 
+        let launchOptions = UITestingLaunchOptions.current
         let schema = Schema([PracticeSession.self])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
+        let modelConfiguration = launchOptions.modelConfiguration(schema: schema)
         do {
             let container = try ModelContainer(for: schema, configurations: [modelConfiguration])
+            launchOptions.prepare(container.mainContext)
             self.sharedModelContainer = container
-            self._generalVM = State(initialValue: GeneralViewModel(modelContext: container.mainContext))
+            self._generalVM = State(initialValue: GeneralViewModel(
+                modelContext: container.mainContext,
+                defaults: launchOptions.defaults
+            ))
             self._historyVM = State(initialValue: HistoryViewModel(modelContext: container.mainContext))
         } catch {
             fatalError("Could not create ModelContainer: \(error)")

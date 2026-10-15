@@ -7,7 +7,7 @@ struct ResultBottomButtons: View {
 
     var body: some View {
         VStack(spacing: 12) {
-            // Finishing a practice always saves it, whichever button the user picks.
+            // The session was saved when the result screen appeared; both buttons store the final evaluation.
             PrimaryButton(
                 title: "Practice Again",
                 action: {

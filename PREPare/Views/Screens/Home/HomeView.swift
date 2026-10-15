@@ -38,6 +38,7 @@ struct HomeView: View {
                     } label: {
                         Image(systemName: "gearshape.fill")
                     }
+                    .accessibilityLabel(Text("Settings"))
                 }
                 
             }
