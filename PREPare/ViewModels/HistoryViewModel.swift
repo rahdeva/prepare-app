@@ -14,6 +14,11 @@ final class HistoryViewModel {
     private let storage: LocalStorageUtil
     var sessions: [PracticeSession] = []
 
+    /// Streak and activity figures derived from the loaded sessions.
+    var stats: PracticeStats {
+        PracticeStats(dates: sessions.map(\.date))
+    }
+
     init(modelContext: ModelContext) {
         self.storage = LocalStorageUtil(modelContext: modelContext)
         fetchSessions()

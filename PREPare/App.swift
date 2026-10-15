@@ -42,6 +42,7 @@ struct PREPareApp: App {
                 .environment(historyVM)
                 .environment(\.locale, generalVM.selectedLanguage.locale)
                 .appColorScheme()
+                .task { generalVM.syncDailyReminder() }
         }
         .modelContainer(sharedModelContainer)
     }

@@ -86,6 +86,6 @@ struct ResultView: View {
     NavigationStack {
         ResultView(path: .constant(NavigationPath()))
             .environment(PracticeViewModel())
-            .environment(HistoryViewModel(modelContext: try! ModelContainer(configurations: ModelConfiguration(isStoredInMemoryOnly: true)).mainContext))
+            .environment(HistoryViewModel(modelContext: PreviewContainer.context))
     }
 }

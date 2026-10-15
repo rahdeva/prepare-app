@@ -64,6 +64,6 @@ struct HistoryView: View {
 #Preview {
     NavigationStack {
         HistoryView(path: .constant(NavigationPath()))
-            .environment(HistoryViewModel(modelContext: try! ModelContainer(configurations: ModelConfiguration(isStoredInMemoryOnly: true)).mainContext))
+            .environment(HistoryViewModel(modelContext: PreviewContainer.context))
     }
 }

@@ -144,9 +144,7 @@ struct PracticeView: View {
 }
 
 #Preview {
-    let container = try! ModelContainer(
-        configurations: ModelConfiguration(isStoredInMemoryOnly: true)
-    )
+    let container = PreviewContainer.shared
     NavigationStack {
         PracticeView(path: .constant(NavigationPath()))
             .environment(PracticeViewModel())

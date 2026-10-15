@@ -11,6 +11,7 @@ enum AppRoute: Hashable {
     case home
     case settings
     case history
+    case practiceActivity
     case historyDetail(PracticeSession)
     case chooseTopic
     case chooseTime

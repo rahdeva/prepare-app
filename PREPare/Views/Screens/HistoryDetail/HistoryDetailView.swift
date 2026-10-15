@@ -168,5 +168,5 @@ struct HistoryDetailView: View {
             )
         )
     }
-    .environment(HistoryViewModel(modelContext: try! ModelContainer(for: PracticeSession.self, configurations: ModelConfiguration(isStoredInMemoryOnly: true)).mainContext))
+    .environment(HistoryViewModel(modelContext: PreviewContainer.context))
 }

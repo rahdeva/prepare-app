@@ -365,6 +365,27 @@ extension LinearGradient {
         endPoint: .bottomTrailing
     )
     
+    /// Streak card when there is no active streak.
+    static let grayGradient = LinearGradient(
+        gradient: Gradient(colors: [
+            Color(UIColor(hex: "#A7ADB8")),
+            Color(UIColor(hex: "#828895")),
+            Color(UIColor(hex: "#606A79")),
+        ]),
+        startPoint: .topLeading,
+        endPoint: .bottomTrailing
+    )
+
+    /// Streak card when the streak is active but today's practice hasn't happened yet.
+    static let amberGradient = LinearGradient(
+        gradient: Gradient(colors: [
+            Color(UIColor(hex: "#F7C650")),
+            Color(UIColor(hex: "#F4A344")),
+        ]),
+        startPoint: .topLeading,
+        endPoint: .bottomTrailing
+    )
+
     static let pinkGradient = LinearGradient(
         gradient: Gradient(colors: [
             Color(UIColor(hex: "#E72B83")),

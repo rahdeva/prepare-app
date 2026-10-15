@@ -1,8 +1,10 @@
 import SwiftUI
+import SwiftData
 
 struct HomeView: View {
     @State var showModalPREP: Bool = false
     @Binding var path: NavigationPath
+    @Environment(HistoryViewModel.self) private var historyVM
     
     var body: some View {
         VStack {
@@ -44,8 +46,15 @@ struct HomeView: View {
             .padding(.bottom, 24)
             
             ScrollView{
-//                StreakCard()
-//                Spacer().frame(height: 20)
+                let stats = historyVM.stats
+                Button {
+                    path.append(AppRoute.practiceActivity)
+                } label: {
+                    StreakCard(streak: stats.currentStreak, hasPracticedToday: stats.hasPracticedToday)
+                }
+                .buttonStyle(.plain)
+                .accessibilityHint(Text("Shows your practice activity"))
+                Spacer().frame(height: 20)
 
                 StartPracticeCard(path: $path)
                 Spacer().frame(height: 20)
@@ -71,5 +80,6 @@ struct HomeView: View {
 #Preview {
     NavigationStack {
         HomeView(path: .constant(NavigationPath()))
+            .environment(HistoryViewModel(modelContext: PreviewContainer.context))
     }
 }

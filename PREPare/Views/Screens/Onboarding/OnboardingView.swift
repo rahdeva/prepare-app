@@ -146,9 +146,7 @@ private struct PageIndicator: View {
 }
 
 #Preview {
-    let container = try! ModelContainer(
-        configurations: ModelConfiguration(isStoredInMemoryOnly: true)
-    )
+    let container = PreviewContainer.shared
     OnboardingView()
         .environment(GeneralViewModel(modelContext: container.mainContext))
 }
