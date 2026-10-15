@@ -4,9 +4,6 @@ struct TimeSummaryCard: View {
     let totalTimeSeconds: Int
     let targetTimeSeconds: Int
 
-    private func formatTime(_ seconds: Int) -> String {
-        String(format: "%d:%02d", seconds / 60, seconds % 60)
-    }
 
     var body: some View {
         HStack {
@@ -16,7 +13,7 @@ struct TimeSummaryCard: View {
                     .foregroundStyle(Color.gray500)
                     .fontWeight(.semibold)
 
-                Text(formatTime(totalTimeSeconds))
+                Text(clock: totalTimeSeconds)
                     .font(.system(size: 28, weight: .bold))
                     .foregroundStyle(totalTimeSeconds > targetTimeSeconds ? Color.errorColor : Color.successColor)
             }
@@ -32,7 +29,7 @@ struct TimeSummaryCard: View {
                     .foregroundStyle(.secondary)
                     .fontWeight(.semibold)
 
-                Text(formatTime(targetTimeSeconds))
+                Text(clock: targetTimeSeconds)
                     .font(.system(size: 28, weight: .bold))
                     .foregroundStyle(Color.primaryColor)
             }

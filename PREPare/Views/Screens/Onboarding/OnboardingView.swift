@@ -5,8 +5,8 @@ struct OnboardingPage {
     let icon: String
     let iconColor: Color
     let iconBackgroundColor: Color
-    let title: String
-    let description: String
+    let title: LocalizedStringKey
+    let description: LocalizedStringKey
 }
 
 struct OnboardingView: View {
@@ -146,9 +146,7 @@ private struct PageIndicator: View {
 }
 
 #Preview {
-    let container = try! ModelContainer(
-        configurations: ModelConfiguration(isStoredInMemoryOnly: true)
-    )
+    let container = PreviewContainer.shared
     OnboardingView()
         .environment(GeneralViewModel(modelContext: container.mainContext))
 }

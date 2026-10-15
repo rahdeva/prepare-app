@@ -21,12 +21,13 @@ struct SplashView: View {
                     )
                     .shadowPrimary()
                 
-                Text("PREPare")
+                Text(verbatim: "PREPare")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundStyle(Color.white)
             }
         }
+        .lightStatusBar()
         .onAppear{
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.5, execute: {
                 withAnimation(.easeIn(duration: 0.2)){

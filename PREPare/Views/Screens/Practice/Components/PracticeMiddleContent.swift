@@ -1,14 +1,15 @@
 import SwiftUI
 
 struct PracticeMiddleContent: View {
-    let prepSteps: [String]
-    let prepStepNames: [String]
     let currentPREPIndex: Int
+
+    private var steps: [PREPStep] { PREPStep.allCases }
     
     var body: some View {
         VStack(spacing: 16) {
             HStack {
-                ForEach(Array(prepSteps.enumerated()), id: \.offset) { index, letter in
+                ForEach(steps) { step in
+                    let index = step.rawValue
                     VStack(spacing: 4) {
                         Rectangle()
                             .fill(
@@ -22,18 +23,18 @@ struct PracticeMiddleContent: View {
                             .cornerRadius(16)
                             .padding(.bottom, 4)
                         
-                        Text(letter)
+                        Text(step.letter)
                             .font(.callout)
                             .fontWeight(index == currentPREPIndex ? .bold : .regular)
                             .foregroundStyle(index <= currentPREPIndex ? .white : .white.opacity(0.5))
                     }
-                    if index < prepSteps.count - 1 { Spacer() }
+                    if index < steps.count - 1 { Spacer() }
                 }
             }
             .padding(.horizontal, 20)
             .padding(.top, 20)
             
-            Text(prepStepNames[currentPREPIndex])
+            Text(steps[currentPREPIndex].practiceLabel)
                 .font(.body)
                 .fontWeight(.semibold)
                 .foregroundStyle(.white)

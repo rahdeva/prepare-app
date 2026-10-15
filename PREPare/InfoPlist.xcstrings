@@ -1,0 +1,72 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "CFBundleDisplayName" : {
+      "comment" : "App name shown on the Home Screen.",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "PREPare"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PREPare"
+          }
+        }
+      }
+    },
+    "CFBundleName" : {
+      "comment" : "Bundle name",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "PREPare"
+          }
+        }
+      }
+    },
+    "NSMicrophoneUsageDescription" : {
+      "comment" : "Microphone permission prompt.",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "PREPare uses the microphone to record your responses during speaking practice sessions. Your voice is used to generate transcripts and help you reflect on and improve your communication skills."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PREPare menggunakan mikrofon untuk merekam jawabanmu selama sesi latihan berbicara. Suaramu digunakan untuk membuat transkrip dan membantumu merefleksikan serta meningkatkan kemampuan komunikasimu."
+          }
+        }
+      }
+    },
+    "NSSpeechRecognitionUsageDescription" : {
+      "comment" : "Speech recognition permission prompt.",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "PREPare uses speech recognition to convert your spoken practice responses into text so you can review your answers and track your speaking progress."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PREPare menggunakan pengenalan ucapan untuk mengubah jawaban lisanmu menjadi teks agar kamu bisa meninjau jawaban dan memantau perkembangan berbicaramu."
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

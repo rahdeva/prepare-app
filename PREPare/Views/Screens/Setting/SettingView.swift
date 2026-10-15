@@ -3,46 +3,47 @@ import SwiftData
 
 struct SettingView: View {
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.openURL) private var openURL
     @Environment(GeneralViewModel.self) private var generalVM
     @Environment(HistoryViewModel.self) private var historyVM
-    @State private var dailyReminders: Bool = true
-    @State private var soundEffects: Bool = true
-    @State private var darkMode: Bool = false
     @State private var showDeleteAlert: Bool = false
 
+    private var dailyReminderBinding: Binding<Bool> {
+        Binding(
+            get: { generalVM.isDailyReminderEnabled },
+            set: { generalVM.setDailyReminder(enabled: $0) }
+        )
+    }
+
+    private var appVersion: String {
+        Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "-"
+    }
+
     var body: some View {
+        @Bindable var vm = generalVM
+
         ScrollView {
-            VStack(alignment: .leading, spacing: 16) {
+            VStack(alignment: .leading, spacing: 12) {
                 // Preferences
-                SettingSectionHeader(title: "Preferences")
+                SettingSectionHeader(title: "PREFERENCES")
 
-//                SettingRow(
-//                    icon: "bell",
-//                    title: "Daily Reminders",
-//                    subtitle: "Get notified to practice",
-//                    toggle: $dailyReminders
-//                )
-//
-//                SettingRow(
-//                    icon: "speaker.wave.2",
-//                    title: "Sound Effects",
-//                    subtitle: "Play sounds during practice",
-//                    toggle: $soundEffects
-//                )
-//
-//                SettingRow(
-//                    icon: "moon",
-//                    title: "Dark Mode",
-//                    subtitle: "Switch to a darker appearance",
-//                    toggle: $darkMode
-//                )
+                SettingRow(
+                    icon: "bell",
+                    title: "Daily Reminders",
+                    subtitle: "Get notified to practice",
+                    toggle: dailyReminderBinding
+                )
 
-                @Bindable var vm = generalVM
+                if generalVM.isDailyReminderEnabled {
+                    ReminderTimeRow(time: $vm.dailyReminderTime)
+                        .transition(.opacity.combined(with: .move(edge: .top)))
+                }
+
                 LanguageSwitchRow(selectedLanguage: $vm.selectedLanguage)
 
                 // Data & Privacy
-                SettingSectionHeader(title: "Data & Privacy")
-                    .padding(.top, 8)
+                SettingSectionHeader(title: "DATA & PRIVACY")
+                    .padding(.top, 16)
 
                 SettingRow(
                     icon: "trash",
@@ -53,21 +54,35 @@ struct SettingView: View {
                 )
 
                 // About
-                SettingSectionHeader(title: "About")
-                    .padding(.top, 8)
+                SettingSectionHeader(title: "ABOUT")
+                    .padding(.top, 16)
 
                 SettingRow(
                     icon: "info.circle",
                     title: "Version",
-                    subtitle: "1.0.0"
+                    subtitle: LocalizedStringKey(appVersion)
                 )
             }
-            .padding(.horizontal, 24)
-            .padding(.top, 8)
+            .padding(.horizontal, 20)
+            .padding(.top, 16)
+            .padding(.bottom, 24)
+            .animation(.default, value: generalVM.isDailyReminderEnabled)
         }
-        .background(Color.slate50)
-        .navigationTitle("Setting")
+        .background(Color(UIColor.systemGroupedBackground))
+        .localizedNavigationTitle("Settings")
         .navigationBarTitleDisplayMode(.inline)
+        // Permission may have been revoked in iOS Settings since the toggle was turned on.
+        .onAppear { generalVM.syncDailyReminder() }
+        .alert("Notifications Are Off", isPresented: $vm.isReminderPermissionDenied) {
+            Button("Open Settings") {
+                if let url = URL(string: UIApplication.openSettingsURLString) {
+                    openURL(url)
+                }
+            }
+            Button("Cancel", role: .cancel) {}
+        } message: {
+            Text("Allow notifications for PREPare in Settings to get daily practice reminders.")
+        }
         .alert("Delete All History", isPresented: $showDeleteAlert) {
             Button("Cancel", role: .cancel) {}
             Button("Delete", role: .destructive) {
@@ -80,9 +95,7 @@ struct SettingView: View {
 }
 
 #Preview {
-    let container = try! ModelContainer(
-        configurations: ModelConfiguration(isStoredInMemoryOnly: true)
-    )
+    let container = PreviewContainer.shared
     NavigationStack {
         SettingView()
     }

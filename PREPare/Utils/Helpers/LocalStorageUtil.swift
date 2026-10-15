@@ -82,4 +82,9 @@ final class LocalStorageUtil {
     func remove(forKey key: StorageKeys) {
         defaults.removeObject(forKey: key.rawValue)
     }
+
+    /// Distinguishes "never set" from a stored zero or false.
+    func hasValue(forKey key: StorageKeys) -> Bool {
+        defaults.object(forKey: key.rawValue) != nil
+    }
 }

@@ -13,13 +13,6 @@ struct PREPGuideView: View {
     @State private var showConfirmation = false
     @State private var showPermissionAlert = false
 
-    let steps: [(letter: String, title: String, subtitle: String, example: String)] = [
-        (letter: "P", title: "Point", subtitle: "State your main idea clearly", example: "\"I am passionate about web development\""),
-        (letter: "R", title: "Reason", subtitle: "Explain why this matters", example: "\"Because it allows me to create solutions that help people\""),
-        (letter: "E", title: "Example", subtitle: "Give a concrete example", example: "\"For instance, I built an app that helps students organize their schedules\""),
-        (letter: "P", title: "Point (Restate)", subtitle: "Reinforce your main idea", example: "\"That's why web development is my passion\""),
-    ]
-    
     var body: some View {
         VStack(spacing: 0) {
             ScrollView {
@@ -44,7 +37,7 @@ struct PREPGuideView: View {
                     .cornerRadius(12)
                     .shadowPrimary()
                     
-                    ForEach(steps, id: \.title) { step in
+                    ForEach(PREPStep.allCases) { step in
                         PointStepCard(step: step)
                     }
                 }
@@ -52,7 +45,7 @@ struct PREPGuideView: View {
             }
             
             PrimaryButton(
-                title: "Got It! I'm understand.",
+                title: "Got It, I Understand!",
                 action: {
                     if practiceVM.checkCurrentPermissions() {
                         showConfirmation = true
@@ -62,7 +55,7 @@ struct PREPGuideView: View {
                 }
             )
         }
-        .navigationTitle("PREP Framework")
+        .localizedNavigationTitle("PREP Framework")
         .navigationBarTitleDisplayMode(.inline)
         .overlay {
             if showConfirmation {
@@ -99,7 +92,7 @@ struct PREPGuideView: View {
                         .fontWeight(.bold)
                         .foregroundStyle(Color.slate900)
 
-                    Text("You'll have \(practiceVM.formatTime(practiceVM.selectedPrepTime ?? 0)) preparation time, then \(practiceVM.formatTime(practiceVM.selectedTargetTime ?? 0)) to complete your response using the PREP framework.")
+                    Text("You'll have \(Text(duration: practiceVM.selectedPrepTime ?? 0)) of preparation time, then \(Text(duration: practiceVM.selectedTargetTime ?? 0)) to complete your response using the PREP framework.")
                         .font(.subheadline)
                         .foregroundStyle(Color.slate500)
                         .multilineTextAlignment(.center)

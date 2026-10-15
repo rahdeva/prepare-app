@@ -36,7 +36,7 @@ struct ChooseTimeView: View {
                         ) {
                             ForEach(practiceVM.prepTimes, id: \.self) { time in
                                 TimeChip(
-                                    label: practiceVM.formatTime(time),
+                                    seconds: time,
                                     isSelected: practiceVM.selectedPrepTime == time
                                 )
                                 .onTapGesture { practiceVM.selectedPrepTime = time }
@@ -64,7 +64,7 @@ struct ChooseTimeView: View {
                         ) {
                             ForEach(practiceVM.targetTimes, id: \.self) { time in
                                 TimeChip(
-                                    label: practiceVM.formatTime(time),
+                                    seconds: time,
                                     isSelected: practiceVM.selectedTargetTime == time
                                 )
                                 .onTapGesture { practiceVM.selectedTargetTime = time }
@@ -82,7 +82,7 @@ struct ChooseTimeView: View {
                             Text("Preparation:")
                                 .foregroundStyle(.white.opacity(0.8))
                             Spacer()
-                            Text(practiceVM.selectedPrepTime.map { practiceVM.formatTime($0) } ?? "-")
+                            durationText(practiceVM.selectedPrepTime)
                                 .foregroundStyle(.white)
                         }
 
@@ -90,7 +90,7 @@ struct ChooseTimeView: View {
                             Text("Speaking:")
                                 .foregroundStyle(.white.opacity(0.8))
                             Spacer()
-                            Text(practiceVM.selectedTargetTime.map { practiceVM.formatTime($0) } ?? "-")
+                            durationText(practiceVM.selectedTargetTime)
                                 .foregroundStyle(.white)
                         }
 
@@ -102,7 +102,7 @@ struct ChooseTimeView: View {
                                 .fontWeight(.bold)
                                 .foregroundStyle(.white)
                             Spacer()
-                            Text(practiceVM.formatTime(practiceVM.totalSeconds))
+                            Text(duration: practiceVM.totalSeconds)
                                 .fontWeight(.bold)
                                 .font(.title3)
                                 .foregroundStyle(.white)
@@ -128,8 +128,16 @@ struct ChooseTimeView: View {
             )
             .disabled(practiceVM.selectedPrepTime == nil || practiceVM.selectedTargetTime == nil)
         }
-        .navigationTitle("Choose Practice Time")
+        .localizedNavigationTitle("Choose Practice Time")
         .navigationBarTitleDisplayMode(.inline)
+    }
+
+    private func durationText(_ seconds: Int?) -> Text {
+        if let seconds {
+            Text(duration: seconds)
+        } else {
+            Text(verbatim: "-")
+        }
     }
 }
 

@@ -29,6 +29,9 @@ struct AppRouter: ViewModifier {
                     case .history:
                         HistoryView(path: $path)
 
+                    case .practiceActivity:
+                        PracticeActivityView()
+
                     case .historyDetail(let session):
                         HistoryDetailView(session: session)
 

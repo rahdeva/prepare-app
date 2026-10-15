@@ -17,7 +17,7 @@ struct QuestionCard: View {
                         .fontWeight(.bold)
                         .foregroundStyle(.white)
                     
-                    Text("Topic: \(topic)")
+                    Text("Topic: \(Text(LocalizedStringKey(topic)))")
                         .font(.footnote)
                         .foregroundStyle(.white.opacity(0.8))
                 }
@@ -26,10 +26,14 @@ struct QuestionCard: View {
             Divider()
                 .background(.white)
             
-            Text(question)
+            // Show the whole question: wrap up to 4 lines, then shrink the font to fit.
+            Text(LocalizedStringKey(question))
                 .font(.system(size: 32))
                 .fontWeight(.bold)
                 .foregroundStyle(.white)
+                .lineLimit(4)
+                .minimumScaleFactor(0.5)
+                .frame(maxWidth: .infinity, alignment: .leading)
         }
         .padding(16)
         .frame(maxWidth: .infinity, alignment: .leading)

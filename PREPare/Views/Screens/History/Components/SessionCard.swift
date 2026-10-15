@@ -3,32 +3,19 @@ import SwiftUI
 struct SessionCard: View {
     let title: String
     let subtitle: String
-    let date: String
+    let date: Date
     let actualTimeSeconds: Int
     let targetTimeSeconds: Int
     let rating: Double
-    let notes: String
-
-    private func formatTime(_ seconds: Int) -> String {
-        String(format: "%d:%02d", seconds / 60, seconds % 60)
-    }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            HStack(alignment: .top) {
-                Text(title)
-                    .font(.headline)
-                    .fontWeight(.bold)
-                    .foregroundStyle(Color.slate900)
+            Text(LocalizedStringKey(title))
+                .font(.headline)
+                .fontWeight(.bold)
+                .foregroundStyle(Color.slate900)
 
-                Spacer()
-
-                Text(date)
-                    .font(.subheadline)
-                    .foregroundStyle(Color.gray400)
-            }
-
-            Text(subtitle)
+            Text(LocalizedStringKey(subtitle))
                 .font(.subheadline)
                 .foregroundStyle(Color.gray500)
 
@@ -40,14 +27,17 @@ struct SessionCard: View {
                         .font(.subheadline)
                         .foregroundStyle(Color.green500)
 
-                    Text(formatTime(actualTimeSeconds))
+                    Text(clock: actualTimeSeconds)
                         .font(.subheadline)
                         .fontWeight(.bold)
                         .foregroundStyle(Color.green500)
 
-                    Text("/ \(formatTime(targetTimeSeconds))")
-                        .font(.subheadline)
-                        .foregroundStyle(Color.gray400)
+                    Group {
+                        Text(verbatim: "/")
+                        Text(clock: targetTimeSeconds)
+                    }
+                    .font(.subheadline)
+                    .foregroundStyle(Color.gray400)
                 }
 
                 HStack(spacing: 4) {
@@ -55,26 +45,26 @@ struct SessionCard: View {
                         .font(.subheadline)
                         .foregroundStyle(Color.amber400)
 
-                    Text(String(format: "%.1f", rating))
+                    Text(rating, format: .number.precision(.fractionLength(1)))
                         .font(.subheadline)
                         .fontWeight(.bold)
                         .foregroundStyle(Color.slate800)
                 }
             }
 
-            Spacer().frame(height: 4)
+            Divider()
+                .padding(.vertical, 4)
 
+            // When the session was practiced, formatted for the in-app language.
             HStack(spacing: 6) {
-                Text("\u{1F4DD}")
-                    .font(.caption)
-
-                Text(notes)
-                    .font(.caption)
-                    .foregroundStyle(Color.gray500)
-                    .lineLimit(2)
+                Image(systemName: "calendar")
+                Text(date, format: .dateTime.weekday(.abbreviated).day().month(.abbreviated).year().hour().minute())
             }
+            .font(.caption)
+            .foregroundStyle(Color.gray500)
         }
         .padding(16)
+        .frame(maxWidth: .infinity, alignment: .leading)
         .background(.white)
         .cornerRadius(16)
         .shadowPrimary()
@@ -83,13 +73,12 @@ struct SessionCard: View {
 
 #Preview {
     SessionCard(
-        title: "Job Interview Basics",
-        subtitle: "Introduce yourself in a job interview",
-        date: "Apr 15",
+        title: "Job Interview",
+        subtitle: "Tell me about yourself.",
+        date: .now,
         actualTimeSeconds: 120,
         targetTimeSeconds: 150,
-        rating: 4.0,
-        notes: "Good flow, need to work on examples"
+        rating: 4.0
     )
     .padding(24)
     .background(Color.slate50)

@@ -3,11 +3,11 @@ import SwiftUI
 struct DetailTopicCard: View {
     let topicName: String
     let question: String
-    let date: String
+    let date: Date
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text(topicName)
+            Text(LocalizedStringKey(topicName))
                 .font(.caption)
                 .fontWeight(.semibold)
                 .foregroundStyle(Color.green700)
@@ -16,20 +16,29 @@ struct DetailTopicCard: View {
                 .background(Color.green100)
                 .cornerRadius(20)
 
-            Text(question)
+            Text(LocalizedStringKey(question))
                 .font(.body)
                 .fontWeight(.medium)
                 .foregroundStyle(Color.slate900)
 
-            HStack(spacing: 6) {
-                Image(systemName: "calendar")
-                    .font(.caption)
-                    .foregroundStyle(Color.gray400)
+            HStack(spacing: 14) {
+                HStack(spacing: 6) {
+                    Image(systemName: "calendar")
+                        .foregroundStyle(Color.gray400)
 
-                Text(date)
-                    .font(.caption)
-                    .foregroundStyle(Color.gray500)
+                    Text(date, format: .dateTime.weekday(.wide).day().month(.wide).year())
+                        .foregroundStyle(Color.gray500)
+                }
+
+                HStack(spacing: 6) {
+                    Image(systemName: "clock")
+                        .foregroundStyle(Color.gray400)
+
+                    Text(date, format: .dateTime.hour().minute())
+                        .foregroundStyle(Color.gray500)
+                }
             }
+            .font(.caption)
         }
         .padding(16)
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -41,9 +50,9 @@ struct DetailTopicCard: View {
 
 #Preview {
     DetailTopicCard(
-        topicName: "Job Interview Basics",
-        question: "Introduce yourself in a job interview",
-        date: "Wednesday, April 15, 2026"
+        topicName: "Job Interview",
+        question: "Tell me about yourself.",
+        date: .now
     )
     .padding(24)
     .background(Color.slate50)

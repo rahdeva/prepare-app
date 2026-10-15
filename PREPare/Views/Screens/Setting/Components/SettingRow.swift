@@ -7,54 +7,55 @@ enum SettingRowStyle {
 
 struct SettingRow: View {
     let icon: String
-    let title: String
-    let subtitle: String
+    let title: LocalizedStringKey
+    let subtitle: LocalizedStringKey
     var style: SettingRowStyle = .normal
     var toggle: Binding<Bool>? = nil
     var action: (() -> Void)? = nil
 
+    private var isDestructive: Bool { style == .destructive }
+
     var body: some View {
-        Button {
-            if let toggle {
-                toggle.wrappedValue.toggle()
+        if toggle != nil || action != nil {
+            Button {
+                toggle?.wrappedValue.toggle()
+                action?()
+            } label: {
+                content
             }
-            action?()
-        } label: {
-            HStack(spacing: 16) {
-                Image(systemName: icon)
-                    .font(.system(size: 18))
-                    .foregroundStyle(style == .destructive ? Color.red500 : Color.slate700)
-                    .frame(width: 40, height: 40)
-                    .background(
-                        Circle()
-                            .fill(style == .destructive ? Color.red50 : Color.slate100)
-                    )
-
-                VStack(alignment: .leading, spacing: 2) {
-                    Text(title)
-                        .font(.system(size: 16, weight: .medium))
-                        .foregroundStyle(style == .destructive ? Color.red500 : Color.slate900)
-
-                    Text(subtitle)
-                        .font(.system(size: 13))
-                        .foregroundStyle(Color.slate400)
-                }
-
-                Spacer()
-
-                if let toggle {
-                    Toggle("", isOn: toggle)
-                        .labelsHidden()
-                        .tint(.primaryColor)
-                }
-            }
-            .padding(16)
-            .background(
-                RoundedRectangle(cornerRadius: 16)
-                    .fill(style == .destructive ? Color.red50 : Color.white)
-            )
+            .buttonStyle(.plain)
+        } else {
+            content
         }
-        .buttonStyle(.plain)
-        .shadowPrimary()
+    }
+
+    private var content: some View {
+        HStack(spacing: 14) {
+            SettingIcon(systemName: icon, isDestructive: isDestructive)
+
+            VStack(alignment: .leading, spacing: 2) {
+                Text(title)
+                    .font(.system(size: 17, weight: .semibold))
+                    .foregroundStyle(isDestructive ? Color.red600 : Color.slate900)
+
+                Text(subtitle)
+                    .font(.system(size: 14))
+                    .foregroundStyle(Color.slate500)
+            }
+
+            Spacer(minLength: 8)
+
+            if let toggle {
+                Toggle(title, isOn: toggle)
+                    .labelsHidden()
+                    .tint(.primaryColor)
+            } else if action != nil {
+                Image(systemName: "chevron.right")
+                    .font(.system(size: 14, weight: .semibold))
+                    .foregroundStyle(Color.slate400)
+            }
+        }
+        .contentShape(Rectangle())
+        .settingCard()
     }
 }

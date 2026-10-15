@@ -30,11 +30,10 @@ struct AppView: View {
 }
 
 #Preview {
-    let container = try! ModelContainer(
-        configurations: ModelConfiguration(isStoredInMemoryOnly: true)
-    )
+    let container = PreviewContainer.shared
     AppView()
         .environment(GeneralViewModel(modelContext: container.mainContext))
         .environment(PracticeViewModel())
+        .environment(HistoryViewModel(modelContext: container.mainContext))
         .modelContainer(container)
 }

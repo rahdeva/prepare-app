@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PointStepCard: View {
-    let step: (letter: String, title: String, subtitle: String, example: String)
+    let step: PREPStep
     
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -28,13 +28,13 @@ struct PointStepCard: View {
                         .font(.headline)
                         .fontWeight(.semibold)
                     
-                    Text(step.subtitle)
+                    Text(step.guideSubtitle)
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                 }
             }
             
-            Text(step.example)
+            Text(step.guideExample)
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
                 .padding(12)

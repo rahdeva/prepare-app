@@ -35,7 +35,7 @@ struct PreparationBottomContent: View {
                         Image(systemName: "checkmark.circle.fill")
                             .font(.caption)
                             .foregroundStyle(.white.opacity(0.7))
-                        Text("Hold phone 6-8 inches away")
+                        Text("Hold your phone 6–8 inches away")
                             .font(.caption)
                             .foregroundStyle(.white.opacity(0.7))
                     }

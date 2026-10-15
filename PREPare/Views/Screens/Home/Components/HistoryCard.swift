@@ -19,6 +19,7 @@ struct HistoryCard: View {
                         .foregroundStyle(.white)
                         .fontWeight(.regular)
                 }
+                .multilineTextAlignment(.leading)
                 
                 Spacer()
                 

@@ -1,0 +1,50 @@
+{
+  "brand": "PREPare",
+  "version": "2.0",
+  "colors": [
+    {
+      "name": "Deep Navy",
+      "hex": "#213C51",
+      "rgb": [
+        33,
+        60,
+        81
+      ],
+      "role": "Primary"
+    },
+    {
+      "name": "Steel Blue",
+      "hex": "#6594B1",
+      "rgb": [
+        101,
+        148,
+        177
+      ],
+      "role": "Primary"
+    },
+    {
+      "name": "Mist",
+      "hex": "#E8EFF5",
+      "rgb": [
+        232,
+        239,
+        245
+      ],
+      "role": "Supporting"
+    },
+    {
+      "name": "Ink",
+      "hex": "#0E1821",
+      "rgb": [
+        14,
+        24,
+        33
+      ],
+      "role": "Supporting"
+    }
+  ],
+  "typography": [
+    "SF Pro",
+    "Inter"
+  ]
+}

@@ -14,6 +14,11 @@ final class HistoryViewModel {
     private let storage: LocalStorageUtil
     var sessions: [PracticeSession] = []
 
+    /// Streak and activity figures derived from the loaded sessions.
+    var stats: PracticeStats {
+        PracticeStats(dates: sessions.map(\.date))
+    }
+
     init(modelContext: ModelContext) {
         self.storage = LocalStorageUtil(modelContext: modelContext)
         fetchSessions()
@@ -26,6 +31,7 @@ final class HistoryViewModel {
         )
     }
 
+    @discardableResult
     func saveSession(
         topicTitle: String,
         questionText: String,
@@ -36,10 +42,10 @@ final class HistoryViewModel {
         stepTranscriptions: [String],
         stepDurations: [Int],
         recordingURL: URL?
-    ) {
+    ) -> PracticeSession {
         var recordingFileName: String? = nil
         if let sourceURL = recordingURL {
-            recordingFileName = copyRecordingToDocuments(from: sourceURL)
+            recordingFileName = moveRecordingToDocuments(from: sourceURL)
         }
 
         let session = PracticeSession(
@@ -56,6 +62,16 @@ final class HistoryViewModel {
 
         storage.insert(session)
         fetchSessions()
+        return session
+    }
+
+    /// Updates the self-evaluation of a saved session and persists it.
+    func updateEvaluation(of session: PracticeSession, rating: Int, notes: String) {
+        let trimmedNotes = notes.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard session.rating != rating || session.notes != trimmedNotes else { return }
+        session.rating = rating
+        session.notes = trimmedNotes
+        storage.save()
     }
 
     func clearAllHistory() {
@@ -70,19 +86,30 @@ final class HistoryViewModel {
         sessions = []
     }
 
-    private func copyRecordingToDocuments(from sourceURL: URL) -> String? {
-        guard let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
+    /// Moves the finished recording out of the temporary directory (which iOS may purge)
+    /// into Documents. Only the file name is stored, because the container path can change
+    /// between app launches.
+    private func moveRecordingToDocuments(from sourceURL: URL) -> String? {
+        let fileManager = FileManager.default
+        guard let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else {
             return nil
         }
 
-        let fileName = "\(UUID().uuidString).caf"
+        let size = (try? fileManager.attributesOfItem(atPath: sourceURL.path)[.size] as? Int) ?? 0
+        guard size > 0 else {
+            print("Recording is missing or empty, not saving: \(sourceURL.lastPathComponent)")
+            return nil
+        }
+
+        let fileExtension = sourceURL.pathExtension.isEmpty ? "m4a" : sourceURL.pathExtension
+        let fileName = "\(UUID().uuidString).\(fileExtension)"
         let destinationURL = documentsURL.appendingPathComponent(fileName)
 
         do {
-            try FileManager.default.copyItem(at: sourceURL, to: destinationURL)
+            try fileManager.moveItem(at: sourceURL, to: destinationURL)
             return fileName
         } catch {
-            print("Failed to copy recording: \(error)")
+            print("Failed to save recording: \(error)")
             return nil
         }
     }

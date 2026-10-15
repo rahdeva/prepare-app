@@ -10,16 +10,30 @@ import Observation
 
 @Observable
 final class SpeechRecognizerUtil {
-    private let speechRecognizer: SFSpeechRecognizer?
-    private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
-    private var recognitionTask: SFSpeechRecognitionTask?
+    private static let fallbackLocale = Locale(identifier: "en-US")
+
+    @ObservationIgnored private var speechRecognizer: SFSpeechRecognizer?
+    @ObservationIgnored private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
+    @ObservationIgnored private var recognitionTask: SFSpeechRecognitionTask?
 
     private(set) var transcribedText: String = ""
     private(set) var isTranscribing = false
     private(set) var authorizationStatus: SFSpeechRecognizerAuthorizationStatus = .notDetermined
 
-    init(locale: Locale = Locale(identifier: "en-US")) {
-        speechRecognizer = SFSpeechRecognizer(locale: locale)
+    init(locale: Locale = SpeechRecognizerUtil.fallbackLocale) {
+        speechRecognizer = Self.makeRecognizer(for: locale)
+    }
+
+    /// Switches the recognition language. Safe to call between sessions; no-op if already set.
+    func setLocale(_ locale: Locale) {
+        guard speechRecognizer?.locale.identifier != locale.identifier else { return }
+        guard !isTranscribing else { return } // Don't swap the recognizer under a running task.
+        speechRecognizer = Self.makeRecognizer(for: locale)
+    }
+
+    private static func makeRecognizer(for locale: Locale) -> SFSpeechRecognizer? {
+        // SFSpeechRecognizer returns nil for unsupported locales; fall back so recording still works.
+        SFSpeechRecognizer(locale: locale) ?? SFSpeechRecognizer(locale: fallbackLocale)
     }
 
     func requestAuthorization() async -> Bool {

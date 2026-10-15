@@ -1,13 +1,9 @@
 import SwiftUI
 
 struct PREPStepSummaryCard: View {
-    let letter: String
-    let title: String
-    let stepNumber: Int
-    let totalSteps: Int
+    let step: PREPStep
     let timeSeconds: Int
-    let stepResult: String
-    let guidelines: [String]
+    let transcription: String
     let isExpanded: Bool
     let onToggle: () -> Void
 
@@ -15,7 +11,7 @@ struct PREPStepSummaryCard: View {
         VStack(spacing: 0){
             VStack(alignment: .leading, spacing: 12){
                 HStack(alignment: .top) {
-                    Text(letter)
+                    Text(step.letter)
                         .font(.headline)
                         .fontWeight(.bold)
                         .foregroundStyle(Color.white)
@@ -26,11 +22,11 @@ struct PREPStepSummaryCard: View {
                         )
 
                     VStack(alignment: .leading, spacing: 2) {
-                        Text(title)
+                        Text(step.title)
                             .font(.headline)
                             .fontWeight(.semibold)
 
-                        Text("Step \(stepNumber) of \(totalSteps)")
+                        Text("Step \(step.number) of \(PREPStep.allCases.count)")
                             .font(.caption)
                             .foregroundStyle(.secondary)
                     }
@@ -44,7 +40,13 @@ struct PREPStepSummaryCard: View {
                 }
 
 
-                Text(stepResult)
+                Group {
+                    if transcription.isEmpty {
+                        Text("No speech detected")
+                    } else {
+                        Text(transcription)
+                    }
+                }
                     .font(.subheadline)
                     .foregroundStyle(Color.gray900)
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -80,13 +82,14 @@ struct PREPStepSummaryCard: View {
 
             if isExpanded {
                 VStack(alignment: .leading, spacing: 8) {
-                    ForEach(guidelines, id: \.self) { guideline in
+                    // Guidelines are a fixed list per step, so position is a stable identity.
+                    ForEach(0..<step.guidelines.count, id: \.self) { index in
                         HStack(alignment: .center, spacing: 8) {
                             Circle()
                                 .fill(Color.gray500)
                                 .frame(width: 6, height: 6)
 
-                            Text(guideline)
+                            Text(step.guidelines[index])
                                 .font(.subheadline)
                         }
                     }

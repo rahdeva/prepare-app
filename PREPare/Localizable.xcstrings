@@ -1,0 +1,3190 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "“Because it allows me to create solutions that help people.”" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“Karena bidang ini memungkinkanku menciptakan solusi yang membantu orang lain.”"
+          }
+        }
+      }
+    },
+    "“For instance, I built an app that helps students organize their schedules.”" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“Misalnya, aku pernah membuat aplikasi yang membantu pelajar mengatur jadwal mereka.”"
+          }
+        }
+      }
+    },
+    "“I am passionate about web development.”" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“Aku sangat tertarik pada pengembangan web.”"
+          }
+        }
+      }
+    },
+    "“That's why web development is my passion.”" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“Karena itulah pengembangan web adalah passion-ku.”"
+          }
+        }
+      }
+    },
+    "%lld sessions" : {
+      "comment" : "Number of practice sessions on the selected heatmap day.",
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld session"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld sessions"
+                }
+              }
+            }
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld sesi"
+          }
+        }
+      }
+    },
+    "%lld stars" : {
+      "comment" : "Star rating option."
+    },
+    "%lldm" : {
+      "comment" : "Duration in whole minutes.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld mnt"
+          }
+        }
+      }
+    },
+    "%lldm %llds" : {
+      "comment" : "Duration in minutes and seconds.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld mnt %2$lld detik"
+          }
+        }
+      }
+    },
+    "%llds" : {
+      "comment" : "Duration in seconds only.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld detik"
+          }
+        }
+      }
+    },
+    "ABOUT" : {
+      "comment" : "Settings section header.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TENTANG"
+          }
+        }
+      }
+    },
+    "Allow notifications for PREPare in Settings to get daily practice reminders." : {
+      "comment" : "Alert message when notifications are denied in iOS Settings.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Izinkan notifikasi untuk PREPare di Pengaturan agar menerima pengingat latihan harian."
+          }
+        }
+      }
+    },
+    "Are you sure you want to delete all history? This cannot be undone." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yakin ingin menghapus semua riwayat? Tindakan ini tidak dapat dibatalkan."
+          }
+        }
+      }
+    },
+    "Back to Home" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kembali ke Beranda"
+          }
+        }
+      }
+    },
+    "Because exercise can make the body healthier and more refreshed." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Karena olahraga bisa membuat tubuh lebih sehat dan segar."
+          }
+        }
+      }
+    },
+    "Best streak" : {
+      "comment" : "Heatmap stat label: longest run of consecutive practice days.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beruntun terbaik"
+          }
+        }
+      }
+    },
+    "Build a consistent practice habit and track your improvement with self-evaluation and history." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bangun kebiasaan latihan yang konsisten dan pantau perkembanganmu lewat evaluasi diri dan riwayat."
+          }
+        }
+      }
+    },
+    "Cancel" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Batal"
+          }
+        }
+      }
+    },
+    "CAREER" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KARIER"
+          }
+        }
+      }
+    },
+    "Career Goals" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tujuan Karier"
+          }
+        }
+      }
+    },
+    "Change Language" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ganti Bahasa"
+          }
+        }
+      }
+    },
+    "Choose a topic, set your time, and start practicing with the framework" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pilih topik, atur waktumu, lalu mulai berlatih dengan kerangka PREP"
+          }
+        }
+      }
+    },
+    "Choose Practice Time" : {
+      "comment" : "Navigation title.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pilih Waktu Latihan"
+          }
+        }
+      }
+    },
+    "Choose Topic" : {
+      "comment" : "Navigation title.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pilih Topik"
+          }
+        }
+      }
+    },
+    "Clear and concise main statement" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pernyataan utama yang jelas dan ringkas"
+          }
+        }
+      }
+    },
+    "Communication Skills" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keterampilan Komunikasi"
+          }
+        }
+      }
+    },
+    "Complete a practice session to see your history here." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selesaikan satu sesi latihan untuk melihat riwayatmu di sini."
+          }
+        }
+      }
+    },
+    "Connects to broader context or impact" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mengaitkan dengan konteks atau dampak yang lebih luas"
+          }
+        }
+      }
+    },
+    "Continue" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lanjutkan"
+          }
+        }
+      }
+    },
+    "Current streak" : {
+      "comment" : "Heatmap stat label: consecutive practice days so far.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beruntun saat ini"
+          }
+        }
+      }
+    },
+    "Daily Reminders" : {
+      "comment" : "Settings row title for the daily practice reminder toggle.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pengingat Harian"
+          }
+        }
+      }
+    },
+    "DATA & PRIVACY" : {
+      "comment" : "Settings section header.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DATA & PRIVASI"
+          }
+        }
+      }
+    },
+    "day streak" : {
+      "comment" : "Shown after the streak count, e.g. 7 day streak.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "hari beruntun"
+          }
+        }
+      }
+    },
+    "Delete" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hapus"
+          }
+        }
+      }
+    },
+    "Delete All History" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hapus Semua Riwayat"
+          }
+        }
+      }
+    },
+    "Describe a challenging situation you faced at work and how you handled it." : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ceritakan situasi sulit yang pernah kamu hadapi di tempat kerja dan bagaimana kamu menanganinya."
+          }
+        }
+      }
+    },
+    "Describe a learning experience that changed your perspective." : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ceritakan pengalaman belajar yang mengubah sudut pandangmu."
+          }
+        }
+      }
+    },
+    "Describe a memorable presentation you gave." : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ceritakan presentasi berkesan yang pernah kamu bawakan."
+          }
+        }
+      }
+    },
+    "Describe a successful team project you contributed to." : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ceritakan proyek tim sukses yang pernah kamu ikut kerjakan."
+          }
+        }
+      }
+    },
+    "Describe a time public speaking helped you achieve a goal." : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ceritakan saat kemampuan berbicara di depan umum membantumu mencapai tujuan."
+          }
+        }
+      }
+    },
+    "Describe a time you had to compromise for the team's benefit." : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ceritakan saat kamu harus berkompromi demi kepentingan tim."
+          }
+        }
+      }
+    },
+    "Describe a time you had to deliver bad news." : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ceritakan saat kamu harus menyampaikan kabar buruk."
+          }
+        }
+      }
+    },
+    "Describe a time you had to lead by example." : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ceritakan saat kamu harus memimpin dengan memberi teladan."
+          }
+        }
+      }
+    },
+    "Describe a time you had to learn something quickly." : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ceritakan saat kamu harus mempelajari sesuatu dengan cepat."
+          }
+        }
+      }
+    },
+    "Describe a time you had to make a quick decision under pressure." : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ceritakan saat kamu harus mengambil keputusan cepat di bawah tekanan."
+          }
+        }
+      }
+    },
+    "Describe a time you identified a problem before it became critical." : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ceritakan saat kamu menemukan masalah sebelum menjadi serius."
+          }
+        }
+      }
+    },
+    "Describe a time you stepped out of your comfort zone." : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ceritakan saat kamu keluar dari zona nyamanmu."
+          }
+        }
+      }
+    },
+    "Describe a time you worked effectively as part of a team." : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ceritakan saat kamu bekerja secara efektif sebagai bagian dari tim."
+          }
+        }
+      }
+    },
+    "Describe a time your communication skills helped resolve a problem." : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ceritakan saat keterampilan komunikasimu membantu menyelesaikan masalah."
+          }
+        }
+      }
+    },
+    "Describe your approach to solving complex problems." : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jelaskan pendekatanmu dalam memecahkan masalah yang kompleks."
+          }
+        }
+      }
+    },
+    "Describe your ideal work environment." : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gambarkan lingkungan kerja idealmu."
+          }
+        }
+      }
+    },
+    "Describe your leadership style." : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jelaskan gaya kepemimpinanmu."
+          }
+        }
+      }
+    },
+    "Directly answers the question or topic" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Langsung menjawab pertanyaan atau topik"
+          }
+        }
+      }
+    },
+    "Done" : {
+      "comment" : "Keyboard toolbar button that finishes editing notes.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selesai"
+          }
+        }
+      }
+    },
+    "Easy to understand and remember" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mudah dipahami dan diingat"
+          }
+        }
+      }
+    },
+    "Edit" : {
+      "comment" : "Button that enables editing of the self-evaluation in history detail.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit"
+          }
+        }
+      }
+    },
+    "EDUCATION" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PENDIDIKAN"
+          }
+        }
+      }
+    },
+    "Every day at this time" : {
+      "comment" : "Settings row subtitle for the daily reminder time picker.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Setiap hari pada waktu ini"
+          }
+        }
+      }
+    },
+    "Example" : {
+      "comment" : "Name of the E step in the PREP framework.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Contoh"
+          }
+        }
+      }
+    },
+    "Example (E)" : {
+      "comment" : "Current PREP step label during practice.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Contoh (E)"
+          }
+        }
+      }
+    },
+    "Example:" : {
+      "comment" : "Label before an example sentence.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Contoh:"
+          }
+        }
+      }
+    },
+    "Explain the reason behind your opinion." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jelaskan alasan di balik pendapatmu."
+          }
+        }
+      }
+    },
+    "Explain why this matters" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jelaskan mengapa hal ini penting"
+          }
+        }
+      }
+    },
+    "Explains the “why” behind your point" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menjelaskan “mengapa” di balik poinmu"
+          }
+        }
+      }
+    },
+    "FINISH" : {
+      "comment" : "Button that ends the practice session.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SELESAI"
+          }
+        }
+      }
+    },
+    "For example, when I go jogging in the morning, I feel more focused while working." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Contohnya, saat aku jogging di pagi hari, aku jadi lebih fokus saat bekerja."
+          }
+        }
+      }
+    },
+    "Formula:" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rumus:"
+          }
+        }
+      }
+    },
+    "Get notified to practice" : {
+      "comment" : "Settings row subtitle for the daily reminder toggle.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dapatkan notifikasi untuk latihan"
+          }
+        }
+      }
+    },
+    "Get Started" : {
+      "comment" : "Last onboarding button.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mulai"
+          }
+        }
+      }
+    },
+    "Give a concrete example" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Berikan contoh yang konkret"
+          }
+        }
+      }
+    },
+    "Give a simple example." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Berikan contoh sederhana."
+          }
+        }
+      }
+    },
+    "Got It, I Understand!" : {
+      "comment" : "Button confirming the user read the PREP guide.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oke, Saya Paham!"
+          }
+        }
+      }
+    },
+    "Great Job!" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kerja Bagus!"
+          }
+        }
+      }
+    },
+    "History" : {
+      "comment" : "Navigation title.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riwayat"
+          }
+        }
+      }
+    },
+    "History Detail" : {
+      "comment" : "Navigation title.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detail Riwayat"
+          }
+        }
+      }
+    },
+    "Hold your phone 6–8 inches away" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pegang ponsel sekitar 15–20 cm dari mulut"
+          }
+        }
+      }
+    },
+    "Home" : {
+      "comment" : "Navigation title.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beranda"
+          }
+        }
+      }
+    },
+    "How do you adapt your communication style for different audiences?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bagaimana kamu menyesuaikan gaya komunikasimu untuk audiens yang berbeda?"
+          }
+        }
+      }
+    },
+    "How do you apply what you learn in real life?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bagaimana kamu menerapkan apa yang kamu pelajari dalam kehidupan nyata?"
+          }
+        }
+      }
+    },
+    "How do you balance authority with approachability?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bagaimana kamu menyeimbangkan wibawa dengan sikap yang mudah didekati?"
+          }
+        }
+      }
+    },
+    "How do you balance learning new skills with mastering existing ones?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bagaimana kamu menyeimbangkan antara mempelajari keterampilan baru dan mendalami yang sudah ada?"
+          }
+        }
+      }
+    },
+    "How do you build trust with new team members?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bagaimana kamu membangun kepercayaan dengan anggota tim baru?"
+          }
+        }
+      }
+    },
+    "How do you deal with a team member who isn't pulling their weight?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bagaimana kamu menghadapi anggota tim yang tidak menjalankan bagiannya?"
+          }
+        }
+      }
+    },
+    "How do you develop future leaders within your team?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bagaimana kamu menyiapkan calon pemimpin di dalam timmu?"
+          }
+        }
+      }
+    },
+    "How do you engage your audience during a speech?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bagaimana kamu membuat audiens tetap terlibat saat kamu berbicara?"
+          }
+        }
+      }
+    },
+    "How do you ensure effective communication within a team?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bagaimana kamu memastikan komunikasi yang efektif dalam tim?"
+          }
+        }
+      }
+    },
+    "How do you ensure your message is clearly understood?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bagaimana kamu memastikan pesanmu dipahami dengan jelas?"
+          }
+        }
+      }
+    },
+    "How do you evaluate whether a solution is effective?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bagaimana kamu menilai apakah sebuah solusi efektif?"
+          }
+        }
+      }
+    },
+    "How do you give constructive feedback to others?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bagaimana kamu memberikan masukan yang membangun kepada orang lain?"
+          }
+        }
+      }
+    },
+    "How do you handle a situation where you don't have all the information?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bagaimana kamu menghadapi situasi saat informasi yang kamu miliki tidak lengkap?"
+          }
+        }
+      }
+    },
+    "How do you handle communication in a remote work setting?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bagaimana kamu menjaga komunikasi saat bekerja jarak jauh?"
+          }
+        }
+      }
+    },
+    "How do you handle conflicts with coworkers?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bagaimana kamu menangani konflik dengan rekan kerja?"
+          }
+        }
+      }
+    },
+    "How do you handle criticism?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bagaimana kamu menanggapi kritik?"
+          }
+        }
+      }
+    },
+    "How do you handle failure?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bagaimana kamu menghadapi kegagalan?"
+          }
+        }
+      }
+    },
+    "How do you handle misunderstandings in conversation?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bagaimana kamu menangani kesalahpahaman dalam percakapan?"
+          }
+        }
+      }
+    },
+    "How do you handle subjects or topics that you find difficult?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bagaimana kamu menghadapi pelajaran atau topik yang menurutmu sulit?"
+          }
+        }
+      }
+    },
+    "How do you handle tough questions from the audience?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bagaimana kamu menanggapi pertanyaan sulit dari audiens?"
+          }
+        }
+      }
+    },
+    "How do you handle underperforming team members?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bagaimana kamu menangani anggota tim yang kinerjanya kurang?"
+          }
+        }
+      }
+    },
+    "How do you handle working overtime or tight deadlines?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bagaimana kamu menghadapi lembur atau tenggat waktu yang ketat?"
+          }
+        }
+      }
+    },
+    "How do you involve others in the problem-solving process?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bagaimana kamu melibatkan orang lain dalam proses pemecahan masalah?"
+          }
+        }
+      }
+    },
+    "How do you maintain work-life balance?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bagaimana kamu menjaga keseimbangan kerja dan hidup?"
+          }
+        }
+      }
+    },
+    "How do you make tough decisions as a leader?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bagaimana kamu mengambil keputusan sulit sebagai pemimpin?"
+          }
+        }
+      }
+    },
+    "How do you measure success in your career?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bagaimana kamu mengukur kesuksesan dalam kariermu?"
+          }
+        }
+      }
+    },
+    "How do you motivate others?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bagaimana caramu memotivasi orang lain?"
+          }
+        }
+      }
+    },
+    "How do you plan to achieve your professional goals?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bagaimana rencanamu mencapai tujuan profesionalmu?"
+          }
+        }
+      }
+    },
+    "How do you prepare for a public speaking engagement?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bagaimana kamu mempersiapkan diri untuk berbicara di depan umum?"
+          }
+        }
+      }
+    },
+    "How do you prepare for an important presentation?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bagaimana kamu mempersiapkan presentasi penting?"
+          }
+        }
+      }
+    },
+    "How do you prioritize tasks when everything feels urgent?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bagaimana kamu memprioritaskan tugas saat semuanya terasa mendesak?"
+          }
+        }
+      }
+    },
+    "How do you set and achieve personal goals?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bagaimana kamu menetapkan dan mencapai tujuan pribadimu?"
+          }
+        }
+      }
+    },
+    "How do you set boundaries between work and personal life?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bagaimana kamu menetapkan batas antara pekerjaan dan kehidupan pribadi?"
+          }
+        }
+      }
+    },
+    "How do you stay current in your field?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bagaimana kamu tetap mengikuti perkembangan di bidangmu?"
+          }
+        }
+      }
+    },
+    "How do you stay disciplined with your study routine?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bagaimana kamu tetap disiplin dengan rutinitas belajarmu?"
+          }
+        }
+      }
+    },
+    "How do you stay motivated during difficult times?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bagaimana kamu tetap termotivasi di masa-masa sulit?"
+          }
+        }
+      }
+    },
+    "How do you stay productive without burning out?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bagaimana kamu tetap produktif tanpa mengalami burnout?"
+          }
+        }
+      }
+    },
+    "How do you tailor your presentation to your audience?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bagaimana kamu menyesuaikan presentasimu dengan audiens?"
+          }
+        }
+      }
+    },
+    "I think morning exercise is important." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menurutku olahraga pagi itu penting."
+          }
+        }
+      }
+    },
+    "Job Interview" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wawancara Kerja"
+          }
+        }
+      }
+    },
+    "Leadership" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kepemimpinan"
+          }
+        }
+      }
+    },
+    "Learn to organize your ideas using the proven PREP framework for clear and confident communication." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Belajar menyusun ide dengan kerangka PREP yang terbukti efektif agar komunikasimu jelas dan percaya diri."
+          }
+        }
+      }
+    },
+    "Learning & Study" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Belajar & Studi"
+          }
+        }
+      }
+    },
+    "Leaves a lasting impression on your audience" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meninggalkan kesan mendalam bagi pendengar"
+          }
+        }
+      }
+    },
+    "Less" : {
+      "comment" : "Heatmap legend, low activity.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sedikit"
+          }
+        }
+      }
+    },
+    "Listen to your practice session" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dengarkan sesi latihanmu"
+          }
+        }
+      }
+    },
+    "Makes your argument more convincing" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Membuat argumenmu lebih meyakinkan"
+          }
+        }
+      }
+    },
+    "Makes your point relatable and memorable" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Membuat poinmu mudah dipahami dan diingat"
+          }
+        }
+      }
+    },
+    "May be slightly rephrased for impact" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Boleh diungkapkan ulang agar lebih berkesan"
+          }
+        }
+      }
+    },
+    "More" : {
+      "comment" : "Heatmap legend, high activity.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Banyak"
+          }
+        }
+      }
+    },
+    "My History" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riwayatku"
+          }
+        }
+      }
+    },
+    "Next" : {
+      "comment" : "Onboarding button.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Berikutnya"
+          }
+        }
+      }
+    },
+    "NEXT" : {
+      "comment" : "Button that moves to the next PREP step.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "LANJUT"
+          }
+        }
+      }
+    },
+    "No notes added" : {
+      "comment" : "Shown in history detail when the session has no notes.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidak ada catatan"
+          }
+        }
+      }
+    },
+    "No practice" : {
+      "comment" : "Heatmap detail when the selected day has no sessions.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidak ada latihan"
+          }
+        }
+      }
+    },
+    "No Practice Sessions Yet" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Belum Ada Sesi Latihan"
+          }
+        }
+      }
+    },
+    "No recording available" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rekaman tidak tersedia"
+          }
+        }
+      }
+    },
+    "No speech detected" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidak ada suara yang terdeteksi"
+          }
+        }
+      }
+    },
+    "Not rated yet" : {
+      "comment" : "Shown in history detail when the session has no rating.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Belum dinilai"
+          }
+        }
+      }
+    },
+    "Notes (Optional)" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Catatan (Opsional)"
+          }
+        }
+      }
+    },
+    "Notifications Are Off" : {
+      "comment" : "Alert title when notifications are denied in iOS Settings.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notifikasi Nonaktif"
+          }
+        }
+      }
+    },
+    "On Time" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tepat Waktu"
+          }
+        }
+      }
+    },
+    "Open Settings" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buka Pengaturan"
+          }
+        }
+      }
+    },
+    "Over Time" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Melebihi Waktu"
+          }
+        }
+      }
+    },
+    "Permissions Required" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Izin Diperlukan"
+          }
+        }
+      }
+    },
+    "Personal Growth" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pengembangan Diri"
+          }
+        }
+      }
+    },
+    "PERSONAL GROWTH" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PENGEMBANGAN DIRI"
+          }
+        }
+      }
+    },
+    "Playback position" : {
+      "comment" : "Accessibility label for the recording scrub slider.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Posisi pemutaran"
+          }
+        }
+      }
+    },
+    "Please enable Microphone and Speech Recognition access in Settings to start practice." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktifkan akses Mikrofon dan Pengenalan Ucapan di Pengaturan untuk mulai berlatih."
+          }
+        }
+      }
+    },
+    "Point" : {
+      "comment" : "Name of the first P step in the PREP framework.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poin"
+          }
+        }
+      }
+    },
+    "Point (P)" : {
+      "comment" : "Current PREP step label during practice.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poin (P)"
+          }
+        }
+      }
+    },
+    "Point (Restate)" : {
+      "comment" : "Name of the last P step in the PREP framework.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poin (Penegasan)"
+          }
+        }
+      }
+    },
+    "Point → Reason → Example → Point" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poin → Alasan → Contoh → Poin"
+          }
+        }
+      }
+    },
+    "Practice" : {
+      "comment" : "Navigation title.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Latihan"
+          }
+        }
+      }
+    },
+    "Practice Activity" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktivitas Latihan"
+          }
+        }
+      }
+    },
+    "Practice Again" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Latihan Lagi"
+          }
+        }
+      }
+    },
+    "Practice speaking with customizable time limits to simulate real-world spontaneous situations." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Latihan berbicara dengan batas waktu yang bisa diatur untuk mensimulasikan situasi spontan di dunia nyata."
+          }
+        }
+      }
+    },
+    "Practice today to keep your streak going" : {
+      "comment" : "Streak card status when the streak is active but today's session isn't done.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Latihan hari ini agar tetap beruntun"
+          }
+        }
+      }
+    },
+    "Practice today to start a new streak" : {
+      "comment" : "Streak card status when there is no active streak.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Latihan hari ini untuk memulai hari beruntun baru"
+          }
+        }
+      }
+    },
+    "Practice with PREP" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Latihan dengan PREP"
+          }
+        }
+      }
+    },
+    "Practiced today. Keep it up!" : {
+      "comment" : "Streak card status when today's session is done.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sudah latihan hari ini. Pertahankan!"
+          }
+        }
+      }
+    },
+    "PREFERENCES" : {
+      "comment" : "Settings section header.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PREFERENSI"
+          }
+        }
+      }
+    },
+    "PREP Framework" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kerangka PREP"
+          }
+        }
+      }
+    },
+    "PREP helps you express your opinion clearly." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PREP membantumu menyampaikan pendapat dengan jelas."
+          }
+        }
+      }
+    },
+    "PREP Summary" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ringkasan PREP"
+          }
+        }
+      }
+    },
+    "Preparation Time" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Waktu Persiapan"
+          }
+        }
+      }
+    },
+    "Preparation:" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Persiapan:"
+          }
+        }
+      }
+    },
+    "Problem Solving" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pemecahan Masalah"
+          }
+        }
+      }
+    },
+    "Provides a strong conclusion" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Memberikan kesimpulan yang kuat"
+          }
+        }
+      }
+    },
+    "Provides evidence to support your claim" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Memberikan bukti untuk mendukung klaimmu"
+          }
+        }
+      }
+    },
+    "Provides logical justification" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Memberikan alasan yang logis"
+          }
+        }
+      }
+    },
+    "Public Speaking" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Berbicara di Depan Umum"
+          }
+        }
+      }
+    },
+    "Question" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pertanyaan"
+          }
+        }
+      }
+    },
+    "Quick Guide" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Panduan Singkat"
+          }
+        }
+      }
+    },
+    "Rate your performance" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nilai performamu"
+          }
+        }
+      }
+    },
+    "Rating %lld of %lld" : {
+      "comment" : "VoiceOver label for the star rating. First value is the rating, second is the maximum.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nilai %1$lld dari %2$lld"
+          }
+        }
+      }
+    },
+    "Ready to Practice?" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siap Berlatih?"
+          }
+        }
+      }
+    },
+    "Real-world scenario or case study" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skenario nyata atau studi kasus"
+          }
+        }
+      }
+    },
+    "Reason" : {
+      "comment" : "Name of the R step in the PREP framework.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alasan"
+          }
+        }
+      }
+    },
+    "Reason (R)" : {
+      "comment" : "Current PREP step label during practice.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alasan (R)"
+          }
+        }
+      }
+    },
+    "Recording" : {
+      "comment" : "Status shown while audio is being recorded.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Merekam"
+          }
+        }
+      }
+    },
+    "Recording Tips" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tips Merekam"
+          }
+        }
+      }
+    },
+    "Reinforce your main idea" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tegaskan kembali ide utamamu"
+          }
+        }
+      }
+    },
+    "Reinforces your main message" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Memperkuat pesan utamamu"
+          }
+        }
+      }
+    },
+    "Reminder Time" : {
+      "comment" : "Settings row title for the daily reminder time picker.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Waktu Pengingat"
+          }
+        }
+      }
+    },
+    "Repeat your main opinion as a closing." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ulangi pendapat utamamu sebagai penutup."
+          }
+        }
+      }
+    },
+    "Restate Point (P)" : {
+      "comment" : "Current PREP step label during practice, last step.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penegasan Poin (P)"
+          }
+        }
+      }
+    },
+    "Result" : {
+      "comment" : "Navigation title.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hasil"
+          }
+        }
+      }
+    },
+    "Save" : {
+      "comment" : "Button that saves the edited self-evaluation in history detail.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simpan"
+          }
+        }
+      }
+    },
+    "Self-Evaluation" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Evaluasi Diri"
+          }
+        }
+      }
+    },
+    "Sessions" : {
+      "comment" : "Heatmap stat label: total number of practice sessions.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sesi"
+          }
+        }
+      }
+    },
+    "Sets the direction for your entire response" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menentukan arah seluruh jawabanmu"
+          }
+        }
+      }
+    },
+    "Settings" : {
+      "comment" : "Navigation title.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pengaturan"
+          }
+        }
+      }
+    },
+    "Shows your practice activity" : {
+      "comment" : "VoiceOver hint for the streak card on Home.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menampilkan aktivitas latihanmu"
+          }
+        }
+      }
+    },
+    "Skip" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lewati"
+          }
+        }
+      }
+    },
+    "Skip Preparation" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lewati Persiapan"
+          }
+        }
+      }
+    },
+    "So, I believe morning exercise is very beneficial." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jadi, aku yakin olahraga pagi sangat bermanfaat."
+          }
+        }
+      }
+    },
+    "Speak at a normal volume" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bicara dengan volume normal"
+          }
+        }
+      }
+    },
+    "Speak clearly and confidently" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bicaralah dengan jelas dan percaya diri"
+          }
+        }
+      }
+    },
+    "Speak clearly and keep your phone close for the best recording quality" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bicara dengan jelas dan dekatkan ponselmu agar kualitas rekaman maksimal"
+          }
+        }
+      }
+    },
+    "Speaking duration" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Durasi berbicara"
+          }
+        }
+      }
+    },
+    "Speaking:" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Berbicara:"
+          }
+        }
+      }
+    },
+    "Specific, concrete illustration" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ilustrasi yang spesifik dan konkret"
+          }
+        }
+      }
+    },
+    "Start" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mulai"
+          }
+        }
+      }
+    },
+    "Start Practice" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mulai Latihan"
+          }
+        }
+      }
+    },
+    "State your main idea clearly" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sampaikan ide utamamu dengan jelas"
+          }
+        }
+      }
+    },
+    "State your main opinion." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sampaikan pendapat utamamu."
+          }
+        }
+      }
+    },
+    "Step %lld of %lld" : {
+      "comment" : "First value is the current step, second is the total number of steps.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Langkah %1$lld dari %2$lld"
+          }
+        }
+      }
+    },
+    "Structure Your Thoughts" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Susun Pikiranmu"
+          }
+        }
+      }
+    },
+    "Take a few minutes to practice speaking with PREP today." : {
+      "comment" : "Daily reminder notification body.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Luangkan beberapa menit untuk latihan berbicara dengan PREP hari ini."
+          }
+        }
+      }
+    },
+    "Tap a dot to see the details" : {
+      "comment" : "Heatmap hint shown before a day is selected.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ketuk titik untuk melihat detail"
+          }
+        }
+      }
+    },
+    "Target" : {
+      "comment" : "Label for the target speaking time.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Target"
+          }
+        }
+      }
+    },
+    "Target Time" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Waktu Target"
+          }
+        }
+      }
+    },
+    "Teamwork" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kerja Sama Tim"
+          }
+        }
+      }
+    },
+    "Tell me about a time you led a team through a difficult situation." : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ceritakan saat kamu memimpin tim melewati situasi sulit."
+          }
+        }
+      }
+    },
+    "Tell me about a time you solved a problem creatively." : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ceritakan saat kamu memecahkan masalah dengan cara yang kreatif."
+          }
+        }
+      }
+    },
+    "Tell me about yourself." : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ceritakan tentang dirimu."
+          }
+        }
+      }
+    },
+    "Think about your response" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pikirkan jawabanmu"
+          }
+        }
+      }
+    },
+    "This cannot be undone" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tindakan ini tidak dapat dibatalkan"
+          }
+        }
+      }
+    },
+    "Time to practice!" : {
+      "comment" : "Daily reminder notification title.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Waktunya latihan!"
+          }
+        }
+      }
+    },
+    "Time to think before speaking" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Waktu berpikir sebelum berbicara"
+          }
+        }
+      }
+    },
+    "Time-Bound Practice" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Latihan dengan Batas Waktu"
+          }
+        }
+      }
+    },
+    "Topic: %@" : {
+      "comment" : "The value is the topic name.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Topik: %@"
+          }
+        }
+      }
+    },
+    "Total Time" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Total Waktu"
+          }
+        }
+      }
+    },
+    "Total:" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Total:"
+          }
+        }
+      }
+    },
+    "Track Your Progress" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pantau Perkembanganmu"
+          }
+        }
+      }
+    },
+    "Unknown Topic" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Topik Tidak Diketahui"
+          }
+        }
+      }
+    },
+    "Use this framework to organize your thoughts before speaking. Each step builds on the previous one." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gunakan kerangka ini untuk menyusun pikiran sebelum berbicara. Setiap langkah dibangun dari langkah sebelumnya."
+          }
+        }
+      }
+    },
+    "Version" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versi"
+          }
+        }
+      }
+    },
+    "View your past activities and records." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lihat aktivitas dan catatan latihanmu sebelumnya."
+          }
+        }
+      }
+    },
+    "What advice would you give to someone afraid of public speaking?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apa saranmu untuk orang yang takut berbicara di depan umum?"
+          }
+        }
+      }
+    },
+    "What are your long-term career goals?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apa tujuan kariermu dalam jangka panjang?"
+          }
+        }
+      }
+    },
+    "What are your salary expectations?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Berapa gaji yang kamu harapkan?"
+          }
+        }
+      }
+    },
+    "What book or experience has had the biggest impact on you?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buku atau pengalaman apa yang paling berpengaruh bagimu?"
+          }
+        }
+      }
+    },
+    "What do you do to manage stress at work?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apa yang kamu lakukan untuk mengelola stres di tempat kerja?"
+          }
+        }
+      }
+    },
+    "What do you do when you disagree with a team decision?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apa yang kamu lakukan saat tidak setuju dengan keputusan tim?"
+          }
+        }
+      }
+    },
+    "What do you do when you lose your train of thought while speaking?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apa yang kamu lakukan saat tiba-tiba lupa alur bicaramu?"
+          }
+        }
+      }
+    },
+    "What do you do when your initial solution doesn't work?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apa yang kamu lakukan saat solusi awalmu tidak berhasil?"
+          }
+        }
+      }
+    },
+    "What does a healthy work culture look like to you?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menurutmu, seperti apa budaya kerja yang sehat?"
+          }
+        }
+      }
+    },
+    "What does success mean to you personally?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apa arti kesuksesan bagimu secara pribadi?"
+          }
+        }
+      }
+    },
+    "What hobbies or activities help you recharge?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hobi atau aktivitas apa yang membantumu mengisi ulang energi?"
+          }
+        }
+      }
+    },
+    "What industry trends excite you the most?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tren industri apa yang paling membuatmu antusias?"
+          }
+        }
+      }
+    },
+    "What is one thing you would change about yourself and why?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Satu hal apa yang ingin kamu ubah dari dirimu, dan mengapa?"
+          }
+        }
+      }
+    },
+    "What is the most challenging problem you have ever solved?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apa masalah paling menantang yang pernah kamu pecahkan?"
+          }
+        }
+      }
+    },
+    "What is the most important lesson you learned as a leader?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apa pelajaran terpenting yang kamu dapat sebagai pemimpin?"
+          }
+        }
+      }
+    },
+    "What is the most important lesson you've learned in life?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apa pelajaran hidup terpenting yang pernah kamu dapatkan?"
+          }
+        }
+      }
+    },
+    "What is the most valuable thing you've learned outside of school?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apa hal paling berharga yang kamu pelajari di luar sekolah?"
+          }
+        }
+      }
+    },
+    "What is your greatest weakness?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apa kelemahan terbesarmu?"
+          }
+        }
+      }
+    },
+    "What is your preferred method of learning new things?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metode apa yang paling kamu sukai untuk mempelajari hal baru?"
+          }
+        }
+      }
+    },
+    "What makes a great team in your opinion?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menurutmu, apa yang membuat sebuah tim menjadi hebat?"
+          }
+        }
+      }
+    },
+    "What makes a speech truly impactful?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apa yang membuat sebuah pidato benar-benar berkesan?"
+          }
+        }
+      }
+    },
+    "What makes someone an effective communicator?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apa yang membuat seseorang menjadi komunikator yang efektif?"
+          }
+        }
+      }
+    },
+    "What makes you unique compared to other candidates?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apa yang membuatmu berbeda dari kandidat lain?"
+          }
+        }
+      }
+    },
+    "What motivates you at work?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apa yang memotivasimu dalam bekerja?"
+          }
+        }
+      }
+    },
+    "What motivates you to keep learning?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apa yang memotivasimu untuk terus belajar?"
+          }
+        }
+      }
+    },
+    "What personal quality are you most proud of?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sifat pribadi apa yang paling kamu banggakan?"
+          }
+        }
+      }
+    },
+    "What professional achievement are you most proud of?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pencapaian profesional apa yang paling kamu banggakan?"
+          }
+        }
+      }
+    },
+    "What qualities make an effective leader?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kualitas apa yang membuat seorang pemimpin efektif?"
+          }
+        }
+      }
+    },
+    "What role do you usually take in a team?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peran apa yang biasanya kamu ambil dalam tim?"
+          }
+        }
+      }
+    },
+    "What role does active listening play in your communication?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seberapa penting mendengarkan secara aktif dalam caramu berkomunikasi?"
+          }
+        }
+      }
+    },
+    "What role does curiosity play in your learning?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seberapa besar peran rasa ingin tahu dalam caramu belajar?"
+          }
+        }
+      }
+    },
+    "What role does mentorship play in your career development?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seberapa besar peran mentoring dalam pengembangan kariermu?"
+          }
+        }
+      }
+    },
+    "What should be in this step?" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apa saja isi langkah ini?"
+          }
+        }
+      }
+    },
+    "What skills do you want to develop in the next year?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keterampilan apa yang ingin kamu kembangkan dalam setahun ke depan?"
+          }
+        }
+      }
+    },
+    "What steps do you take to analyze a problem before acting?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Langkah apa yang kamu ambil untuk menganalisis masalah sebelum bertindak?"
+          }
+        }
+      }
+    },
+    "What strategies do you use to manage your time effectively?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Strategi apa yang kamu gunakan untuk mengatur waktu secara efektif?"
+          }
+        }
+      }
+    },
+    "What techniques do you use to manage stage fright?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Teknik apa yang kamu gunakan untuk mengatasi demam panggung?"
+          }
+        }
+      }
+    },
+    "What went well? What can you improve?" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apa yang sudah baik? Apa yang bisa ditingkatkan?"
+          }
+        }
+      }
+    },
+    "What would your ideal career path look like?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seperti apa jalur karier idealmu?"
+          }
+        }
+      }
+    },
+    "Where do you see your career heading in the next decade?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ke mana arah kariermu dalam sepuluh tahun ke depan?"
+          }
+        }
+      }
+    },
+    "Where do you see yourself in five years?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Di mana kamu melihat dirimu lima tahun lagi?"
+          }
+        }
+      }
+    },
+    "Why are you leaving your current job?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mengapa kamu ingin meninggalkan pekerjaanmu saat ini?"
+          }
+        }
+      }
+    },
+    "Why do you want to work for this company?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mengapa kamu ingin bekerja di perusahaan ini?"
+          }
+        }
+      }
+    },
+    "Why should we hire you?" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mengapa kami harus merekrutmu?"
+          }
+        }
+      }
+    },
+    "Work-Life Balance" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keseimbangan Kerja dan Hidup"
+          }
+        }
+      }
+    },
+    "You completed your practice session" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kamu telah menyelesaikan sesi latihan"
+          }
+        }
+      }
+    },
+    "You'll have %@ of preparation time, then %@ to complete your response using the PREP framework." : {
+      "comment" : "First value is the preparation time, second is the speaking time, e.g. 30s and 2m.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kamu punya %1$@ waktu persiapan, lalu %2$@ untuk menyelesaikan jawabanmu dengan kerangka PREP."
+          }
+        }
+      }
+    },
+    "YOUR NOTES" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CATATANMU"
+          }
+        }
+      }
+    },
+    "Your Practice Setup" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pengaturan Latihanmu"
+          }
+        }
+      }
+    },
+    "YOUR RATING" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NILAIMU"
+          }
+        }
+      }
+    },
+    "Your Recording" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rekamanmu"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.1"
+}

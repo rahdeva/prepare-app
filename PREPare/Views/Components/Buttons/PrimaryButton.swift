@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct PrimaryButton: View {
-    var title: String
+    var title: LocalizedStringKey
     var icon: String? = nil
     var action: (() -> Void)? = nil
     var horizontalPadding: CGFloat = 24
@@ -36,5 +36,5 @@ struct PrimaryButton: View {
 }
 
 #Preview {
-    PrimaryButton(title: "asdasd", icon: "lightbul", action: {})
+    PrimaryButton(title: "Continue", icon: "lightbulb", action: {})
 }
