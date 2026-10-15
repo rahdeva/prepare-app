@@ -5,26 +5,18 @@ struct DetailPREPStepCard: View {
     let timeSeconds: Int
     let transcription: String
 
-    private var circleColor: Color {
-        switch step {
-        case .point: Color.indigo400
-        case .reason: Color.green500
-        case .example: Color.amber500
-        case .restate: Color.purple400
-        }
-    }
-
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             HStack(alignment: .top) {
-                Circle()
-                    .fill(circleColor)
-                    .frame(width: 40, height: 40)
-                    .overlay(
-                        Text(step.letter)
-                            .font(.headline)
-                            .fontWeight(.bold)
-                            .foregroundStyle(.white)
+                // Same letter badge as PREPStepSummaryCard on the result screen.
+                Text(step.letter)
+                    .font(.headline)
+                    .fontWeight(.bold)
+                    .foregroundStyle(Color.white)
+                    .frame(width: 36, height: 36)
+                    .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(LinearGradient.primaryGradient)
                     )
 
                 VStack(alignment: .leading, spacing: 2) {

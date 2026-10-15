@@ -1,6 +1,72 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Done" : {
+      "comment" : "Keyboard toolbar button that finishes editing notes.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selesai"
+          }
+        }
+      }
+    },
+    "Edit" : {
+      "comment" : "Button that enables editing of the self-evaluation in history detail.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit"
+          }
+        }
+      }
+    },
+    "No notes added" : {
+      "comment" : "Shown in history detail when the session has no notes.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidak ada catatan"
+          }
+        }
+      }
+    },
+    "Not rated yet" : {
+      "comment" : "Shown in history detail when the session has no rating.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Belum dinilai"
+          }
+        }
+      }
+    },
+    "Rating %lld of %lld" : {
+      "comment" : "VoiceOver label for the star rating. First value is the rating, second is the maximum.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nilai %1$lld dari %2$lld"
+          }
+        }
+      }
+    },
+    "Save" : {
+      "comment" : "Button that saves the edited self-evaluation in history detail.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simpan"
+          }
+        }
+      }
+    },
     "“Because it allows me to create solutions that help people.”" : {
       "localizations" : {
         "id" : {

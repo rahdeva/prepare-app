@@ -58,6 +58,15 @@ final class HistoryViewModel {
         fetchSessions()
     }
 
+    /// Updates the self-evaluation of a saved session and persists it.
+    func updateEvaluation(of session: PracticeSession, rating: Int, notes: String) {
+        let trimmedNotes = notes.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard session.rating != rating || session.notes != trimmedNotes else { return }
+        session.rating = rating
+        session.notes = trimmedNotes
+        storage.save()
+    }
+
     func clearAllHistory() {
         let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
         for session in sessions {

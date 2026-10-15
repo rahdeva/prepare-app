@@ -1,8 +1,10 @@
 import SwiftUI
 
+/// Shows the saved rating; stars become tappable only while the detail screen is in edit mode.
 struct DetailRatingCard: View {
-    let rating: Int
-    let maxRating: Int = 5
+    @Binding var rating: Int
+    let isEditing: Bool
+    private let maxRating = 5
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -12,12 +14,24 @@ struct DetailRatingCard: View {
                 .foregroundStyle(Color.gray500)
                 .tracking(0.5)
 
-            HStack(spacing: 4) {
-                ForEach(1...maxRating, id: \.self) { index in
-                    Image(systemName: index <= rating ? "star.fill" : "star")
-                        .font(.system(size: 32))
-                        .foregroundStyle(index <= rating ? Color.amber400 : Color.gray300)
+            if isEditing {
+                StarRatingView(rating: $rating)
+            } else {
+                HStack(spacing: 8) {
+                    ForEach(1...maxRating, id: \.self) { index in
+                        Image(systemName: index <= rating ? "star.fill" : "star")
+                            .font(.system(size: 36))
+                            .foregroundStyle(index <= rating ? Color.amber400 : Color.gray300)
+                    }
                 }
+                .accessibilityElement(children: .ignore)
+                .accessibilityLabel(Text("Rating \(rating) of \(maxRating)"))
+            }
+
+            if rating == 0 {
+                Text("Not rated yet")
+                    .font(.subheadline)
+                    .foregroundStyle(Color.gray500)
             }
         }
         .padding(16)
@@ -29,7 +43,11 @@ struct DetailRatingCard: View {
 }
 
 #Preview {
-    DetailRatingCard(rating: 4)
-        .padding(24)
-        .background(Color.slate50)
+    @Previewable @State var rating = 3
+    VStack(spacing: 16) {
+        DetailRatingCard(rating: $rating, isEditing: false)
+        DetailRatingCard(rating: $rating, isEditing: true)
+    }
+    .padding(24)
+    .background(Color.slate50)
 }

@@ -7,22 +7,13 @@ struct SessionCard: View {
     let actualTimeSeconds: Int
     let targetTimeSeconds: Int
     let rating: Double
-    let notes: String
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            HStack(alignment: .top) {
-                Text(LocalizedStringKey(title))
-                    .font(.headline)
-                    .fontWeight(.bold)
-                    .foregroundStyle(Color.slate900)
-
-                Spacer()
-
-                Text(date, format: .dateTime.month(.abbreviated).day())
-                    .font(.subheadline)
-                    .foregroundStyle(Color.gray400)
-            }
+            Text(LocalizedStringKey(title))
+                .font(.headline)
+                .fontWeight(.bold)
+                .foregroundStyle(Color.slate900)
 
             Text(LocalizedStringKey(subtitle))
                 .font(.subheadline)
@@ -61,19 +52,19 @@ struct SessionCard: View {
                 }
             }
 
-            Spacer().frame(height: 4)
+            Divider()
+                .padding(.vertical, 4)
 
+            // When the session was practiced, formatted for the in-app language.
             HStack(spacing: 6) {
-                Text(verbatim: "\u{1F4DD}")
-                    .font(.caption)
-
-                Text(notes)
-                    .font(.caption)
-                    .foregroundStyle(Color.gray500)
-                    .lineLimit(2)
+                Image(systemName: "calendar")
+                Text(date, format: .dateTime.weekday(.abbreviated).day().month(.abbreviated).year().hour().minute())
             }
+            .font(.caption)
+            .foregroundStyle(Color.gray500)
         }
         .padding(16)
+        .frame(maxWidth: .infinity, alignment: .leading)
         .background(.white)
         .cornerRadius(16)
         .shadowPrimary()
@@ -87,8 +78,7 @@ struct SessionCard: View {
         date: .now,
         actualTimeSeconds: 120,
         targetTimeSeconds: 150,
-        rating: 4.0,
-        notes: "Good flow, need to work on examples"
+        rating: 4.0
     )
     .padding(24)
     .background(Color.slate50)

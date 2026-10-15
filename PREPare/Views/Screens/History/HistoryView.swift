@@ -42,8 +42,7 @@ struct HistoryView: View {
                                     date: session.date,
                                     actualTimeSeconds: session.totalTimeSeconds,
                                     targetTimeSeconds: session.targetTimeSeconds,
-                                    rating: Double(session.rating),
-                                    notes: session.notes
+                                    rating: Double(session.rating)
                                 )
                             }
                             .buttonStyle(.plain)

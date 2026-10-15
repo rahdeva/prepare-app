@@ -9,41 +9,53 @@ struct DetailTimeCard: View {
     }
 
     var body: some View {
-        HStack(spacing: 20) {
-            VStack(spacing: 4) {
-                Text("Total Time")
-                    .font(.caption)
-                    .foregroundStyle(Color.gray500)
+        VStack(spacing: 14) {
+            statusBadge
 
-                Text(clock: totalTimeSeconds)
-                    .font(.system(size: 28, weight: .bold))
-                    .foregroundStyle(isOnTime ? Color.green500 : Color.red500)
+            HStack(spacing: 0) {
+                VStack(spacing: 4) {
+                    Text("Total Time")
+                        .font(.caption)
+                        .foregroundStyle(Color.gray500)
+
+                    Text(clock: totalTimeSeconds)
+                        .font(.system(size: 28, weight: .bold))
+                        .foregroundStyle(isOnTime ? Color.green500 : Color.red500)
+                }
+                .frame(maxWidth: .infinity)
+
+                Rectangle()
+                    .fill(Color.gray200)
+                    .frame(width: 1, height: 44)
+
+                VStack(spacing: 4) {
+                    Text("Target")
+                        .font(.caption)
+                        .foregroundStyle(Color.gray500)
+
+                    Text(clock: targetTimeSeconds)
+                        .font(.system(size: 28, weight: .bold))
+                        .foregroundStyle(Color.gray400)
+                }
+                .frame(maxWidth: .infinity)
             }
-
-            VStack(spacing: 4) {
-                Text("Target")
-                    .font(.caption)
-                    .foregroundStyle(Color.gray500)
-
-                Text(clock: targetTimeSeconds)
-                    .font(.system(size: 28, weight: .bold))
-                    .foregroundStyle(Color.gray400)
-            }
-
-            Text(isOnTime ? "On Time" : "Over Time")
-                .font(.caption)
-                .fontWeight(.semibold)
-                .foregroundStyle(isOnTime ? Color.green600 : Color.red600)
-                .padding(.horizontal, 12)
-                .padding(.vertical, 6)
-                .background(isOnTime ? Color.green100 : Color.red100)
-                .cornerRadius(20)
         }
         .padding(16)
-        .frame(maxWidth: .infinity, alignment: .leading)
+        .frame(maxWidth: .infinity)
         .background(.white)
         .cornerRadius(16)
         .shadowPrimary()
+    }
+
+    private var statusBadge: some View {
+        Text(isOnTime ? "On Time" : "Over Time")
+            .font(.caption)
+            .fontWeight(.semibold)
+            .foregroundStyle(isOnTime ? Color.green600 : Color.red600)
+            .padding(.horizontal, 12)
+            .padding(.vertical, 6)
+            .background(isOnTime ? Color.green100 : Color.red100)
+            .cornerRadius(20)
     }
 }
 

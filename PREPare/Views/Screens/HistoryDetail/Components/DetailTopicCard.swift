@@ -21,15 +21,24 @@ struct DetailTopicCard: View {
                 .fontWeight(.medium)
                 .foregroundStyle(Color.slate900)
 
-            HStack(spacing: 6) {
-                Image(systemName: "calendar")
-                    .font(.caption)
-                    .foregroundStyle(Color.gray400)
+            HStack(spacing: 14) {
+                HStack(spacing: 6) {
+                    Image(systemName: "calendar")
+                        .foregroundStyle(Color.gray400)
 
-                Text(date, format: .dateTime.weekday(.wide).day().month(.wide).year())
-                    .font(.caption)
-                    .foregroundStyle(Color.gray500)
+                    Text(date, format: .dateTime.weekday(.wide).day().month(.wide).year())
+                        .foregroundStyle(Color.gray500)
+                }
+
+                HStack(spacing: 6) {
+                    Image(systemName: "clock")
+                        .foregroundStyle(Color.gray400)
+
+                    Text(date, format: .dateTime.hour().minute())
+                        .foregroundStyle(Color.gray500)
+                }
             }
+            .font(.caption)
         }
         .padding(16)
         .frame(maxWidth: .infinity, alignment: .leading)
