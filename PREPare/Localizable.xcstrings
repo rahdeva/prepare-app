@@ -1,72 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "Done" : {
-      "comment" : "Keyboard toolbar button that finishes editing notes.",
-      "localizations" : {
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selesai"
-          }
-        }
-      }
-    },
-    "Edit" : {
-      "comment" : "Button that enables editing of the self-evaluation in history detail.",
-      "localizations" : {
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Edit"
-          }
-        }
-      }
-    },
-    "No notes added" : {
-      "comment" : "Shown in history detail when the session has no notes.",
-      "localizations" : {
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tidak ada catatan"
-          }
-        }
-      }
-    },
-    "Not rated yet" : {
-      "comment" : "Shown in history detail when the session has no rating.",
-      "localizations" : {
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Belum dinilai"
-          }
-        }
-      }
-    },
-    "Rating %lld of %lld" : {
-      "comment" : "VoiceOver label for the star rating. First value is the rating, second is the maximum.",
-      "localizations" : {
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nilai %1$lld dari %2$lld"
-          }
-        }
-      }
-    },
-    "Save" : {
-      "comment" : "Button that saves the edited self-evaluation in history detail.",
-      "localizations" : {
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Simpan"
-          }
-        }
-      }
-    },
     "“Because it allows me to create solutions that help people.”" : {
       "localizations" : {
         "id" : {
@@ -106,6 +40,38 @@
           }
         }
       }
+    },
+    "%lld sessions" : {
+      "comment" : "Number of practice sessions on the selected heatmap day.",
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld session"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld sessions"
+                }
+              }
+            }
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld sesi"
+          }
+        }
+      }
+    },
+    "%lld stars" : {
+      "comment" : "Star rating option."
     },
     "%lldm" : {
       "comment" : "Duration in whole minutes.",
@@ -151,6 +117,17 @@
         }
       }
     },
+    "Allow notifications for PREPare in Settings to get daily practice reminders." : {
+      "comment" : "Alert message when notifications are denied in iOS Settings.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Izinkan notifikasi untuk PREPare di Pengaturan agar menerima pengingat latihan harian."
+          }
+        }
+      }
+    },
     "Are you sure you want to delete all history? This cannot be undone." : {
       "localizations" : {
         "id" : {
@@ -177,6 +154,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Karena olahraga bisa membuat tubuh lebih sehat dan segar."
+          }
+        }
+      }
+    },
+    "Best streak" : {
+      "comment" : "Heatmap stat label: longest run of consecutive practice days.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beruntun terbaik"
           }
         }
       }
@@ -318,6 +306,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lanjutkan"
+          }
+        }
+      }
+    },
+    "Current streak" : {
+      "comment" : "Heatmap stat label: consecutive practice days so far.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beruntun saat ini"
+          }
+        }
+      }
+    },
+    "Daily Reminders" : {
+      "comment" : "Settings row title for the daily practice reminder toggle.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pengingat Harian"
           }
         }
       }
@@ -595,12 +605,34 @@
         }
       }
     },
+    "Done" : {
+      "comment" : "Keyboard toolbar button that finishes editing notes.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selesai"
+          }
+        }
+      }
+    },
     "Easy to understand and remember" : {
       "localizations" : {
         "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mudah dipahami dan diingat"
+          }
+        }
+      }
+    },
+    "Edit" : {
+      "comment" : "Button that enables editing of the self-evaluation in history detail.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit"
           }
         }
       }
@@ -614,6 +646,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "PENDIDIKAN"
+          }
+        }
+      }
+    },
+    "Every day at this time" : {
+      "comment" : "Settings row subtitle for the daily reminder time picker.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Setiap hari pada waktu ini"
           }
         }
       }
@@ -708,6 +751,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rumus:"
+          }
+        }
+      }
+    },
+    "Get notified to practice" : {
+      "comment" : "Settings row subtitle for the daily reminder toggle.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dapatkan notifikasi untuk latihan"
           }
         }
       }
@@ -1464,6 +1518,28 @@
         }
       }
     },
+    "No notes added" : {
+      "comment" : "Shown in history detail when the session has no notes.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidak ada catatan"
+          }
+        }
+      }
+    },
+    "No practice" : {
+      "comment" : "Heatmap detail when the selected day has no sessions.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidak ada latihan"
+          }
+        }
+      }
+    },
     "No Practice Sessions Yet" : {
       "localizations" : {
         "id" : {
@@ -1494,12 +1570,34 @@
         }
       }
     },
+    "Not rated yet" : {
+      "comment" : "Shown in history detail when the session has no rating.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Belum dinilai"
+          }
+        }
+      }
+    },
     "Notes (Optional)" : {
       "localizations" : {
         "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Catatan (Opsional)"
+          }
+        }
+      }
+    },
+    "Notifications Are Off" : {
+      "comment" : "Alert title when notifications are denied in iOS Settings.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notifikasi Nonaktif"
           }
         }
       }
@@ -1675,12 +1773,45 @@
         }
       }
     },
+    "Practice today to keep your streak going" : {
+      "comment" : "Streak card status when the streak is active but today's session isn't done.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Latihan hari ini agar tetap beruntun"
+          }
+        }
+      }
+    },
+    "Practice today to start a new streak" : {
+      "comment" : "Streak card status when there is no active streak.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Latihan hari ini untuk memulai hari beruntun baru"
+          }
+        }
+      }
+    },
     "Practice with PREP" : {
       "localizations" : {
         "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Latihan dengan PREP"
+          }
+        }
+      }
+    },
+    "Practiced today. Keep it up!" : {
+      "comment" : "Streak card status when today's session is done.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sudah latihan hari ini. Pertahankan!"
           }
         }
       }
@@ -1832,6 +1963,17 @@
         }
       }
     },
+    "Rating %lld of %lld" : {
+      "comment" : "VoiceOver label for the star rating. First value is the rating, second is the maximum.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nilai %1$lld dari %2$lld"
+          }
+        }
+      }
+    },
     "Ready to Practice?" : {
       "localizations" : {
         "id" : {
@@ -1915,6 +2057,17 @@
         }
       }
     },
+    "Reminder Time" : {
+      "comment" : "Settings row title for the daily reminder time picker.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Waktu Pengingat"
+          }
+        }
+      }
+    },
     "Repeat your main opinion as a closing." : {
       "localizations" : {
         "id" : {
@@ -1947,12 +2100,34 @@
         }
       }
     },
+    "Save" : {
+      "comment" : "Button that saves the edited self-evaluation in history detail.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simpan"
+          }
+        }
+      }
+    },
     "Self-Evaluation" : {
       "localizations" : {
         "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Evaluasi Diri"
+          }
+        }
+      }
+    },
+    "Sessions" : {
+      "comment" : "Heatmap stat label: total number of practice sessions.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sesi"
           }
         }
       }
@@ -1974,6 +2149,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pengaturan"
+          }
+        }
+      }
+    },
+    "Shows your practice activity" : {
+      "comment" : "VoiceOver hint for the streak card on Home.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menampilkan aktivitas latihanmu"
           }
         }
       }
@@ -2129,6 +2315,28 @@
         }
       }
     },
+    "Take a few minutes to practice speaking with PREP today." : {
+      "comment" : "Daily reminder notification body.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Luangkan beberapa menit untuk latihan berbicara dengan PREP hari ini."
+          }
+        }
+      }
+    },
+    "Tap a dot to see the details" : {
+      "comment" : "Heatmap hint shown before a day is selected.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ketuk titik untuk melihat detail"
+          }
+        }
+      }
+    },
     "Target" : {
       "comment" : "Label for the target speaking time.",
       "localizations" : {
@@ -2218,6 +2426,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tindakan ini tidak dapat dibatalkan"
+          }
+        }
+      }
+    },
+    "Time to practice!" : {
+      "comment" : "Daily reminder notification title.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Waktunya latihan!"
           }
         }
       }
@@ -2962,222 +3181,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rekamanmu"
-          }
-        }
-      }
-    },
-    "Daily Reminders" : {
-      "comment" : "Settings row title for the daily practice reminder toggle.",
-      "localizations" : {
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pengingat Harian"
-          }
-        }
-      }
-    },
-    "Get notified to practice" : {
-      "comment" : "Settings row subtitle for the daily reminder toggle.",
-      "localizations" : {
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dapatkan notifikasi untuk latihan"
-          }
-        }
-      }
-    },
-    "Reminder Time" : {
-      "comment" : "Settings row title for the daily reminder time picker.",
-      "localizations" : {
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Waktu Pengingat"
-          }
-        }
-      }
-    },
-    "Every day at this time" : {
-      "comment" : "Settings row subtitle for the daily reminder time picker.",
-      "localizations" : {
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Setiap hari pada waktu ini"
-          }
-        }
-      }
-    },
-    "Notifications Are Off" : {
-      "comment" : "Alert title when notifications are denied in iOS Settings.",
-      "localizations" : {
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Notifikasi Nonaktif"
-          }
-        }
-      }
-    },
-    "Allow notifications for PREPare in Settings to get daily practice reminders." : {
-      "comment" : "Alert message when notifications are denied in iOS Settings.",
-      "localizations" : {
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Izinkan notifikasi untuk PREPare di Pengaturan agar menerima pengingat latihan harian."
-          }
-        }
-      }
-    },
-    "Time to practice!" : {
-      "comment" : "Daily reminder notification title.",
-      "localizations" : {
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Waktunya latihan!"
-          }
-        }
-      }
-    },
-    "Take a few minutes to practice speaking with PREP today." : {
-      "comment" : "Daily reminder notification body.",
-      "localizations" : {
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Luangkan beberapa menit untuk latihan berbicara dengan PREP hari ini."
-          }
-        }
-      }
-    },
-    "Practiced today. Keep it up!" : {
-      "comment" : "Streak card status when today's session is done.",
-      "localizations" : {
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sudah latihan hari ini. Pertahankan!"
-          }
-        }
-      }
-    },
-    "Practice today to keep your streak going" : {
-      "comment" : "Streak card status when the streak is active but today's session isn't done.",
-      "localizations" : {
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Latihan hari ini agar tetap beruntun"
-          }
-        }
-      }
-    },
-    "Practice today to start a new streak" : {
-      "comment" : "Streak card status when there is no active streak.",
-      "localizations" : {
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Latihan hari ini untuk memulai hari beruntun baru"
-          }
-        }
-      }
-    },
-    "Sessions" : {
-      "comment" : "Heatmap stat label: total number of practice sessions.",
-      "localizations" : {
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sesi"
-          }
-        }
-      }
-    },
-    "Current streak" : {
-      "comment" : "Heatmap stat label: consecutive practice days so far.",
-      "localizations" : {
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Beruntun saat ini"
-          }
-        }
-      }
-    },
-    "Best streak" : {
-      "comment" : "Heatmap stat label: longest run of consecutive practice days.",
-      "localizations" : {
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Beruntun terbaik"
-          }
-        }
-      }
-    },
-    "Shows your practice activity" : {
-      "comment" : "VoiceOver hint for the streak card on Home.",
-      "localizations" : {
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Menampilkan aktivitas latihanmu"
-          }
-        }
-      }
-    },
-    "No practice" : {
-      "comment" : "Heatmap detail when the selected day has no sessions.",
-      "localizations" : {
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tidak ada latihan"
-          }
-        }
-      }
-    },
-    "Tap a dot to see the details" : {
-      "comment" : "Heatmap hint shown before a day is selected.",
-      "localizations" : {
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ketuk titik untuk melihat detail"
-          }
-        }
-      }
-    },
-    "%lld sessions" : {
-      "comment" : "Number of practice sessions on the selected heatmap day.",
-      "localizations" : {
-        "en" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld session"
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld sessions"
-                }
-              }
-            }
-          }
-        },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld sesi"
           }
         }
       }
