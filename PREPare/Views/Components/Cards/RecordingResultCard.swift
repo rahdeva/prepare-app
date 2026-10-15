@@ -34,17 +34,18 @@ struct RecordingResultCard: View {
 
     private func startPlayback() {
         guard let url = recordingURL else { return }
-        do {
-            let session = AVAudioSession.sharedInstance()
-            try session.setCategory(.playback)
-            try session.setActive(true)
-
-            audioPlayer = try AVAudioPlayer(contentsOf: url)
-            audioPlayer?.play()
-            isPlaying = true
-            startProgressTimer()
-        } catch {
-            print("Playback error: \(error)")
+        Task {
+            do {
+                // Session activation can block, so it runs off the main thread.
+                try await AudioWorkQueue.activatePlayback()
+                let player = try AVAudioPlayer(contentsOf: url)
+                audioPlayer = player
+                player.play()
+                isPlaying = true
+                startProgressTimer()
+            } catch {
+                print("Playback error: \(error)")
+            }
         }
     }
 

@@ -26,10 +26,14 @@ struct QuestionCard: View {
             Divider()
                 .background(.white)
             
+            // Show the whole question: wrap up to 4 lines, then shrink the font to fit.
             Text(LocalizedStringKey(question))
                 .font(.system(size: 32))
                 .fontWeight(.bold)
                 .foregroundStyle(.white)
+                .lineLimit(4)
+                .minimumScaleFactor(0.5)
+                .frame(maxWidth: .infinity, alignment: .leading)
         }
         .padding(16)
         .frame(maxWidth: .infinity, alignment: .leading)

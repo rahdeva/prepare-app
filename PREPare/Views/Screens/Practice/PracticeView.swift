@@ -19,6 +19,7 @@ struct PracticeView: View {
     @State private var timeElapsed: Int = 0
     @State private var timer: Timer? = nil
     @State private var currentPREPIndex: Int = 0
+    @State private var isFinishing = false
     /// 0 = empty, 1 = full. Animated once, linearly, over the whole preparation time.
     @State private var prepFillProgress: CGFloat = 0
 
@@ -56,7 +57,7 @@ struct PracticeView: View {
             timeRemaining = targetSeconds
             timeElapsed = 0
         }
-        practiceVM.startRecordingSession()
+        Task { await practiceVM.startRecordingSession() }
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
             timeElapsed += 1
         }
@@ -67,10 +68,16 @@ struct PracticeView: View {
             practiceVM.advanceStep(currentIndex: currentPREPIndex)
             withAnimation { currentPREPIndex += 1 }
         } else {
+            guard !isFinishing else { return }
+            isFinishing = true
             timer?.invalidate()
             timer = nil
-            practiceVM.finishSession(currentIndex: currentPREPIndex, totalTime: timeElapsed)
-            path.append(AppRoute.result)
+            Task {
+                // Wait until the recording file is finalized before the result screen plays it.
+                await practiceVM.finishSession(currentIndex: currentPREPIndex, totalTime: timeElapsed)
+                path.append(AppRoute.result)
+                isFinishing = false
+            }
         }
     }
 
@@ -91,6 +98,7 @@ struct PracticeView: View {
                     QuestionCard(topic: topic, question: question)
                         .padding(.horizontal, 20)
                         .padding(.top, 16)
+                        .layoutPriority(1)
 
                     Spacer()
 
@@ -121,14 +129,12 @@ struct PracticeView: View {
             .localizedNavigationTitle("Practice")
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden(true)
-            .toolbarColorScheme(.dark, for: .navigationBar)
+            .lightStatusBar()
             .onAppear { startTimer() }
             .onDisappear {
                 timer?.invalidate()
                 timer = nil
-                if practiceVM.audioRecorder.isRecording {
-                    practiceVM.audioRecorder.stopRecording()
-                }
+                Task { await practiceVM.audioRecorder.stopRecording() }
             }
         }
     }

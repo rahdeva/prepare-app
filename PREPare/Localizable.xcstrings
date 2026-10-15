@@ -1,8 +1,48 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "“Because it allows me to create solutions that help people.”" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“Karena bidang ini memungkinkanku menciptakan solusi yang membantu orang lain.”"
+          }
+        }
+      }
+    },
+    "“For instance, I built an app that helps students organize their schedules.”" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“Misalnya, aku pernah membuat aplikasi yang membantu pelajar mengatur jadwal mereka.”"
+          }
+        }
+      }
+    },
+    "“I am passionate about web development.”" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“Aku sangat tertarik pada pengembangan web.”"
+          }
+        }
+      }
+    },
+    "“That's why web development is my passion.”" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“Karena itulah pengembangan web adalah passion-ku.”"
+          }
+        }
+      }
+    },
     "%lldm" : {
-      "comment" : "Duration in whole minutes, e.g. 2m.",
+      "comment" : "Duration in whole minutes.",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -13,7 +53,7 @@
       }
     },
     "%lldm %llds" : {
-      "comment" : "Duration in minutes and seconds, e.g. 1m 30s. First value is minutes, second is seconds.",
+      "comment" : "Duration in minutes and seconds.",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -24,7 +64,7 @@
       }
     },
     "%llds" : {
-      "comment" : "Duration in seconds, e.g. 30s.",
+      "comment" : "Duration in seconds only.",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -75,6 +115,16 @@
         }
       }
     },
+    "Cancel" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Batal"
+          }
+        }
+      }
+    },
     "CAREER" : {
       "comment" : "Practice topic, category or question from TopicData.swift.",
       "extractionState" : "manual",
@@ -84,16 +134,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "KARIER"
-          }
-        }
-      }
-    },
-    "Cancel" : {
-      "localizations" : {
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Batal"
           }
         }
       }
@@ -121,6 +161,16 @@
         }
       }
     },
+    "Choose a topic, set your time, and start practicing with the framework" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pilih topik, atur waktumu, lalu mulai berlatih dengan kerangka PREP"
+          }
+        }
+      }
+    },
     "Choose Practice Time" : {
       "comment" : "Navigation title.",
       "localizations" : {
@@ -139,16 +189,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pilih Topik"
-          }
-        }
-      }
-    },
-    "Choose a topic, set your time, and start practicing with the framework" : {
-      "localizations" : {
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pilih topik, atur waktumu, lalu mulai berlatih dengan kerangka PREP"
           }
         }
       }
@@ -213,6 +253,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "DATA & PRIVASI"
+          }
+        }
+      }
+    },
+    "day streak" : {
+      "comment" : "Shown after the streak count, e.g. 7 day streak.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "hari beruntun"
           }
         }
       }
@@ -468,6 +519,16 @@
         }
       }
     },
+    "Easy to understand and remember" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mudah dipahami dan diingat"
+          }
+        }
+      }
+    },
     "EDUCATION" : {
       "comment" : "Practice topic, category or question from TopicData.swift.",
       "extractionState" : "manual",
@@ -477,16 +538,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "PENDIDIKAN"
-          }
-        }
-      }
-    },
-    "Easy to understand and remember" : {
-      "localizations" : {
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mudah dipahami dan diingat"
           }
         }
       }
@@ -1315,17 +1366,6 @@
         }
       }
     },
-    "NEXT" : {
-      "comment" : "Button that moves to the next PREP step.",
-      "localizations" : {
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "LANJUT"
-          }
-        }
-      }
-    },
     "Next" : {
       "comment" : "Onboarding button.",
       "localizations" : {
@@ -1333,6 +1373,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Berikutnya"
+          }
+        }
+      }
+    },
+    "NEXT" : {
+      "comment" : "Button that moves to the next PREP step.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "LANJUT"
           }
         }
       }
@@ -1407,60 +1458,6 @@
         }
       }
     },
-    "PERSONAL GROWTH" : {
-      "comment" : "Practice topic, category or question from TopicData.swift.",
-      "extractionState" : "manual",
-      "generatesSymbol" : false,
-      "localizations" : {
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PENGEMBANGAN DIRI"
-          }
-        }
-      }
-    },
-    "PREFERENCES" : {
-      "comment" : "Settings section header.",
-      "localizations" : {
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PREFERENSI"
-          }
-        }
-      }
-    },
-    "PREP Framework" : {
-      "localizations" : {
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kerangka PREP"
-          }
-        }
-      }
-    },
-    "PREP Summary" : {
-      "localizations" : {
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ringkasan PREP"
-          }
-        }
-      }
-    },
-    "PREP helps you express your opinion clearly." : {
-      "localizations" : {
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PREP membantumu menyampaikan pendapat dengan jelas."
-          }
-        }
-      }
-    },
     "Permissions Required" : {
       "localizations" : {
         "id" : {
@@ -1480,6 +1477,19 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pengembangan Diri"
+          }
+        }
+      }
+    },
+    "PERSONAL GROWTH" : {
+      "comment" : "Practice topic, category or question from TopicData.swift.",
+      "extractionState" : "manual",
+      "generatesSymbol" : false,
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PENGEMBANGAN DIRI"
           }
         }
       }
@@ -1584,6 +1594,47 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Latihan dengan PREP"
+          }
+        }
+      }
+    },
+    "PREFERENCES" : {
+      "comment" : "Settings section header.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PREFERENSI"
+          }
+        }
+      }
+    },
+    "PREP Framework" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kerangka PREP"
+          }
+        }
+      }
+    },
+    "PREP helps you express your opinion clearly." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PREP membantumu menyampaikan pendapat dengan jelas."
+          }
+        }
+      }
+    },
+    "PREP Summary" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ringkasan PREP"
           }
         }
       }
@@ -2777,26 +2828,6 @@
         }
       }
     },
-    "YOUR NOTES" : {
-      "localizations" : {
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CATATANMU"
-          }
-        }
-      }
-    },
-    "YOUR RATING" : {
-      "localizations" : {
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "NILAIMU"
-          }
-        }
-      }
-    },
     "You completed your practice session" : {
       "localizations" : {
         "id" : {
@@ -2818,12 +2849,32 @@
         }
       }
     },
+    "YOUR NOTES" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CATATANMU"
+          }
+        }
+      }
+    },
     "Your Practice Setup" : {
       "localizations" : {
         "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pengaturan Latihanmu"
+          }
+        }
+      }
+    },
+    "YOUR RATING" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NILAIMU"
           }
         }
       }
@@ -2837,58 +2888,7 @@
           }
         }
       }
-    },
-    "day streak" : {
-      "comment" : "Shown after the streak count, e.g. 7 day streak.",
-      "localizations" : {
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "hari beruntun"
-          }
-        }
-      }
-    },
-    "“Because it allows me to create solutions that help people.”" : {
-      "localizations" : {
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "“Karena bidang ini memungkinkanku menciptakan solusi yang membantu orang lain.”"
-          }
-        }
-      }
-    },
-    "“For instance, I built an app that helps students organize their schedules.”" : {
-      "localizations" : {
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "“Misalnya, aku pernah membuat aplikasi yang membantu pelajar mengatur jadwal mereka.”"
-          }
-        }
-      }
-    },
-    "“I am passionate about web development.”" : {
-      "localizations" : {
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "“Aku sangat tertarik pada pengembangan web.”"
-          }
-        }
-      }
-    },
-    "“That's why web development is my passion.”" : {
-      "localizations" : {
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "“Karena itulah pengembangan web adalah passion-ku.”"
-          }
-        }
-      }
     }
   },
-  "version" : "1.0"
+  "version" : "1.1"
 }

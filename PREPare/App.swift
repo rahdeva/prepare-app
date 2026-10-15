@@ -16,6 +16,12 @@ struct PREPareApp: App {
     @State private var historyVM: HistoryViewModel
 
     init() {
+        // SwiftData stores its database in Application Support, which doesn't exist on a fresh
+        // install. Creating it first avoids CoreData's failed-then-recovered store errors.
+        if let supportURL = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first {
+            try? FileManager.default.createDirectory(at: supportURL, withIntermediateDirectories: true)
+        }
+
         let schema = Schema([PracticeSession.self])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
         do {
@@ -35,7 +41,7 @@ struct PREPareApp: App {
                 .environment(practiceVM)
                 .environment(historyVM)
                 .environment(\.locale, generalVM.selectedLanguage.locale)
-                .preferredColorScheme(.light)
+                .appColorScheme()
         }
         .modelContainer(sharedModelContainer)
     }

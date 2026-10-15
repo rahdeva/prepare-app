@@ -23,14 +23,15 @@ struct LanguageSwitchRow: View {
 
             Spacer(minLength: 8)
 
+            // Menu items don't depend on the selection or the locale, so UIKit never has to update
+            // the menu while it is dismissing after a choice.
             Menu {
-                Picker(selection: $selectedLanguage) {
-                    ForEach(AppLanguageData.allCases, id: \.self) { language in
+                ForEach(AppLanguageData.allCases, id: \.self) { language in
+                    Button {
+                        selectedLanguage = language
+                    } label: {
                         Text(verbatim: "\(language.flag)  \(language.label)")
-                            .tag(language)
                     }
-                } label: {
-                    Text("Change Language")
                 }
             } label: {
                 HStack(spacing: 5) {
@@ -54,6 +55,5 @@ struct LanguageSwitchRow: View {
             .accessibilityValue(Text(selectedLanguage.label))
         }
         .settingCard()
-        .animation(.easeInOut(duration: 0.2), value: selectedLanguage)
     }
 }

@@ -73,12 +73,12 @@ final class PracticeViewModel {
         return isPermissionGranted
     }
 
-    func startRecordingSession() {
+    func startRecordingSession() async {
         audioRecorder.onAudioBuffer = { [weak self] buffer in
             self?.speechRecognizer.appendBuffer(buffer)
         }
         do {
-            try audioRecorder.startRecording()
+            try await audioRecorder.startRecording()
             speechRecognizer.startTranscribing()
             stepStartTime = Date()
         } catch {
@@ -99,7 +99,7 @@ final class PracticeViewModel {
         }
     }
 
-    func finishSession(currentIndex: Int, totalTime: Int) {
+    func finishSession(currentIndex: Int, totalTime: Int) async {
         let text = speechRecognizer.stopTranscribing()
         stepTranscriptions[currentIndex] = text
         if let start = stepStartTime {
@@ -107,7 +107,7 @@ final class PracticeViewModel {
         }
 
         totalPracticeTime = totalTime
-        audioRecorder.stopRecording()
+        await audioRecorder.stopRecording()
     }
 
     // MARK: - Reset
