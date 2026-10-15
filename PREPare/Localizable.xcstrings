@@ -58,7 +58,7 @@
         "id" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%1$lld mnt %2$lld dtk"
+            "value" : "%1$lld mnt %2$lld detik"
           }
         }
       }
@@ -69,7 +69,7 @@
         "id" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%lld dtk"
+            "value" : "%lld detik"
           }
         }
       }

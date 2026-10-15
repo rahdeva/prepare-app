@@ -299,7 +299,9 @@ extension Color {
 }
 
 extension UIColor {
-    public convenience init(hex: String) {
+    /// Pure value conversion with no UI state, so it is usable from static gradients that are
+    /// initialized outside the main actor.
+    nonisolated public convenience init(hex: String) {
         var hexColor = hex.trimmingCharacters(in: .whitespacesAndNewlines)
         hexColor = hexColor.replacingOccurrences(of: "#", with: "")
 
