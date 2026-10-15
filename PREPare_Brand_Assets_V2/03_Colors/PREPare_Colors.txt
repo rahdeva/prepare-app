@@ -1,0 +1,8 @@
+PREPare Brand Colors — V2
+
+Deep Navy    Primary     HEX #213C51   RGB 33, 60, 81
+Steel Blue   Primary     HEX #6594B1   RGB 101, 148, 177
+Mist         Supporting  HEX #E8EFF5   RGB 232, 239, 245
+Ink          Supporting  HEX #0E1821   RGB 14, 24, 33
+
+Typography: SF Pro (iOS / Apple), Inter (web & docs)
