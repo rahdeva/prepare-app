@@ -33,4 +33,13 @@ enum AppLanguageData: String, CaseIterable {
             case .indonesian: Locale(identifier: "id")
         }
     }
+
+    /// Locale used for speech recognition, so transcription follows the in-app language.
+    /// Uses the region-qualified identifiers that `SFSpeechRecognizer` supports.
+    var speechLocale: Locale {
+        switch self {
+            case .english: Locale(identifier: "en-US")
+            case .indonesian: Locale(identifier: "id-ID")
+        }
+    }
 }

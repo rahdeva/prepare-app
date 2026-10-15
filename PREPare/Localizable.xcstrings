@@ -161,6 +161,16 @@
         }
       }
     },
+    "Back to Home" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kembali ke Beranda"
+          }
+        }
+      }
+    },
     "Because exercise can make the body healthier and more refreshed." : {
       "localizations" : {
         "id" : {
@@ -1560,6 +1570,17 @@
         }
       }
     },
+    "Playback position" : {
+      "comment" : "Accessibility label for the recording scrub slider.",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Posisi pemutaran"
+          }
+        }
+      }
+    },
     "Please enable Microphone and Speech Recognition access in Settings to start practice." : {
       "localizations" : {
         "id" : {
@@ -1922,16 +1943,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hasil"
-          }
-        }
-      }
-    },
-    "Save & Back to Home" : {
-      "localizations" : {
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Simpan & Kembali ke Beranda"
           }
         }
       }

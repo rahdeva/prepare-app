@@ -3,23 +3,26 @@ import SwiftUI
 struct ResultBottomButtons: View {
     @Binding var path: NavigationPath
     let onSave: () -> Void
+    let onPracticeAgain: () -> Void
 
     var body: some View {
         VStack(spacing: 12) {
+            // Finishing a practice always saves it, whichever button the user picks.
             PrimaryButton(
-                title: "Save & Back to Home",
+                title: "Practice Again",
                 action: {
                     onSave()
-                    path = NavigationPath()
+                    onPracticeAgain()
+                    // Home is the stack root, so this lands on Choose Topic with the previous topic still selected.
+                    path = NavigationPath([AppRoute.chooseTopic])
                 }
             )
 
             Button(action: {
-                if path.count > 0 {
-                    path.removeLast()
-                }
+                onSave()
+                path = NavigationPath()
             }) {
-                Text("Practice Again")
+                Text("Back to Home")
                     .font(.system(size: 18, weight: .bold))
                     .foregroundStyle(Color.primaryColor)
                     .frame(maxWidth: .infinity)

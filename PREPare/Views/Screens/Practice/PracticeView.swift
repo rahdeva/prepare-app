@@ -1,4 +1,5 @@
 import SwiftUI
+import SwiftData
 
 enum PracticeState {
     case preparation
@@ -8,6 +9,7 @@ enum PracticeState {
 struct PracticeView: View {
     @Binding var path: NavigationPath
     @Environment(PracticeViewModel.self) private var practiceVM
+    @Environment(GeneralViewModel.self) private var generalVM
 
     var topic: String { practiceVM.selectedTopic?.title ?? TopicData.topics[0].title }
     var question: String { practiceVM.selectedQuestion?.text ?? TopicData.questions[0].text }
@@ -57,7 +59,8 @@ struct PracticeView: View {
             timeRemaining = targetSeconds
             timeElapsed = 0
         }
-        Task { await practiceVM.startRecordingSession() }
+        let speechLocale = generalVM.selectedLanguage.speechLocale
+        Task { await practiceVM.startRecordingSession(speechLocale: speechLocale) }
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
             timeElapsed += 1
         }
@@ -141,8 +144,12 @@ struct PracticeView: View {
 }
 
 #Preview {
+    let container = try! ModelContainer(
+        configurations: ModelConfiguration(isStoredInMemoryOnly: true)
+    )
     NavigationStack {
         PracticeView(path: .constant(NavigationPath()))
             .environment(PracticeViewModel())
+            .environment(GeneralViewModel(modelContext: container.mainContext))
     }
 }

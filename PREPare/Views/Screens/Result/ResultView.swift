@@ -69,7 +69,8 @@ struct ResultView: View {
 
                 ResultBottomButtons(
                     path: $path,
-                    onSave: saveSession
+                    onSave: saveSession,
+                    onPracticeAgain: practiceVM.prepareForPracticeAgain
                 )
             }
         }

@@ -73,7 +73,8 @@ final class PracticeViewModel {
         return isPermissionGranted
     }
 
-    func startRecordingSession() async {
+    func startRecordingSession(speechLocale: Locale) async {
+        speechRecognizer.setLocale(speechLocale)
         audioRecorder.onAudioBuffer = { [weak self] buffer in
             self?.speechRecognizer.appendBuffer(buffer)
         }
@@ -116,7 +117,17 @@ final class PracticeViewModel {
         selectedQuestion = nil
         selectedPrepTime = 30
         selectedTargetTime = 120
+        clearSessionData()
+    }
 
+    /// Clears the previous attempt's recording data while keeping the chosen topic and times,
+    /// so "Practice Again" lands on Choose Topic with the last setup pre-filled.
+    func prepareForPracticeAgain() {
+        selectedQuestion = nil
+        clearSessionData()
+    }
+
+    private func clearSessionData() {
         stepTranscriptions = ["", "", "", ""]
         stepDurations = [0, 0, 0, 0]
         totalPracticeTime = 0
