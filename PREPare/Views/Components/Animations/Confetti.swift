@@ -34,8 +34,8 @@ struct ConfettiPiece: Identifiable {
                 size: CGFloat.random(in: 6...12),
                 spinSpeed: Double.random(in: 0.6...1.4),
                 spinPhase: Double.random(in: 0...(2 * .pi)),
-                fallDuration: Double.random(in: 2.2...4.0),
-                delay: Double.random(in: 0...1.5),
+                fallDuration: Double.random(in: 1.8...3.2),
+                delay: Double.random(in: 0...0.5),
                 swayAmplitude: CGFloat.random(in: 10...30),
                 swaySpeed: Double.random(in: 1.5...3.0),
                 swayPhase: Double.random(in: 0...(2 * .pi)),
@@ -53,15 +53,16 @@ struct ConfettiPiece: Identifiable {
 /// Positions are a pure function of elapsed time, so the effect survives parent re-renders
 /// and does not depend on an `onAppear` state change racing the first layout.
 struct Confetti: View {
-    var count: Int = 60
+    var count: Int = 70
 
     @State private var pieces: [ConfettiPiece]
-    @State private var startDate = Date()
+    @State private var startDate: Date
     @State private var finished = false
 
-    init(count: Int = 60) {
+    init(count: Int = 70) {
         self.count = count
         _pieces = State(initialValue: ConfettiPiece.generate(count: count))
+        _startDate = State(initialValue: Date())
     }
 
     private var totalDuration: Double {
@@ -73,7 +74,7 @@ struct Confetti: View {
             if !finished {
                 TimelineView(.animation) { context in
                     let elapsed = context.date.timeIntervalSince(startDate)
-                    Canvas(rendersAsynchronously: true) { ctx, size in
+                    Canvas { ctx, size in
                         for piece in pieces {
                             draw(piece, at: elapsed, in: size, context: &ctx)
                         }
@@ -85,8 +86,8 @@ struct Confetti: View {
         .ignoresSafeArea()
         .allowsHitTesting(false)
         .task {
-            startDate = Date()
-            try? await Task.sleep(for: .seconds(totalDuration))
+            let remaining = max(totalDuration - Date().timeIntervalSince(startDate), 0)
+            try? await Task.sleep(for: .seconds(remaining))
             withAnimation(.easeOut(duration: 0.3)) { finished = true }
         }
     }
@@ -97,8 +98,9 @@ struct Confetti: View {
         let progress = t / piece.fallDuration
         guard progress <= 1 else { return }
 
-        // Ease-in so pieces start slow and pick up speed like they're falling.
-        let eased = progress * progress
+        // Start at a visible speed and accelerate, so the first pieces are on screen immediately
+        // instead of hovering near the top edge during a slow ease-in.
+        let eased = progress * (0.35 + 0.65 * progress)
         let travel = size.height + piece.size * 4
         let y = -piece.size * 2 + eased * travel
         let sway = sin(t * piece.swaySpeed + piece.swayPhase) * piece.swayAmplitude
